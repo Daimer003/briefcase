@@ -3,9 +3,9 @@ import { Text } from "@chakra-ui/react"
 
 
 export const LogoBox = styled(Text) <{ color: string }>`
+  display: flex;
   font-weight: bold;
   font-size: 18px;
-  display: inline-flex;
   align-items: center;
   height: 30px;
   line-height: 40px;

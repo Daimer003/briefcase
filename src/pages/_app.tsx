@@ -5,9 +5,6 @@ import theme from '../../lib/theme'
 import LayoutMain from '@/components/layouts/main'
 
 
-
-
-
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider theme={theme}>

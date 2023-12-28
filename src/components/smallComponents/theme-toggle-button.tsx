@@ -19,8 +19,8 @@ const ThemeToggleButton = () => {
         <IconButton
           isRound={true}
           aria-label="Toggle theme"
-          colorScheme={useColorModeValue('greenDawn.50', 'gray.900')}
-          icon={useColorModeValue(<BiSolidMoon />, <BiSolidSun />)}
+          color={useColorModeValue('gray.900', 'greenDawn.50')}
+          icon={useColorModeValue(<BiSolidSun />, <BiSolidMoon />)}
           onClick={toggleColorMode}
         ></IconButton>
       </motion.div>

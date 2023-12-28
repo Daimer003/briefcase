@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import { Box, Container } from '@chakra-ui/react'
-import Navbar from '@/components/shared/navbar/navbar'
-import LayoutMain from '@/components/layouts/main'
+import { Box } from '@chakra-ui/react'
+import Profile from '@/components/smallComponents/profile'
 
 
 export default function Home() {
@@ -13,7 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Box>
+        <Profile />
+      </Box>
     </>
   )
 }

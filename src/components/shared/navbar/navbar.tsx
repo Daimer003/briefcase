@@ -18,35 +18,40 @@ import { ImGithub } from "react-icons/im";
 import { MdOutlineMenu } from "react-icons/md";
 
 
-interface Props {
-    href: any,
-    path: any,
-    target?: any,
-    children: any,
+interface LinkItemProps {
+    href: string,
+    path: string,
+    target?: string,
+    children: React.ReactNode,
     props?: any
 }
 
-const LinkItem = ({ href, path, target, children, ...props }: Props) => {
+const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => {
     const active = path === href
-    const inactiveColor = useColorModeValue('greenDawn.50', 'gray.900')
+    const inactiveColor = useColorModeValue('gray.900', 'greenDawn.50')
     return (
-        <Link
-            as={NextLink}
-            href={href}
-            scroll={false}
-            p={2}
-            bg={active ? 'grassTeal' : undefined}
-            color={active ? '#202023' : inactiveColor}
-            target={target}
-            {...props}
-        >
-            {children}
-        </Link>
+        <NextLink href={href} passHref>
+            <Link
+                p={2}
+                bg={active ? 'grassTeal' : undefined}
+                color={active ? '#202023' : inactiveColor}
+                display="inline-flex"
+                alignItems="center"
+                style={{ gap: 4 }}
+                pl={2}
+                target={target}
+                {...props}
+            >
+                {children}
+            </Link>
+        </NextLink>
     )
 }
 
-const MenuLink = forwardRef((props, ref) => (
-    <Link ref={ref} as={NextLink} {...props} />
+const MenuLink = forwardRef(({ href, ...props }: any, ref: any) => (
+    <NextLink href={href} passHref>
+        <Link ref={ref} {...props} />
+    </NextLink>
 ))
 
 const Navbar = (props: any) => {
@@ -75,10 +80,6 @@ const Navbar = (props: any) => {
                     target="_blank"
                     href="https://gitlab.com/Daymer"
                     path={path}
-                    display="inline-flex"
-                    alignItems="center"
-                    style={{ gap: 4 }}
-                    pl={2}
                 >
                     <ImGithub />
                     Source
@@ -94,6 +95,8 @@ const Navbar = (props: any) => {
                     <Menu isLazy id="navbar-menu">
                         <MenuButton
                             as={IconButton}
+                            color={useColorModeValue('gray.900', 'greenDawn.50')}
+                            colorScheme={useColorModeValue('gray.100', 'greenDawn.50')}
                             icon={<MdOutlineMenu />}
                             variant="outline"
                             aria-label="Options"

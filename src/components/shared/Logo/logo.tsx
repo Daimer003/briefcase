@@ -6,12 +6,13 @@ import { LogoBox } from "@/styles/components/shared/Logo/logo.styles";
 
 
 const Logo = () => {
+
     return (
         <Link href="/" scroll={false}>
-            <LogoBox as="span" color={useColorModeValue('greenDawn.50', 'gray.900')} >
+            <LogoBox as="span" color={useColorModeValue('gray.900', 'greenDawn.50')} >
                 <FootprintIcon />
                 <Text
-                    color={useColorModeValue('greenDawn.50', 'gray.900')}
+                    color={useColorModeValue('gray.900', 'greenDawn.50')}
                     fontFamily='M PLUS Rounded 1c", sans-serif'
                     fontWeight="bold"
                 >
