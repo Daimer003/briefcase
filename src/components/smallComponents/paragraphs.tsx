@@ -7,8 +7,16 @@ interface Props {
 
 const Paragraphs = ({ children }: Props) => {
     return (
-        <Box>
-            <Text as="p">
+        <Box
+            width="100%"
+            height="auto"
+            padding="10px"
+            boxSizing="border-box"
+        >
+            <Text
+                as="p"
+                textAlign="justify"
+            >
                 {children}
             </Text>
         </Box>

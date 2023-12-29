@@ -1,7 +1,5 @@
-import { Box, Heading, Spacer, Text } from "@chakra-ui/react";
+import { Box, Heading, Spacer, Text, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image";
-import Paragraphs from "./paragraphs";
-
 
 
 const Profile = () => {
@@ -24,7 +22,7 @@ const Profile = () => {
                 >
                     Daymer Perdomo Molina
                 </Heading>
-                <Paragraphs>Frontend developer (Técnico de aeronaves).</Paragraphs>
+                <p>Frontend developer (Técnico de aeronaves).</p>
             </Box>
             <Spacer />
             <Box
@@ -33,7 +31,7 @@ const Profile = () => {
                 height="100px"
                 borderRadius="50%"
                 overflow="hidden"
-                border="4px solid gray"
+                border={`3px solid ${useColorModeValue('#D0D9D6', '#1e1f20')}`}
                 margin="20px auto"
             >
                 <Image
