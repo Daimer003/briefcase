@@ -12,9 +12,12 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@types/cors": "^2.8.17",
+    "ai": "^2.2.30",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",
     "openai": "^4.24.1",
+    "openai-edge": "^1.2.2",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0"
