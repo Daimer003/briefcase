@@ -33,7 +33,6 @@ export default async function handler(
 ) {
     const { messages } = await req.body;
     // await runMiddleware(req, res, corsMiddleware);
-    console.log(messages)
     // Ask OpenAI for a streaming chat completion given the prompt
     try {
         const response = await openai.chat.completions.create({

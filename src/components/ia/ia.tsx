@@ -1,14 +1,49 @@
 'use client'
 
-import { IaBox, ChatBox } from "@/styles/components/ia/ia.styles";
-import { Box, Button, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+    IaBox,
+    ChatBox,
+    SearchBox
+} from "@/styles/components/ia/ia.styles";
+import {
+    Box,
+    Button,
+    Input,
+    Text,
+    useColorModeValue,
+    useDisclosure
+} from "@chakra-ui/react";
 import { useChat } from 'ai/react';
 import { RiRobot2Line } from "react-icons/ri";
+import ModalGlobal from "../shared/modal/modal";
+import { use, useState } from "react";
+
+
 
 // Optional but recommended: use the Edge Runtime. This can only be done at the page level, not inside nested components.
 export const runtime = 'experimental-edge';
 const Ia = () => {
-    const { messages, handleSubmit, input, handleInputChange } = useChat({ api: "/api/chat/route" });
+    const {
+        messages,
+        setMessages,
+        handleSubmit,
+        handleInputChange,
+        input
+    } = useChat({ api: "/api/chat/route" });
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [name, setName] = useState<any>("")
+    const [question, setQuestion] = useState<string>("false")
+
+    //* Setea el campo para una nueva pregunta
+    const setChat = () => {
+        setMessages([])
+    }
+    //*Obtiene el valor del input (Name)
+    const gettheValue = (e: any) => {
+        const name = e.target.value
+        setName(name)
+    }
+
 
     return (
         <IaBox>
@@ -28,7 +63,7 @@ const Ia = () => {
                 >
                     {/* <RiRobot2Line /> */}
                     ¡Hola! Soy un asistente impulsado por inteligencia artificial diseñado por un visionario entusiasta de la tecnología.
-                    ¿Cómo puedo ayudarlo hoy?
+                    ¿Cómo puedo ayudarlo hoy {name}?
 
                 </Text>
             </Box>
@@ -38,6 +73,11 @@ const Ia = () => {
             >
                 <Button
                     width="100%"
+                    onClick={() => setQuestion("true")}
+                >Preguntar?</Button>
+                <Button
+                    width="100%"
+                    onClick={() => setChat()}
                 >1</Button>
                 <Button
                     width="100%"
@@ -51,11 +91,23 @@ const Ia = () => {
                 <Button
                     width="100%"
                 >5</Button>
-
             </Box>
+
             <ChatBox
                 border={useColorModeValue('#0B0C0D', '#F0F0F2')}
             >
+                < SearchBox openSearch={question}>
+                    <form onSubmit={handleSubmit}>
+                        <Input
+                            value={input}
+                            onChange={handleInputChange}
+                        />
+                        <Button
+                            onClick={() => setQuestion("false")}
+                            type="submit"
+                        >Send</Button>
+                    </form>
+                </SearchBox>
                 {/* <Text
                     color={useColorModeValue('gray.900', 'greenDawn.50')}
                     as="p"
@@ -67,16 +119,31 @@ const Ia = () => {
                             {m.content}
                         </div>
                     ))}
-
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            Say something...
-                            <input value={input} onChange={handleInputChange} />
-                        </label>
-                        <button type="submit">Send</button>
-                    </form>
                 </div>
             </ChatBox>
+            <ModalGlobal
+                title="Cual es tu nombre?"
+                isOpen={isOpen}
+                onOpen={onOpen}
+                onClose={onClose}
+            >
+                <Box
+                    display="flex"
+                    width="auto"
+                    gap="10px"
+                >
+                    <Input
+                        type="text"
+                        placeholder="Nombre"
+                        onChange={gettheValue}
+                    />
+                    <Button
+                        onClick={() => onClose()}
+                    >
+                        Listo
+                    </Button>
+                </Box>
+            </ModalGlobal>
         </IaBox>
     );
 }

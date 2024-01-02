@@ -23,5 +23,26 @@ export const ChatBox = styled(Box)`
   padding: 10px;
   box-sizing: border-box;
   border-radius: var(--border-radius-small);
+  position: relative;
 `;
+
+export const SearchBox = styled(Box) <{ openSearch: string }>`
+  display:${({ openSearch }) => openSearch == "true" ? "flex" : "none"};
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  form{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+`;
+
 

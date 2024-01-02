@@ -4,8 +4,6 @@ import Profile from '@/components/smallComponents/profile'
 import Paragraphs from '@/components/smallComponents/paragraphs'
 
 
-
-
 export default function Home() {
   return (
     <>
