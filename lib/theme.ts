@@ -42,7 +42,10 @@ const colors = {
         50: "#D0D9D6"
     },
     softPeach: "#F2CDAC",
-    slateGray: "#4F5559"
+    slateGray: "#4F5559",
+    yellow900: {
+        900: "#5F370E"
+    }
 }
 
 const config = {

@@ -47,6 +47,7 @@ const ModalGlobal = (
                     background="black"
                     border="1px solid #F0F0F2"
                     padding="10px"
+                    margin="20px"
                 >
                     <ModalHeader
                         margin="0"

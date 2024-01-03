@@ -18,11 +18,13 @@ export const ChatBox = styled(Box)`
   display: flex;
   width: 100%;
   min-height: 150px;
+  max-height: 300px;
   height: auto;
   border: 1px solid ${({ border }) => border};
   padding: 10px;
   box-sizing: border-box;
   border-radius: var(--border-radius-small);
+  overflow: auto;
   position: relative;
 `;
 
@@ -31,9 +33,9 @@ export const SearchBox = styled(Box) <{ openSearch: string }>`
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;
   box-sizing: border-box;
   position: absolute;
+  background-color: rgba(0,0,0, .9);
   left: 0;
   top: 0;
   form{
@@ -42,7 +44,13 @@ export const SearchBox = styled(Box) <{ openSearch: string }>`
     gap: 10px;
     padding: 10px;
     box-sizing: border-box;
+    input{
+      background: #000000;
+    }
   }
 `;
 
-
+export const ContentChat = styled(Box)`
+  width: 100%;
+  height: auto;
+`;

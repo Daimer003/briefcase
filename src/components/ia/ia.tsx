@@ -3,7 +3,8 @@
 import {
     IaBox,
     ChatBox,
-    SearchBox
+    SearchBox,
+    ContentChat
 } from "@/styles/components/ia/ia.styles";
 import {
     Box,
@@ -16,11 +17,10 @@ import {
 import { useChat } from 'ai/react';
 import { RiRobot2Line } from "react-icons/ri";
 import ModalGlobal from "../shared/modal/modal";
-import { use, useState } from "react";
+import { useState } from "react";
+import { data } from "./data";
 
 
-
-// Optional but recommended: use the Edge Runtime. This can only be done at the page level, not inside nested components.
 export const runtime = 'experimental-edge';
 const Ia = () => {
     const {
@@ -29,7 +29,17 @@ const Ia = () => {
         handleSubmit,
         handleInputChange,
         input
-    } = useChat({ api: "/api/chat/route" });
+    } = useChat(
+        {
+            api: "/api/chat/route",
+            initialMessages: [
+                {
+                    id: "1",
+                    role: "system",
+                    content: data
+                }
+            ]
+        });
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [name, setName] = useState<any>("")
     const [question, setQuestion] = useState<string>("false")
@@ -52,7 +62,6 @@ const Ia = () => {
                 padding="10px"
                 boxSizing="border-box"
                 borderRadius="var(--border-radius-small)"
-
             >
                 <Text
                     display="flex"
@@ -64,33 +73,35 @@ const Ia = () => {
                     {/* <RiRobot2Line /> */}
                     ¡Hola! Soy un asistente impulsado por inteligencia artificial diseñado por un visionario entusiasta de la tecnología.
                     ¿Cómo puedo ayudarlo hoy {name}?
-
                 </Text>
             </Box>
-            <Box
-                display="flex"
-                gap="10px"
+            <Box display="flex" gap="10px"
             >
                 <Button
                     width="100%"
+                    background={useColorModeValue('gray.900', 'softPeach')}
+                    color={useColorModeValue('gray.100', 'gray.900')}
                     onClick={() => setQuestion("true")}
                 >Preguntar?</Button>
                 <Button
                     width="100%"
+                    maxWidth="80px"
                     onClick={() => setChat()}
-                >1</Button>
+                >
+                    1
+                </Button>
                 <Button
                     width="100%"
-                >2</Button>
+                    maxWidth="80px"
+                >
+                    2
+                </Button>
                 <Button
                     width="100%"
-                >3</Button>
-                <Button
-                    width="100%"
-                >4</Button>
-                <Button
-                    width="100%"
-                >5</Button>
+                    maxWidth="80px"
+                >
+                    3
+                </Button>
             </Box>
 
             <ChatBox
@@ -105,21 +116,21 @@ const Ia = () => {
                         <Button
                             onClick={() => setQuestion("false")}
                             type="submit"
-                        >Send</Button>
+                        >
+                            Send
+                        </Button>
                     </form>
                 </SearchBox>
-                {/* <Text
-                    color={useColorModeValue('gray.900', 'greenDawn.50')}
-                    as="p"
-                >...</Text> */}
-                <div>
-                    {messages.map(m => (
-                        <div key={m.id}>
-                            {m.role === 'user' ? 'User: ' : 'AI: '}
-                            {m.content}
-                        </div>
-                    ))}
-                </div>
+                <ContentChat>
+                    {
+                        messages.filter(m => m.role !== "system").map(m => (
+                            <div key={m.id}>
+                                {m.role === 'user' ? 'User: ' : 'AI: '}
+                                {m.content}
+                            </div>
+                        ))
+                    }
+                </ContentChat>
             </ChatBox>
             <ModalGlobal
                 title="Cual es tu nombre?"
@@ -137,9 +148,7 @@ const Ia = () => {
                         placeholder="Nombre"
                         onChange={gettheValue}
                     />
-                    <Button
-                        onClick={() => onClose()}
-                    >
+                    <Button onClick={() => onClose()}>
                         Listo
                     </Button>
                 </Box>

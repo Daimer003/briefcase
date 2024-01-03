@@ -2,6 +2,8 @@ import { Box, Container } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import Navbar from "../shared/navbar/navbar";
 import Ia from "../ia/ia";
+import Footer from "../shared/footer/footer";
+
 
 interface Props {
     children: ReactNode,
@@ -29,6 +31,7 @@ const Main = ({ children, router }: Props) => {
                 <Navbar path={router.asPath} />
                 <Ia />
                 {children}
+                <Footer />
             </Container>
         </Box>
     );
