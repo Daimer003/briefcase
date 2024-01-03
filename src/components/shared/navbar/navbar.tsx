@@ -31,8 +31,12 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
     const active = path === href
     const inactiveColor = useColorModeValue('gray.900', 'greenDawn.50')
     return (
-        <NextLink href={href} passHref>
-            <Link
+        <NextLink
+            href={href}
+            passHref
+            target={target}
+        >
+            <Box
                 p={2}
                 bg={active ? 'grassTeal' : undefined}
                 color={active ? '#202023' : inactiveColor}
@@ -40,20 +44,18 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
                 alignItems="center"
                 style={{ gap: 4 }}
                 pl={2}
-                target={target}
                 {...props}
             >
                 {children}
-            </Link>
+            </Box>
         </NextLink>
     )
 }
 
-const MenuLink = forwardRef(({ href, ...props }: any, ref: any) => (
-    <NextLink href={href} passHref>
-        <Link ref={ref} {...props} />
-    </NextLink>
+const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
+    <Link ref={ref} {...props} />
 ))
+
 
 const Navbar = (props: any) => {
     const { path } = props
