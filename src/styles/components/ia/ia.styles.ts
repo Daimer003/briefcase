@@ -7,7 +7,7 @@ export const IaBox = styled(Box)`
   flex-direction: column;
   width: 100%;
   height: auto;
-  margin-top: 40px;
+  margin-top: 80px;
   gap: 5px;
   padding: 10px;
   box-sizing: border-box;
@@ -28,8 +28,8 @@ export const ChatBox = styled(Box)`
   position: relative;
 `;
 
-export const SearchBox = styled(Box) <{ openSearch: string }>`
-  display:${({ openSearch }) => openSearch == "true" ? "flex" : "none"};
+export const SearchBox = styled(Box) <{ opensearch: string }>`
+  display:${({ opensearch }) => opensearch == "true" ? "flex" : "none"};
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -37,7 +37,9 @@ export const SearchBox = styled(Box) <{ openSearch: string }>`
   position: absolute;
   background-color: rgba(0,0,0, .9);
   left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
   form{
     display: flex;
     width: 100%;
@@ -53,4 +55,7 @@ export const SearchBox = styled(Box) <{ openSearch: string }>`
 export const ContentChat = styled(Box)`
   width: 100%;
   height: auto;
+  a{
+    color: var(--color-text-a);
+  }
 `;

@@ -3,10 +3,8 @@ import { forwardRef } from 'react'
 import {
     Box,
     Spacer,
-    Link,
     Stack,
     MenuList,
-    MenuItem,
     Menu,
     MenuButton,
     IconButton,
@@ -38,6 +36,7 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
         >
             <Box
                 p={2}
+                width="100%"
                 bg={active ? 'grassTeal' : undefined}
                 color={active ? '#202023' : inactiveColor}
                 display="inline-flex"
@@ -52,10 +51,12 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
     )
 }
 
+//*referencias se utilizan para acceder directamente a un elemento del DOM o a un componente React hijo.
 const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
-    <Link ref={ref} {...props} />
+    <NextLink
+        href={ref}
+    />
 ))
-
 
 const Navbar = (props: any) => {
     const { path } = props
@@ -63,9 +64,15 @@ const Navbar = (props: any) => {
         <Box
             display="flex"
             width="100%"
+            maxWidth="800px"
             alignItems="center"
             padding="10px"
             boxSizing="border-box"
+            bg={useColorModeValue('#ffffff40', '#20202380')}
+            css={{ backdropFilter: 'blur(10px)' }}
+            position="fixed"
+            zIndex={2}
+            {...props}
         >
             <Logo />
             <Stack
@@ -77,7 +84,7 @@ const Navbar = (props: any) => {
                 mt={{ base: 4, md: 0 }}
             >
                 <LinkItem href="/works" path={path}>
-                    Works
+                    Obras
                 </LinkItem>
                 <LinkItem
                     target="_blank"
@@ -85,12 +92,11 @@ const Navbar = (props: any) => {
                     path={path}
                 >
                     <ImGithub />
-                    Source
+                    Fuente
                 </LinkItem>
             </Stack>
             <Spacer />
-            <Box
-                display="flex"
+            <Box display="flex"
             >
                 <ThemeToggleButton />
 
@@ -104,20 +110,25 @@ const Navbar = (props: any) => {
                             variant="outline"
                             aria-label="Options"
                         />
-                        <MenuList>
-                            <MenuItem as={MenuLink} href="/">
-                                About
-                            </MenuItem>
-                            <MenuItem as={MenuLink} href="/works">
-                                Works
-                            </MenuItem>
+                        <MenuList
+                            display="flex"
+                            flexDirection="column"
+                        >
+                            <LinkItem href="/" path={path}>
+                                Perfil
+                            </LinkItem >
+                            <LinkItem href="/works" path={path}>
+                                Obras
+                            </LinkItem>
 
-                            <MenuItem
-                                as={Link}
-                                href="https://github.com/craftzdog/craftzdog-homepage"
+                            <LinkItem
+                                target="_blank"
+                                href="https://gitlab.com/Daymer"
+                                path={path}
                             >
-                                View Source
-                            </MenuItem>
+                                <ImGithub />
+                                Fuente
+                            </LinkItem>
                         </MenuList>
                     </Menu>
                 </Box>

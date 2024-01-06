@@ -1,3 +1,4 @@
+
 import { Box, Container } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import Navbar from "../shared/navbar/navbar";
@@ -27,6 +28,7 @@ const Main = ({ children, router }: Props) => {
                 maxWidth="800px"
                 margin="0"
                 padding="0"
+                position="relative"
             >
                 <Navbar path={router.asPath} />
                 <Ia />

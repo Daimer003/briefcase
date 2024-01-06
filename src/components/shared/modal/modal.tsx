@@ -14,7 +14,8 @@ interface Props {
     children: ReactNode,
     isOpen: boolean,
     onOpen: () => void,
-    onClose: () => void
+    onClose: () => void,
+    user: boolean,
 }
 
 const ModalGlobal = (
@@ -23,7 +24,8 @@ const ModalGlobal = (
         children,
         isOpen,
         onOpen,
-        onClose
+        onClose,
+        user
     }: Props) => {
     const OverlayOne = () => (
         <ModalOverlay
@@ -36,7 +38,6 @@ const ModalGlobal = (
 
     useEffect(() => {
         setOverlay(<OverlayOne />)
-        onOpen()
     }, [])
 
     return (

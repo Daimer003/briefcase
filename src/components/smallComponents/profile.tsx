@@ -7,7 +7,10 @@ import {
     ListItem,
     Link,
     Button,
-    useColorModeValue
+    useColorModeValue,
+    Wrap,
+    WrapItem,
+    Center
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Paragraphs from "./paragraphs";
@@ -20,9 +23,10 @@ import {
 import { FaFutbol, FaInstagram } from "react-icons/fa";
 import { GoFileCode } from "react-icons/go";
 import { GiRobotGolem, GiBookshelf } from "react-icons/gi";
-import { IoMdCafe } from "react-icons/io";
+import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
 import { FaGitlab } from "react-icons/fa6";
-
+import CardProyect from "./cardProyect";
+import { ongoingProjects } from "../../../utils/data";
 
 
 const Profile = () => {
@@ -48,8 +52,8 @@ const Profile = () => {
                 <Spacer />
                 <Box
                     display="flex"
-                    width="100px"
-                    height="100px"
+                    width="150px"
+                    height="150px"
                     borderRadius="50%"
                     overflow="hidden"
                     border={`3px solid ${useColorModeValue('#D0D9D6', '#1e1f20')}`}
@@ -58,16 +62,16 @@ const Profile = () => {
                     <Image
                         src="/assets/daimer.webp"
                         alt="Imagen del perfil"
-                        width={100}
-                        height={100}
+                        width={150}
+                        height={150}
                     />
                 </Box>
             </Box>
             <Paragraphs>
-                Takuya is a freelance and a full-stack developer based in Osaka with a passion for building digital services/stuff he wants.
-                He has a knack for all things launching products, from planning and designing all the way to solving real-life problems with code.
-                When not online, he loves hanging out with his camera. Currently, he is living off of his own product called Inkdrop.
-                He publishes content for marketing his products and his YouTube channel called "Dev as Life" has more than 100k subscribers.
+                Soy un profesional en constante evolución, con una trayectoria en Dcorp, donde mi labor se enfoca en funciones específicas. Además, trabajo de manera independiente como desarrollador frontend en Medellín.
+                Mi destreza abarca todo el proceso de lanzamiento de productos, desde la conceptualización y diseño hasta la resolución de desafíos reales mediante la programación.
+                Fuera del ámbito digital, disfruto dedicar tiempo al desarrollo de proyectos de electrónica, explorando mi pasión por la innovación.
+                Mi enfoque meticuloso y mi compromiso con la excelencia me impulsan constantemente a buscar nuevas formas de crear soluciones impactantes.
             </Paragraphs>
             <Box
                 display="flex"
@@ -94,7 +98,7 @@ const Profile = () => {
                         2013
                     </Text>
                     <Text as="p">
-                        Completó el programa de tecnico y especialista en electronica, en la institucion Corporacion Educativa Indoamericana.
+                        Completé el programa de técnico y especialista en electrónica en la institución Corporación Educativa Indoamericana.
                     </Text>
                 </Box>
                 <Box display="flex" gap="5px">
@@ -102,7 +106,7 @@ const Profile = () => {
                         2019
                     </Text>
                     <Text as="p">
-                        Completó el programa de Full Stack en la Escuela de Acamica, estudios en tecnologias para el desarrollo de aplicaciones.
+                        Completé el programa de Full Stack en la Escuela de Acámica, con estudios en tecnologías para el desarrollo de aplicaciones.
                     </Text>
                 </Box>
                 <Box display="flex" gap="5px">
@@ -110,7 +114,7 @@ const Profile = () => {
                         2024
                     </Text>
                     <Text as="p">
-                        En la actualidad trabajo para la empresa Dcorp, y autonomo.
+                        En la actualidad trabajo para la empresa Dcorp, y también soy independiente.
                     </Text>
                 </Box>
 
@@ -129,6 +133,8 @@ const Profile = () => {
                         <Tag
                             size='lg'
                             colorScheme='red'
+                            border='1px'
+                            borderColor='red'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={FaFutbol} />
@@ -137,14 +143,18 @@ const Profile = () => {
                         <Tag
                             size='lg'
                             colorScheme='blue'
+                            border='1px'
+                            borderColor='blue'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GiRobotGolem} />
-                            <TagLabel>Robotica</TagLabel>
+                            <TagLabel>Robótica</TagLabel>
                         </Tag>
                         <Tag
                             size='lg'
                             colorScheme='green'
+                            border='1px'
+                            borderColor='green'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GoFileCode} />
@@ -153,14 +163,18 @@ const Profile = () => {
                         <Tag
                             size='lg'
                             colorScheme='purple'
+                            border='1px'
+                            borderColor='purple'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GiBookshelf} />
-                            <TagLabel>Aprendizaje automático</TagLabel>
+                            <TagLabel>Aprendizaje autodidacta</TagLabel>
                         </Tag>
                         <Tag
                             size='lg'
                             colorScheme='yellow'
+                            border='1px'
+                            borderColor='yellow'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={IoMdCafe} />
@@ -200,11 +214,24 @@ const Profile = () => {
                                 </Button>
                             </Link>
                         </ListItem>
-
+                        <ListItem>
+                            <Link href="https://www.linkedin.com/in/daymer-perdomo-5aa0a5137/" target="_blank">
+                                <Button
+                                    variant="ghost"
+                                    colorScheme="teal"
+                                    leftIcon={<IoLogoLinkedin />}
+                                >
+                                    Daymer Perdomo
+                                </Button>
+                            </Link>
+                        </ListItem>
                     </List>
                 </Box>
 
-                <Box marginTop="10px">
+                <Box
+                    width="100%"
+                    height="auto"
+                    marginTop="10px">
                     <Text
                         as="h3"
                         fontSize="x-large"
@@ -213,9 +240,26 @@ const Profile = () => {
                         Proyectos en curso...
                     </Text>
                 </Box>
-            </Box>
+                <Wrap spacing='20px' justify='center'>
+                    {
+                        ongoingProjects.map(project => {
+                            return (
+                                <WrapItem key={project.id}>
+                                    <Center w='100%' maxW="380px" h='380px'>
+                                        <CardProyect
+                                            title={project.title}
+                                            imagen={project.imagen}
+                                            paragraph={project.paragraph}
+                                            technologies={project.technologies}
+                                        />
+                                    </Center>
+                                </WrapItem>
+                            )
+                        })}
+                </Wrap >
+            </Box >
 
-        </Box>
+        </Box >
     );
 }
 
