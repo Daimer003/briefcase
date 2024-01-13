@@ -68,7 +68,7 @@ const Navbar = (props: any) => {
             alignItems="center"
             padding="10px"
             boxSizing="border-box"
-            bg={useColorModeValue('#ffffff40', '#20202380')}
+            bg={useColorModeValue('#ffffff3', '#0c0c0c80')}
             css={{ backdropFilter: 'blur(10px)' }}
             position="fixed"
             zIndex={2}

@@ -128,7 +128,7 @@ export const projectsInProduction = [
     {
         id: 4,
         title: "Colegio la Fontaine",
-        imagen: "/assets/kluby.webp",
+        imagen: "/assets/projects/colegiof.webp",
         paragraph: "Somos la primera aplicación en Latinoamérica que une, respalda y organiza todos los clubes de motor y eléctrico para darles orden, estatus y una participación en sus propios eventos y de terceros.",
         technologies: [
             {

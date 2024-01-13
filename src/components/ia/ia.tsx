@@ -18,10 +18,9 @@ import {
 import { useChat } from 'ai/react';
 import { RiRobot2Line } from "react-icons/ri";
 import ModalGlobal from "../shared/modal/modal";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { data } from "./data";
 import parse from "html-react-parser";
-
 
 
 export const runtime = 'experimental-edge';
@@ -45,6 +44,7 @@ const Ia = () => {
                 }
             ]
         });
+    const myDivRef = useRef<HTMLDivElement>(null);
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [name, setName] = useState<any>("")
     const [question, setQuestion] = useState<string>("false")
@@ -88,6 +88,24 @@ const Ia = () => {
         if (isLoading) return <Spinner />
     }
 
+    //* Esta función hará scroll al final del div cuando se actualice el contenido
+    const scrollToBottom = () => {
+        if (myDivRef.current) {
+            myDivRef.current.scrollTop = myDivRef.current.scrollHeight;
+        }
+    };
+
+    //* Esta función hará scroll al final del div cuando se actualice el contenido
+    const scrollTop = () => {
+        if (myDivRef.current) {
+            myDivRef.current.scrollTop = 0;
+        }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
     return (
         <IaBox>
             <Box
@@ -116,6 +134,7 @@ const Ia = () => {
                 <Box
                     display="flex"
                     gap="10px"
+                    onClick={scrollTop}
                 >
                     <Button
                         width="100%"
@@ -160,13 +179,16 @@ const Ia = () => {
                     border="1px"
                     borderColor="green"
                     color={useColorModeValue('gray.100', 'gray.900')}
-                    onClick={() => setQuestion("true")}
+                    onClick={() => {
+                        setQuestion("true")
+                        scrollTop()
+                    }}
                 >
                     Realizame una pregunta sobre Daymer.
                 </Button>
             </Box>
 
-            <ChatBox border={useColorModeValue('#0B0C0D', '#C6F6D5')}>
+            <ChatBox border={useColorModeValue('#0B0C0D', '#C6F6D5')} ref={myDivRef}>
                 <SearchBox opensearch={question}>
                     <form onSubmit={handleSubmit}>
                         <Input
@@ -182,10 +204,10 @@ const Ia = () => {
                         </Button>
                     </form>
                 </SearchBox>
-                <ContentChat>
+                <ContentChat >
                     {
                         messages.filter(m => m.role !== "system").map(m => (
-                            <div key={m.id}>
+                            <Box key={m.id}  >
                                 {m.role === 'user' ?
                                     <Text
                                         color={useColorModeValue('#38A169', '#68D391')}
@@ -196,7 +218,7 @@ const Ia = () => {
                                         as="span">
                                         AI: </Text>}
                                 {parseMessage(m.content)}
-                            </div>
+                            </Box>
                         ))
                     }
                     <Box

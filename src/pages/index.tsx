@@ -10,7 +10,6 @@ const variants = {
 }
 
 
-
 export default function Home() {
   return (
     <>

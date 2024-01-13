@@ -26,6 +26,7 @@ export const ChatBox = styled(Box)`
   border-radius: var(--border-radius-small);
   overflow: auto;
   position: relative;
+  scroll-behavior: smooth;
 `;
 
 export const SearchBox = styled(Box) <{ opensearch: string }>`
