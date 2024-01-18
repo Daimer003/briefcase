@@ -39,7 +39,7 @@ export default async function handler(
             model: 'gpt-3.5-turbo',
             stream: true,
             messages,
-            max_tokens: 200,
+            max_tokens: 300,
         });
 
         // Convert the response into a friendly text-stream

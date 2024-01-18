@@ -13,10 +13,10 @@ import {
     Text,
     useColorModeValue,
     useDisclosure,
-    Spinner
+    Spinner,
+    Heading
 } from "@chakra-ui/react";
 import { useChat } from 'ai/react';
-import { RiRobot2Line } from "react-icons/ri";
 import ModalGlobal from "../shared/modal/modal";
 import { useEffect, useState, useRef } from "react";
 import { data } from "./data";
@@ -88,14 +88,14 @@ const Ia = () => {
         if (isLoading) return <Spinner />
     }
 
-    //* Esta función hará scroll al final del div cuando se actualice el contenido
+    //* Esta función hará scroll al inicio del div cuando se actualice el contenido
     const scrollToBottom = () => {
         if (myDivRef.current) {
             myDivRef.current.scrollTop = myDivRef.current.scrollHeight;
         }
     };
 
-    //* Esta función hará scroll al final del div cuando se actualice el contenido
+    //* Esta función hará scroll al inicio
     const scrollTop = () => {
         if (myDivRef.current) {
             myDivRef.current.scrollTop = 0;
@@ -115,7 +115,6 @@ const Ia = () => {
                 borderRadius="var(--border-radius-small)"
             >
                 <Text
-                    display="flex"
                     alignItems="center"
                     gap="5px"
                     color={useColorModeValue('gray.900', 'greenDawn.50')}
@@ -123,8 +122,9 @@ const Ia = () => {
                 >
                     {/* <RiRobot2Line /> */}
                     ¡Hola! Soy un asistente impulsado por inteligencia artificial diseñado por un visionario entusiasta de la tecnología.
-                    ¿Cómo puedo ayudarlo hoy {name}?
+                    <span>¿Cómo puedo ayudarlo hoy <strong>{name}</strong>?</span>
                 </Text>
+
             </Box>
             <Box
                 display="flex"
@@ -133,45 +133,75 @@ const Ia = () => {
             >
                 <Box
                     display="flex"
+                    width="100%"
                     gap="10px"
-                    onClick={scrollTop}
                 >
-                    <Button
+                    <Box
+                        display="flex"
                         width="100%"
-                        colorScheme='gray'
-                        border='1px'
-                        borderColor='gray.900'
-                        onClick={() => {
-                            setInput('Experiencia y habilidades técnicas?')
-                            setQuestion("true")
-                        }}
+                        gap="10px"
+                        onClick={scrollTop}
                     >
-                        Pregunta 1
-                    </Button>
-                    <Button
-                        width="100%"
-                        colorScheme='gray'
-                        border='1px'
-                        borderColor='gray.900'
-                        onClick={() => {
-                            setInput('Formación y aprendizaje continuo?')
-                            setQuestion("true")
-                        }}
-                    >
-                        Pregunta 2
-                    </Button>
-                    <Button
-                        width="100%"
-                        colorScheme='gray'
-                        border='1px'
-                        borderColor='gray.900'
-                        onClick={() => {
-                            setInput('Colaboración y resolución de problemas?')
-                            setQuestion("true")
-                        }}
-                    >
-                        Pregunta 3
-                    </Button>
+                        <Button
+                            width="100%"
+                            colorScheme='gray'
+                            border='1px'
+                            borderColor='gray.900'
+                            overflow="hidden"
+
+                            onClick={() => {
+                                setInput('Experiencia y habilidades técnicas?')
+                                setQuestion("true")
+                            }}
+                        >
+                            <Heading
+                                as='span'
+                                size="sm"
+                                noOfLines={1}
+                                fontFamily="M PLUS Rounded 1c"
+                            >
+                                Experiencia y habilidades técnicas?
+                            </Heading>
+                        </Button>
+                        <Button
+                            width="100%"
+                            colorScheme='gray'
+                            border='1px'
+                            borderColor='gray.900'
+                            onClick={() => {
+                                setInput('Formación y aprendizaje continuo?')
+                                setQuestion("true")
+                            }}
+                        >
+                            <Heading
+                                as='span'
+                                size="sm"
+                                noOfLines={1}
+                                fontFamily="M PLUS Rounded 1c"
+                            >
+                                Formación y aprendizaje continuo?
+                            </Heading>
+                        </Button>
+                        <Button
+                            width="100%"
+                            colorScheme='gray'
+                            border='1px'
+                            borderColor='gray.900'
+                            onClick={() => {
+                                setInput('Colaboración y resolución de problemas?')
+                                setQuestion("true")
+                            }}
+                        >
+                            <Heading
+                                as='span'
+                                size="sm"
+                                noOfLines={1}
+                                fontFamily="M PLUS Rounded 1c"
+                            >
+                                Colaboración y resolución de problemas?
+                            </Heading>
+                        </Button>
+                    </Box>
                 </Box>
                 <Button
                     width="100%"
@@ -187,52 +217,59 @@ const Ia = () => {
                     Realizame una pregunta sobre Daymer.
                 </Button>
             </Box>
-
-            <ChatBox border={useColorModeValue('#0B0C0D', '#C6F6D5')} ref={myDivRef}>
-                <SearchBox opensearch={question}>
-                    <form onSubmit={handleSubmit}>
-                        <Input
-                            value={input}
-                            onChange={handleInputChange}
-                            placeholder="¿Pregunta?"
-                        />
-                        <Button
-                            onClick={() => setQuestion("false")}
-                            type="submit"
+            <Box
+                display="flex"
+                width="100%"
+                minHeight="150px"
+                maxHeight="300px"
+                position="relative"
+            >
+                <ChatBox border={useColorModeValue('#0B0C0D', '#C6F6D5')} ref={myDivRef}>
+                    <SearchBox opensearch={question}>
+                        <form onSubmit={handleSubmit}>
+                            <Input
+                                value={input}
+                                onChange={handleInputChange}
+                                placeholder="¿Pregunta?"
+                            />
+                            <Button
+                                onClick={() => setQuestion("false")}
+                                type="submit"
+                            >
+                                Enviar
+                            </Button>
+                        </form>
+                    </SearchBox>
+                    <ContentChat >
+                        {
+                            messages.filter(m => m.role !== "system").map(m => (
+                                <Box key={m.id}  >
+                                    {m.role === 'user' ?
+                                        <Text
+                                            color={useColorModeValue('#38A169', '#68D391')}
+                                            as="span">
+                                            User: </Text> :
+                                        <Text
+                                            color={useColorModeValue('#ED64A6', '#F687B3')}
+                                            as="span">
+                                            AI: </Text>}
+                                    {parseMessage(m.content)}
+                                </Box>
+                            ))
+                        }
+                        <Box
+                            display="flex"
+                            position="fixed"
+                            bottom="0"
+                            right="0"
+                            padding="10px"
+                            boxSizing="border-box"
                         >
-                            Enviar
-                        </Button>
-                    </form>
-                </SearchBox>
-                <ContentChat >
-                    {
-                        messages.filter(m => m.role !== "system").map(m => (
-                            <Box key={m.id}  >
-                                {m.role === 'user' ?
-                                    <Text
-                                        color={useColorModeValue('#38A169', '#68D391')}
-                                        as="span">
-                                        User: </Text> :
-                                    <Text
-                                        color={useColorModeValue('#ED64A6', '#F687B3')}
-                                        as="span">
-                                        AI: </Text>}
-                                {parseMessage(m.content)}
-                            </Box>
-                        ))
-                    }
-                    <Box
-                        display="flex"
-                        position="absolute"
-                        bottom="0"
-                        right="0"
-                        padding="10px"
-                        boxSizing="border-box"
-                    >
-                        {loadingIa()}
-                    </Box>
-                </ContentChat>
-            </ChatBox>
+                            {loadingIa()}
+                        </Box>
+                    </ContentChat>
+                </ChatBox>
+            </Box>
             <ModalGlobal
                 title="Cual es tu nombre?"
                 isOpen={isOpen}
@@ -258,7 +295,7 @@ const Ia = () => {
                     </Button>
                 </Box>
             </ModalGlobal>
-        </IaBox>
+        </IaBox >
     );
 }
 

@@ -12,6 +12,10 @@ export const IaBox = styled(Box)`
   padding: 10px;
   box-sizing: border-box;
   gap: 10px;
+  position: relative;
+  & span strong{
+    text-transform: capitalize;
+  }
 `;
 
 export const ChatBox = styled(Box)`

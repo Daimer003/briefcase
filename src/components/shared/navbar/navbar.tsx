@@ -53,9 +53,7 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
 
 //*referencias se utilizan para acceder directamente a un elemento del DOM o a un componente React hijo.
 const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
-    <NextLink
-        href={ref}
-    />
+    <NextLink href={ref} />
 ))
 
 const Navbar = (props: any) => {
@@ -86,6 +84,9 @@ const Navbar = (props: any) => {
                 <LinkItem href="/works" path={path}>
                     Obras
                 </LinkItem>
+                <LinkItem href="/recommendations" path={path}>
+                    Recomendaciones
+                </LinkItem>
                 <LinkItem
                     target="_blank"
                     href="https://gitlab.com/Daymer"
@@ -96,8 +97,7 @@ const Navbar = (props: any) => {
                 </LinkItem>
             </Stack>
             <Spacer />
-            <Box display="flex"
-            >
+            <Box display="flex">
                 <ThemeToggleButton />
 
                 <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
@@ -120,7 +120,9 @@ const Navbar = (props: any) => {
                             <LinkItem href="/works" path={path}>
                                 Obras
                             </LinkItem>
-
+                            <LinkItem href="/recommendations" path={path}>
+                                Recomendaciones
+                            </LinkItem>
                             <LinkItem
                                 target="_blank"
                                 href="https://gitlab.com/Daymer"
