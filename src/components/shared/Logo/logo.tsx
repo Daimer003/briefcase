@@ -5,7 +5,7 @@ import { LogoBox } from "@/styles/components/shared/Logo/logo.styles";
 
 
 
-const Logo = () => {
+const LogoNav = () => {
 
     return (
         <Link href="/" scroll={false}>
@@ -23,4 +23,4 @@ const Logo = () => {
     );
 }
 
-export default Logo;
+export default LogoNav;

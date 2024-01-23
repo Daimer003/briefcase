@@ -10,7 +10,7 @@ import {
     IconButton,
     useColorModeValue
 } from "@chakra-ui/react";
-import Logo from "../logo/logo";
+import LogoNav from "../logo/logo";
 import ThemeToggleButton from "@/components/smallComponents/theme-toggle-button";
 import NextLink from 'next/link'
 import { ImGithub } from "react-icons/im";
@@ -72,7 +72,7 @@ const Navbar = (props: any) => {
             zIndex={2}
             {...props}
         >
-            <Logo />
+            <LogoNav />
             <Stack
                 direction={{ base: 'column', md: 'row' }}
                 display={{ base: 'none', md: 'flex' }}
