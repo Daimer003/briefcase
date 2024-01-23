@@ -10,7 +10,7 @@ import {
     IconButton,
     useColorModeValue
 } from "@chakra-ui/react";
-import LogoNav from "../logo/logo";
+import LogoNav from "../logo";
 import ThemeToggleButton from "@/components/smallComponents/theme-toggle-button";
 import NextLink from 'next/link'
 import { ImGithub } from "react-icons/im";
