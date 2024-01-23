@@ -1,6 +1,5 @@
 import { OpenAIStream, streamToResponse } from 'ai';
 import { NextApiRequest, NextApiResponse } from 'next';
-// import Cors from 'cors';
 import OpenAI from 'openai';
 
 // Create an OpenAI API client (that's edge friendly!)
@@ -8,31 +7,12 @@ const openai = new OpenAI({
     apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY || '',
 });
 
-// const corsMiddleware = Cors({
-//     methods: ['GET', 'POST', 'OPTIONS'],
-// });
-
-// async function runMiddleware(
-//     req: NextApiRequest,
-//     res: NextApiResponse,
-//     fn: Function
-// ) {
-//     return new Promise((resolve, reject) => {
-//         fn(req, res, (result: any) => {
-//             if (result instanceof Error) {
-//                 return reject(result);
-//             }
-//             return resolve(result);
-//         });
-//     });
-// }
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
     const { messages } = await req.body;
-    // await runMiddleware(req, res, corsMiddleware);
     // Ask OpenAI for a streaming chat completion given the prompt
     try {
         const response = await openai.chat.completions.create({

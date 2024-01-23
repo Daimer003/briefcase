@@ -6,10 +6,13 @@ import {
     Text,
     Button,
     Textarea,
-    ListItem,
-    Link
+    Link,
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
 } from "@chakra-ui/react";
-import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
+import { IoLogoLinkedin } from "react-icons/io";
 
 
 
@@ -22,6 +25,11 @@ const Recommendations = () => {
             boxSizing="border-box"
         >
             <Box>
+                <Alert status='error' marginBottom="20px" borderRadius="8px">
+                    <AlertIcon />
+                    <AlertTitle>Vista de prueba:</AlertTitle>
+                    <AlertDescription>La sección de comentarios aún no está disponible.</AlertDescription>
+                </Alert>
                 <Box
                     display="flex"
                     alignItems="center"
@@ -72,15 +80,23 @@ const Recommendations = () => {
                     </Box>
                     <Button
                         width="100%"
+                        isDisabled
                     >
                         Comentar
                     </Button>
                 </Box>
             </Box>
-            <Box marginTop="40px">
-                <CardRecommendations />
+            <Box
+                display="flex"
+                flexDirection="column"
+                marginTop="40px"
+                gap="20px"
+            >
+                <CardRecommendations data={{ color: "teal" }} />
+                <CardRecommendations data={{ color: "pink" }} />
+                <CardRecommendations data={{ color: "purple" }} />
             </Box>
-        </Box>
+        </Box >
     );
 }
 

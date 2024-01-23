@@ -19,14 +19,18 @@ const Technologies = () => {
                     Tecnologias y herramientas
                 </Text>
             </Box>
-            <Wrap marginTop="40px">
+            <Wrap marginTop="40px" spacing="20px">
                 {
                     technologies.map(t => {
                         return (
                             <WrapItem key={t.id} margin="auto">
                                 <Center w='180px' h='80px'>
                                     <Tag
+                                        display="flex"
+                                        justifyContent="center"
+                                        alignItems="center"
                                         width="100%"
+                                        height="80px"
                                         colorScheme={t.color}
                                         border='1px'
                                         opacity="50%"

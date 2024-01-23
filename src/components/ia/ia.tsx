@@ -122,7 +122,7 @@ const Ia = () => {
                 >
                     {/* <RiRobot2Line /> */}
                     ¡Hola! Soy un asistente impulsado por inteligencia artificial diseñado por un visionario entusiasta de la tecnología.
-                    <span>¿Cómo puedo ayudarlo hoy <strong>{name}</strong>?</span>
+                    <span> ¿Cómo puedo ayudarte hoy <strong>{name}</strong>?</span>
                 </Text>
 
             </Box>

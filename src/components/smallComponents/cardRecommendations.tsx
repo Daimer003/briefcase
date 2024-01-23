@@ -5,12 +5,17 @@ import {
     Text,
     Button,
     Link,
-    Tooltip,
     Tag
 } from "@chakra-ui/react";
 import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
 
-const CardRecommendations = () => {
+interface Props {
+    data: {
+        color: string
+    }
+}
+
+const CardRecommendations = ({ data }: Props) => {
     return (
         <Box
             display="flex"
@@ -25,12 +30,12 @@ const CardRecommendations = () => {
                 gap="10px"
             >
                 <WrapItem>
-                    <Avatar name='Dan Abrahmov' src='' size="sm" colorScheme="gray" />
+                    <Avatar name='Dan Abrahmov' src='' size="sm" background={data.color} />
                 </WrapItem>
                 <Box>
                     <Box display="flex" gap="10px">
-                        <Text as="h5" fontSize="small">Daymer Perdomo</Text>
-                        <Tag size="sm" colorScheme='teal'>
+                        <Text as="h5" fontSize="small">Usuario</Text>
+                        <Tag size="sm" colorScheme={data.color}>
                             CEO
                         </Tag>
                     </Box>
@@ -38,14 +43,14 @@ const CardRecommendations = () => {
                         <Link href="https://www.linkedin.com/in/daymer-perdomo-5aa0a5137/" target="_blank">
                             <Button
                                 variant="ghost"
-                                colorScheme="teal"
+                                colorScheme={data.color}
                                 margin="0"
                                 padding="0"
                                 height="auto"
                                 fontSize="small"
                                 leftIcon={<IoLogoLinkedin />}
                             >
-                                Daymer Perdomo
+                                Carlos Perez
                             </Button>
                         </Link>
 

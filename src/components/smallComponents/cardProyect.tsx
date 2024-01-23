@@ -37,15 +37,23 @@ const CardProyect = (
                 padding="0"
                 margin="0"
             >
-                <Image
-                    src={imagen}
-                    alt='Green double couch with wooden legs'
-                    width={400}
-                    height={100}
-                    style={{
-                        borderRadius: "6px"
-                    }}
-                />
+                <Box
+                    display="flex"
+                    width="100%"
+                    maxHeight="190px"
+                    overflow="hidden"
+                >
+                    <Image
+                        src={imagen}
+                        alt='Green double couch with wooden legs'
+                        width={400}
+                        height={100}
+                        style={{
+                            borderRadius: "6px",
+                            objectFit: "cover"
+                        }}
+                    />
+                </Box>
                 <Stack mt='2' spacing='3'>
                     <Heading size='md'>{title}</Heading>
                     <Text

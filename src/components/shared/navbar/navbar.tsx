@@ -82,7 +82,7 @@ const Navbar = (props: any) => {
                 mt={{ base: 4, md: 0 }}
             >
                 <LinkItem href="/works" path={path}>
-                    Obras
+                    Proyectos
                 </LinkItem>
                 <LinkItem href="/recommendations" path={path}>
                     Recomendaciones
@@ -118,7 +118,7 @@ const Navbar = (props: any) => {
                                 Perfil
                             </LinkItem >
                             <LinkItem href="/works" path={path}>
-                                Obras
+                                Proyectos
                             </LinkItem>
                             <LinkItem href="/recommendations" path={path}>
                                 Recomendaciones

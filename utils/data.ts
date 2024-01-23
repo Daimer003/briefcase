@@ -3,7 +3,7 @@ import { FaAppStoreIos } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 
 import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoJavascript } from "react-icons/bi";
+// import { BiLogoJavascript } from "react-icons/bi";
 import { GiWireframeGlobe } from "react-icons/gi";
 
 
@@ -38,7 +38,7 @@ export const ongoingProjects = [
     {
         id: 2,
         title: "App ScentSync",
-        imagen: "/assets/projects/kluby.webp",
+        imagen: "/assets/projects/scent-sync.webp",
         paragraph: "¡Bienvenido a ScentSync, tu compañero experto en el mundo de las lociones! Sumérgete en una experiencia única donde la ciencia se encuentra con la belleza. ScentSync no es solo una app, es tu aliado para descubrir la armonía perfecta entre tu piel y las fragancias.",
         technologies: [
             {
@@ -129,7 +129,7 @@ export const projectsInProduction = [
         id: 4,
         title: "Colegio la Fontaine",
         imagen: "/assets/projects/colegiof.webp",
-        paragraph: "Somos la primera aplicación en Latinoamérica que une, respalda y organiza todos los clubes de motor y eléctrico para darles orden, estatus y una participación en sus propios eventos y de terceros.",
+        paragraph: "Colegio La Fontaine fue fundado en 2016 por un equipo de cuatro personas, dos de ellos hermanos- Adarley y Lilibeydy Manrique- quienes crecieron en Siloé y vieron en la educación una herramienta de empoderamiento para transformar su realidad y construir un proyecto de vida...",
         technologies: [
             {
                 id: 1,
@@ -220,6 +220,30 @@ export const technologies = [
         name: "React Native",
         icon: "/assets/technologies/react.webp",
         color: "cyan"
+    },
+    {
+        id: 13,
+        name: "Vue.Js",
+        icon: "/assets/technologies/vue.webp",
+        color: "green"
+    },
+    {
+        id: 14,
+        name: "Sass",
+        icon: "/assets/technologies/sass.webp",
+        color: "pink"
+    },
+    {
+        id: 15,
+        name: "Astro",
+        icon: "/assets/technologies/astro.webp",
+        color: "purple"
+    },
+    {
+        id: 16,
+        name: "Docker",
+        icon: "/assets/technologies/docker.webp",
+        color: "blue"
     },
 ]
 
