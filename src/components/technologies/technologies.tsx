@@ -24,13 +24,13 @@ const Technologies = () => {
                     technologies.map(t => {
                         return (
                             <WrapItem key={t.id} margin="auto">
-                                <Center w='180px' h='80px'>
+                                <Center w='150px' h='50px'>
                                     <Tag
                                         display="flex"
                                         justifyContent="center"
                                         alignItems="center"
                                         width="100%"
-                                        height="80px"
+                                        height="60px"
                                         colorScheme={t.color}
                                         border='1px'
                                         opacity="50%"
