@@ -1,5 +1,5 @@
 'use client'
-import { forwardRef } from 'react'
+// import { forwardRef } from 'react'
 import {
     Box,
     Spacer,
@@ -52,9 +52,9 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
 }
 
 //*referencias se utilizan para acceder directamente a un elemento del DOM o a un componente React hijo.
-const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
-    <NextLink href={ref} />
-))
+// const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
+//     <NextLink href={ref} />
+// ))
 
 const Navbar = (props: any) => {
     const { path } = props
