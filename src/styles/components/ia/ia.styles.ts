@@ -1,6 +1,20 @@
 import styled from "@emotion/styled"
-import { Box } from "@chakra-ui/react"
+import { Box, keyframes } from "@chakra-ui/react"
 
+const color1 = '#2F855A';
+const color2 = '#000000';
+
+const gradientAnimation = keyframes`
+   0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
 
 export const IaBox = styled(Box)`
   display: flex;
@@ -16,6 +30,16 @@ export const IaBox = styled(Box)`
   & span strong{
     text-transform: capitalize;
   }
+`;
+
+
+export const BoxText = styled(Box)`
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius-small);
+  background: radial-gradient(circle at top right, ${color1}, ${color2});
+  background-size: 400% 400%;
+  animation: ${gradientAnimation} 3s ease infinite;
 `;
 
 export const ChatBox = styled(Box)`

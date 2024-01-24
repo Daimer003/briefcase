@@ -98,7 +98,7 @@ const Profile = () => {
                         2013
                     </Text>
                     <Text as="p">
-                        Completé el programa de técnico y especialista en electrónica en la institución Corporación Educativa Indoamericana.
+                        Completé el programa de técnico y especialista en electrónica en la Corporación Educativa Indoamericana.
                     </Text>
                 </Box>
                 <Box display="flex" gap="5px">

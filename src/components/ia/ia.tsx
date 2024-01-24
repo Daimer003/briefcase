@@ -4,7 +4,8 @@ import {
     IaBox,
     ChatBox,
     SearchBox,
-    ContentChat
+    ContentChat,
+    BoxText,
 } from "@/styles/components/ia/ia.styles";
 import {
     Box,
@@ -108,16 +109,13 @@ const Ia = () => {
 
     return (
         <IaBox>
-            <Box
+            <BoxText
                 bg={useColorModeValue('#E2E8F0', '#1e1f20')}
-                padding="10px"
-                boxSizing="border-box"
-                borderRadius="var(--border-radius-small)"
             >
                 <Text
                     alignItems="center"
                     gap="5px"
-                    color={useColorModeValue('gray.900', 'greenDawn.50')}
+                    color={useColorModeValue('white', 'greenDawn.50')}
                     as="h4"
                 >
                     {/* <RiRobot2Line /> */}
@@ -125,7 +123,7 @@ const Ia = () => {
                     <span> ¿Cómo puedo ayudarte hoy <strong>{name}</strong>?</span>
                 </Text>
 
-            </Box>
+            </BoxText>
             <Box
                 display="flex"
                 flexDirection="column"
