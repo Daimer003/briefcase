@@ -1,6 +1,8 @@
 import styled from "@emotion/styled"
 import { Box, keyframes } from "@chakra-ui/react"
 
+
+//Background
 const color1 = '#2F855A';
 const color2 = '#000000';
 
