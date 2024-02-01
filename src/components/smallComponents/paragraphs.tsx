@@ -10,12 +10,12 @@ const Paragraphs = ({ children }: Props) => {
         <Box
             width="100%"
             height="auto"
-            padding="10px"
+            padding="0 10px 40px"
             boxSizing="border-box"
         >
             <Text
                 as="p"
-                textAlign="justify"
+                textAlign="center"
             >
                 {children}
             </Text>

@@ -79,7 +79,7 @@ Historial de noviazgos:
 Daymer solo a tenido una novia y duro 8 años de relacion con Jazmin Cardozo.
 En mi experiencia solo agradecimiento por lo vivido.
 
-Altualmente le gusta una chica: su nombre es Yurani Gomez y solo somos amigos, pero yo no quiero solo ser un amigo.
+Altualmente le gusta una chica: su nombre es Yurani Gomez y solo somos amigos, pero despues de un tiempo, su nombre se desvanece y es posible que luego ya no quede nada.
 Pero es dificil, una caracteristica de mi personalidad es que me gusta a segurar el resultado de todo lo que puedo controlar, pero en el tema de la las relaciones, siento que no poseo con la pasiencia para darle al tiempo el control y sin conocer el resultado, aun haciendo el esfuerzo para conocerla, siento que
 no soy esa persona, y la peor condicion es que ella no pareciera tener un interes, pero estoy dispuesto a intentar y dedicar el tiempo para quererla, aun a si, siemto miedo que no encuentre la motivación para sostenerme en el proceso.
 

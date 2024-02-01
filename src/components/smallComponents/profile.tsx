@@ -68,16 +68,43 @@ const Profile = () => {
                 </Box>
             </Box>
             <Paragraphs>
-                Soy un profesional en constante evolución, con una trayectoria en Dcorp, donde mi labor se enfoca en funciones específicas. Además, trabajo de manera independiente como desarrollador frontend en Medellín.
-                Mi destreza abarca todo el proceso de lanzamiento de productos, desde la conceptualización y diseño hasta la resolución de desafíos reales mediante la programación.
-                Fuera del ámbito digital, disfruto dedicar tiempo al desarrollo de proyectos de electrónica, explorando mi pasión por la innovación.
-                Mi enfoque meticuloso y mi compromiso con la excelencia me impulsan constantemente a buscar nuevas formas de crear soluciones impactantes.
+                Soy un profesional en constante evolución con una trayectoria destacada, donde me he enfocado en funciones específicas. Además, trabajo de manera independiente como desarrollador frontend en Medellín. Mi destreza abarca todo el proceso de lanzamiento de productos, desde la conceptualización y diseño hasta la resolución de desafíos reales mediante la programación. Fuera del ámbito digital, disfruto dedicar tiempo al desarrollo de proyectos de electrónica, explorando mi pasión por la innovación. Mi enfoque meticuloso y mi compromiso con la excelencia me impulsan constantemente a buscar nuevas formas de crear soluciones impactantes.
             </Paragraphs>
+            <Box
+                width="100%"
+                height="auto"
+                marginTop="10px">
+                <Text
+                    as="h3"
+                    fontSize="x-large"
+                    fontWeight="bold"
+                >
+                    Proyectos en curso...
+                </Text>
+            </Box>
+            <Wrap spacing='20px' justify='center'>
+                {
+                    ongoingProjects.map(project => {
+                        return (
+                            <WrapItem key={project.id}>
+                                <Center w='100%' maxW="380px" h='380px'>
+                                    <CardProyect
+                                        title={project.title}
+                                        imagen={project.imagen}
+                                        paragraph={project.paragraph}
+                                        technologies={project.technologies}
+                                    />
+                                </Center>
+                            </WrapItem>
+                        )
+                    })}
+            </Wrap >
             <Box
                 display="flex"
                 flexDirection="column"
                 padding="10px"
                 boxSizing="border-box"
+                marginTop="40px"
                 gap="10px"
             >
                 <Text
@@ -228,35 +255,7 @@ const Profile = () => {
                     </List>
                 </Box>
 
-                <Box
-                    width="100%"
-                    height="auto"
-                    marginTop="10px">
-                    <Text
-                        as="h3"
-                        fontSize="x-large"
-                        fontWeight="bold"
-                    >
-                        Proyectos en curso...
-                    </Text>
-                </Box>
-                <Wrap spacing='20px' justify='center'>
-                    {
-                        ongoingProjects.map(project => {
-                            return (
-                                <WrapItem key={project.id}>
-                                    <Center w='100%' maxW="380px" h='380px'>
-                                        <CardProyect
-                                            title={project.title}
-                                            imagen={project.imagen}
-                                            paragraph={project.paragraph}
-                                            technologies={project.technologies}
-                                        />
-                                    </Center>
-                                </WrapItem>
-                            )
-                        })}
-                </Wrap >
+
             </Box >
 
         </Box >
