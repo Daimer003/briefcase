@@ -8,7 +8,8 @@ import {
     Menu,
     MenuButton,
     IconButton,
-    useColorModeValue
+    useColorModeValue,
+    MenuItem
 } from "@chakra-ui/react";
 import LogoNav from "../logo";
 import ThemeToggleButton from "@/components/smallComponents/theme-toggle-button";
@@ -26,8 +27,6 @@ interface LinkItemProps {
 }
 
 const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => {
-    const active = path === href
-    const inactiveColor = useColorModeValue('gray.900', 'greenDawn.50')
     return (
         <NextLink
             href={href}
@@ -37,12 +36,9 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
             <Box
                 p={2}
                 width="100%"
-                bg={active ? 'grassTeal' : undefined}
-                color={active ? '#202023' : inactiveColor}
                 display="inline-flex"
                 alignItems="center"
-                style={{ gap: 4 }}
-                pl={2}
+
                 {...props}
             >
                 {children}
@@ -115,21 +111,29 @@ const Navbar = (props: any) => {
                             flexDirection="column"
                         >
                             <LinkItem href="/" path={path}>
-                                Perfil
+                                <MenuItem>
+                                    Perfil
+                                </MenuItem>
                             </LinkItem >
                             <LinkItem href="/works" path={path}>
-                                Proyectos
+                                <MenuItem>
+                                    Proyectos
+                                </MenuItem>
                             </LinkItem>
                             <LinkItem href="/recommendations" path={path}>
-                                Recomendaciones
+                                <MenuItem>
+                                    Recomendaciones
+                                </MenuItem>
                             </LinkItem>
                             <LinkItem
                                 target="_blank"
                                 href="https://gitlab.com/Daymer"
                                 path={path}
                             >
-                                <ImGithub />
-                                Fuente
+                                <MenuItem >
+                                    <ImGithub style={{ marginRight: "10px" }} />
+                                    Fuente
+                                </MenuItem>
                             </LinkItem>
                         </MenuList>
                     </Menu>
