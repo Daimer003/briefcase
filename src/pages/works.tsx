@@ -37,7 +37,7 @@ const Works = () => {
                     projectsInProduction.map(project => {
                         return (
                             <WrapItem key={project.id}>
-                                <Center w='100%' maxW="380px" h='380px'>
+                                <Center w='100%' maxW="380px" h='auto'>
                                     <CardProyect
                                         title={project.title}
                                         imagen={project.imagen}

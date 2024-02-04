@@ -11,35 +11,29 @@ import { GiWireframeGlobe } from "react-icons/gi";
 export const ongoingProjects = [
     {
         id: 1,
-        title: "App kluby",
-        imagen: "/assets/projects/kluby.webp",
-        paragraph: "Somos la primera aplicación en Latinoamérica que une, respalda y organiza todos los clubes de motor y eléctrico para darles orden, estatus y una participación en sus propios eventos y de terceros.",
+        title: "Portafolio Finder",
+        imagen: "/assets/projects/portafoliofinder.webp",
+        paragraph: "Este proyecto, con Next.js y Chakra UI, automatiza fechas al subir archivos XML. La Forward Date es esencial para cálculos, y el Target DrawDown predeterminado es 1000, ajustable. Moderniza la gestión de datos financieros con interfaz eficiente.",
         technologies: [
             {
                 id: 1,
-                name: "REACT NATIVE",
-                icon: FaReact,
-                color: "cyan"
+                name: "NEXT.JS",
+                icon: TbBrandNextjs,
+                color: "black"
             },
             {
                 id: 2,
-                name: "IOS",
-                icon: FaAppStoreIos,
+                name: "SITIO WEB",
+                icon: GiWireframeGlobe,
                 color: "gray"
             },
-            {
-                id: 3,
-                name: "ANDROID",
-                icon: IoLogoAndroid,
-                color: "green"
-            }
         ]
     },
     {
         id: 2,
         title: "App ScentSync",
         imagen: "/assets/projects/scent-sync.webp",
-        paragraph: "¡Bienvenido a ScentSync, tu compañero experto en el mundo de las lociones! Sumérgete en una experiencia única donde la ciencia se encuentra con la belleza. ScentSync no es solo una app, es tu aliado para descubrir la armonía perfecta entre tu piel y las fragancias.",
+        paragraph: "ScentSync, desarrollado en React Native, utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. La programación reactiva garantiza una interfaz eficiente, convirtiéndolo en un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones.",
         technologies: [
             {
                 id: 1,
@@ -69,7 +63,7 @@ export const projectsInProduction = [
         id: 1,
         title: "Eres Voz",
         imagen: "/assets/projects/eres.webp",
-        paragraph: "Somos la primera aplicación en Latinoamérica que une, respalda y organiza todos los clubes de motor y eléctrico para darles orden, estatus y una participación en sus propios eventos y de terceros.",
+        paragraph: "Esta aplicación web, desarrollada mediante Next.js y Shakra UI, presenta cursos de educación y canto, con especial énfasis en técnicas de manejo vocal. La integración de las APIs de Mercado Pago y PayPal permite la gestión segura y eficiente de las transacciones para la adquisición de los cursos, garantizando una experiencia técnica y funcional para los usuarios.",
         technologies: [
             {
                 id: 1,
@@ -89,7 +83,7 @@ export const projectsInProduction = [
         id: 2,
         title: "Dcorp",
         imagen: "/assets/projects/dcorp.webp",
-        paragraph: "Somos desarrolladores de soluciones web3, blockchain, contratos inteligentes y criptomonedas. Estamos apasionados por ofrecer soluciones personalizadas, seguras y escalables diseñadas para transformar empresas y comunidades hacia la revolución web3.",
+        paragraph: "Esta landing page, desarrollada con Next.js y Styled Components, exhibe nuestra experiencia en desarrollo web. Next.js garantiza un rendimiento sólido, mientras que Styled Components facilita estilos modulares. Nuestra dedicación a la seguridad y escalabilidad se refleja en una experiencia informativa excepcional, ideal para empresas y comunidades.",
         technologies: [
             {
                 id: 1,
@@ -109,7 +103,7 @@ export const projectsInProduction = [
         id: 3,
         title: "Kryptopia",
         imagen: "/assets/projects/kryptopia.webp",
-        paragraph: "¡Sé un pionero en el mercado y genera ingresos extras con toda la tecnología necesaria para facilitar los pagos crypto! Descubre el futuro del comercio en línea con nuestra plataforma blockchain.",
+        paragraph: "Esta landing page, desarrollada con Next.js y Styled Components, exhibe nuestra experiencia en desarrollo web.Next.js garantiza un rendimiento sólido, mientras que Styled Components facilita estilos modulares.Nuestra dedicación a la seguridad y escalabilidad se refleja en una experiencia informativa excepcional, ideal para empresas y comunidades.",
         technologies: [
             {
                 id: 1,
