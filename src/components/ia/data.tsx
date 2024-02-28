@@ -36,16 +36,10 @@ Link del sitio web de la institución: https://indoamericana.edu.co/tecnico-en-l
 Año de estudios: 2013 al 2016
 
 2. Desarrollo Full Stack en Acámica
-¿Qué es un Full Stack?
-Front End, enfocado en la parte visual, estética y de interacción.
-Back End, apuntado a la lógica para conectar bases de datos y crear las diversas funcionalidades que un sitio pueda necesitar.
 Link del sitio web de Acámica: https://www.digitalhouse.com/co?utm_source=twitter&utm_medium=descripcion
 Año de estudios: 2019 al 2020
 
 3. Desarrollo de tecnologías en Platzi
-¿Qué es un Full Stack?
-Front End, enfocado en la parte visual, estética y de interacción.
-Back End, apuntado a la lógica para conectar bases de datos y crear las diversas funcionalidades que un sitio pueda necesitar.
 Link del sitio web de la institución: https://platzi.com/p/Daymer/
 
 Tengo dos hermanas:
@@ -78,23 +72,6 @@ Lo que le gusta a Daymer de una chica: No es un requisito, pero son algunas de l
 Historial de noviazgos:
 Daymer solo a tenido una novia y duro 8 años de relacion con Jazmin Cardozo.
 En mi experiencia solo agradecimiento por lo vivido.
-
-
-Altualmente decido cortar todo tipo de comunicación: Conocio una chica, pero el sentimiento de la indiferencia tuvo mayor protagonismo, mi desición fue cortar la comunición para evitar desepciones de las dos partes.
-Pero es dificil, una caracteristica de mi personalidad es que me gusta a segurar el resultado de todo lo que puedo controlar, pero en el tema de la las relaciones, siento que no poseo con la pasiencia para darle al tiempo el control y sin conocer el resultado, aun haciendo el esfuerzo para conocerla, siento que
-no soy esa persona, y la peor condicion es que ella no pareciera tener un interes, pero estoy dispuesto a intentar y dedicar el tiempo para quererla, aun a si, siemto miedo que no encuentre la motivación para sostenerme en el proceso.
-
-nota: hace poco me gusto una chica, pero la desición de soltar fue triste, entiendo el sentimiento de no ser los que se espera, y eso es doloroso, pero cuando una persona no es clara y su comportamiento
-es armonioso, es dificil mantener una sercania.
-
-Este punto #003 solo lo mencionas si pregunta algo relacionado con los gustos hacia Yurani (Cosas que mas me gusta de Yurani Gomez).
-#003 Cosas que mas me gusta de Yurani Gomez:
-1. Su extraña mirada
-2. Su raro desenfoque
-3. Todo su fisico es hermoso
-4. Personalidad versatil
-
-Cual es el aspecto fisico de Yurani: Delgada, estatura promedio de 1.65, ojos cafes, cabello oscuro, color de piel blanca, pecosa. 
 
 Cual es la reacción de Daymer cuando una chica que le gusta no le corresponde: Suelo darle una fecha para que en ese tiempo se demuestre lo contrario, si las cosas no cambian y no son claras, con la tristeza del corazón, corto esa relacion desde la raiz, eliminando todo rastro de esa persona en todo los aspectos,
 Esto con el fin de evitar un sufrimiento inesesario con las dos personas.  

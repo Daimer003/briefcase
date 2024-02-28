@@ -1,5 +1,4 @@
 'use client'
-// import { forwardRef } from 'react'
 import {
     Box,
     Spacer,
@@ -16,7 +15,7 @@ import ThemeToggleButton from "@/components/smallComponents/theme-toggle-button"
 import NextLink from 'next/link'
 import { ImGithub } from "react-icons/im";
 import { MdOutlineMenu } from "react-icons/md";
-
+import { FaFilePdf } from "react-icons/fa6";
 
 interface LinkItemProps {
     href: string,
@@ -38,6 +37,7 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
                 width="100%"
                 display="inline-flex"
                 alignItems="center"
+                gap="5px"
 
                 {...props}
             >
@@ -47,13 +47,9 @@ const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => 
     )
 }
 
-//*referencias se utilizan para acceder directamente a un elemento del DOM o a un componente React hijo.
-// const MenuLink = forwardRef(({ ...props }: any, ref: any) => (
-//     <NextLink href={ref} />
-// ))
-
 const Navbar = (props: any) => {
     const { path } = props
+
     return (
         <Box
             display="flex"
@@ -91,6 +87,14 @@ const Navbar = (props: any) => {
                     <ImGithub />
                     Fuente
                 </LinkItem>
+                <LinkItem
+                    target="_blank"
+                    href="/assets/documents/cv-daymer.pdf"
+                    path={path}
+                >
+                    <FaFilePdf />
+                    Cv
+                </LinkItem>
             </Stack>
             <Spacer />
             <Box display="flex">
@@ -109,19 +113,20 @@ const Navbar = (props: any) => {
                         <MenuList
                             display="flex"
                             flexDirection="column"
+                            bg='black'
                         >
-                            <LinkItem href="/" path={path}>
-                                <MenuItem>
+                            <LinkItem href="/" path={path} >
+                                <MenuItem bg='black'>
                                     Perfil
                                 </MenuItem>
                             </LinkItem >
                             <LinkItem href="/works" path={path}>
-                                <MenuItem>
+                                <MenuItem bg='black'>
                                     Proyectos
                                 </MenuItem>
                             </LinkItem>
                             <LinkItem href="/recommendations" path={path}>
-                                <MenuItem>
+                                <MenuItem bg='black'>
                                     Recomendaciones
                                 </MenuItem>
                             </LinkItem>
@@ -130,9 +135,19 @@ const Navbar = (props: any) => {
                                 href="https://gitlab.com/Daymer"
                                 path={path}
                             >
-                                <MenuItem >
+                                <MenuItem bg='black'>
                                     <ImGithub style={{ marginRight: "10px" }} />
                                     Fuente
+                                </MenuItem>
+                            </LinkItem>
+                            <LinkItem
+                                target="_blank"
+                                href="/assets/documents/cv-daymer.pdf"
+                                path={path}
+                            >
+                                <MenuItem bg='black' >
+                                    <FaFilePdf style={{ marginRight: "10px" }} />
+                                    Cv
                                 </MenuItem>
                             </LinkItem>
                         </MenuList>

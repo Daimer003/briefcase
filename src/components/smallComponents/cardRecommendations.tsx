@@ -7,7 +7,7 @@ import {
     Link,
     Tag
 } from "@chakra-ui/react";
-import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
+import { IoLogoLinkedin } from "react-icons/io";
 
 interface Props {
     data: {

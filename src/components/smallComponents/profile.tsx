@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     Box,
     Heading,
@@ -10,15 +11,13 @@ import {
     useColorModeValue,
     Wrap,
     WrapItem,
-    Center
-} from "@chakra-ui/react";
-import Image from "next/image";
-import Paragraphs from "./paragraphs";
-import {
+    Center,
     Tag,
     TagLabel,
     TagLeftIcon,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
+import Image from "next/image";
+import Paragraphs from "./paragraphs";
 
 import { FaFutbol, FaInstagram } from "react-icons/fa";
 import { GoFileCode } from "react-icons/go";
@@ -27,9 +26,27 @@ import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
 import { FaGitlab } from "react-icons/fa6";
 import CardProyect from "./cardProyect";
 import { ongoingProjects } from "../../../utils/data";
+import ModalGlobal from "../shared/modal/modal";
+import Detail from "../detail";
 
 
 const Profile = () => {
+    const [detailsProyect, setDetailsProyect] = useState<any>()
+    const [executeModal, setExecuteModal] = useState<boolean>(false)
+
+    //*Ejecuta el modal para ver los detalles
+    const modalDetails = () => {
+        setExecuteModal(true)
+    }
+
+    //* Ejecuta el modal para ver los detalles del proyecto
+    const seeDetails = (project: any) => {
+        console.log(project)
+        setDetailsProyect(project)
+        modalDetails()
+    }
+
+
     return (
         <Box>
             <Box
@@ -47,7 +64,7 @@ const Profile = () => {
                     <Heading as="h2" variant="page-title">
                         Daymer Perdomo Molina
                     </Heading>
-                    <p>Frontend developer (Técnico de aeronaves).</p>
+                    <p>Frontend developer / Técnico de aeronaves.</p>
                 </Box>
                 <Spacer />
                 <Box
@@ -68,7 +85,8 @@ const Profile = () => {
                 </Box>
             </Box>
             <Paragraphs>
-                Soy un profesional en constante evolución con una trayectoria destacada, donde me he enfocado en funciones específicas. Además, trabajo de manera independiente como desarrollador frontend en Medellín. Mi destreza abarca todo el proceso de lanzamiento de productos, desde la conceptualización y diseño hasta la resolución de desafíos reales mediante la programación. Fuera del ámbito digital, disfruto dedicar tiempo al desarrollo de proyectos de electrónica, explorando mi pasión por la innovación. Mi enfoque meticuloso y mi compromiso con la excelencia me impulsan constantemente a buscar nuevas formas de crear soluciones impactantes.
+                Soy un profesional en constante evolución con una trayectoria destacada, donde me he enfocado en funciones específicas. Además, trabajo de manera independiente como desarrollador frontend en Medellín. Mi destreza abarca todo el proceso de lanzamiento de productos, desde la conceptualización y diseño hasta la resolución de desafíos reales mediante la programación.
+                Fuera del ámbito digital, disfruto dedicar tiempo al desarrollo de proyectos de electrónica, explorando mi pasión por la innovación. Mi enfoque meticuloso y mi compromiso con la excelencia me impulsan constantemente a buscar nuevas formas de crear soluciones impactantes.
             </Paragraphs>
             <Box
                 width="100%"
@@ -95,14 +113,16 @@ const Profile = () => {
                                     <CardProyect
                                         title={project.title}
                                         imagen={project.imagen}
-                                        paragraph={project.paragraph}
+                                        paragraph={project?.description}
                                         technologies={project.technologies}
+                                        details={() => seeDetails(project)}
                                     />
                                 </Center>
                             </WrapItem>
                         )
                     })}
             </Wrap >
+
             <Box
                 display="flex"
                 flexDirection="column"
@@ -258,10 +278,17 @@ const Profile = () => {
                         </ListItem>
                     </List>
                 </Box>
-
-
             </Box >
 
+            <ModalGlobal
+                title=""
+                isOpen={executeModal}
+                onOpen={modalDetails}
+                onClose={() => setExecuteModal(false)}
+                size="xl"
+            >
+                <Detail data={detailsProyect} />
+            </ModalGlobal>
         </Box >
     );
 }

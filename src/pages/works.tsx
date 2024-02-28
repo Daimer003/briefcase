@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     Box,
     Wrap,
@@ -8,9 +9,25 @@ import {
 import CardProyect from "@/components/smallComponents/cardProyect";
 import { projectsInProduction } from "../../utils/data";
 import Technologies from "@/components/technologies/technologies";
+import ModalGlobal from "@/components/shared/modal/modal";
+import Detail from "@/components/detail";
 
 
 const Works = () => {
+    const [detailsProyect, setDetailsProyect] = useState<any>()
+    const [executeModal, setExecuteModal] = useState<boolean>(false)
+
+    //*Ejecuta el modal para ver los detalles
+    const modalDetailsWorks = () => {
+        setExecuteModal(true)
+    }
+
+    //* Ejecuta el modal para ver los detalles del proyecto
+    const seeDetailsWorks = (project: any) => {
+        setDetailsProyect(project)
+        modalDetailsWorks()
+    }
+
     return (
         <Box
             padding="10px"
@@ -41,8 +58,9 @@ const Works = () => {
                                     <CardProyect
                                         title={project.title}
                                         imagen={project.imagen}
-                                        paragraph={project.paragraph}
+                                        paragraph={project?.description}
                                         technologies={project.technologies}
+                                        details={() => seeDetailsWorks(project)}
                                     />
                                 </Center>
                             </WrapItem>
@@ -50,6 +68,16 @@ const Works = () => {
                     })}
             </Wrap >
             <Technologies />
+
+            <ModalGlobal
+                title=""
+                isOpen={executeModal}
+                onOpen={modalDetailsWorks}
+                onClose={() => setExecuteModal(false)}
+                size="xl"
+            >
+                <Detail data={detailsProyect} />
+            </ModalGlobal>
         </Box>
     );
 }

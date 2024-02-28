@@ -15,7 +15,8 @@ interface Props {
     isOpen: boolean,
     onOpen: () => void,
     onClose: () => void,
-    user: boolean,
+    user?: boolean,
+    size: string
 }
 
 const ModalGlobal = (
@@ -23,9 +24,8 @@ const ModalGlobal = (
         title,
         children,
         isOpen,
-        onOpen,
         onClose,
-        user
+        size
     }: Props) => {
     const OverlayOne = () => (
         <ModalOverlay
@@ -33,7 +33,6 @@ const ModalGlobal = (
             backdropFilter='blur(10px) hue-rotate(90deg)'
         />
     )
-
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
     useEffect(() => {
@@ -42,7 +41,11 @@ const ModalGlobal = (
 
     return (
         <>
-            <Modal isCentered isOpen={isOpen} onClose={onClose}>
+            <Modal
+                isOpen={isOpen}
+                onClose={onClose}
+                size={size}
+            >
                 {overlay}
                 <ModalContent
                     background="black"

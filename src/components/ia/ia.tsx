@@ -274,6 +274,7 @@ const Ia = () => {
                 onOpen={onOpen}
                 onClose={onClose}
                 user={name == null ? false : true}
+                size="md"
             >
                 <Box
                     display="flex"

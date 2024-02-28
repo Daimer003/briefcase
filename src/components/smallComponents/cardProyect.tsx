@@ -15,8 +15,9 @@ import Image from 'next/image';
 interface Props {
     title: string,
     imagen: string,
-    paragraph: string,
-    technologies: any
+    paragraph: any,
+    technologies: any,
+    details?: () => void
 }
 
 const CardProyect = (
@@ -24,14 +25,17 @@ const CardProyect = (
         title,
         imagen,
         paragraph,
-        technologies
+        technologies,
+        details
     }: Props) => {
     return (
         <Card
-            maxW='sm'
-            background="transparent"
-            border="none"
+            background="#0F0F0F"
+            border='1px solid #2C2C2C'
             boxShadow="none"
+            maxW='sm'
+            borderRadius='10px'
+            p='10px'
         >
             <CardBody
                 padding="0"
@@ -40,7 +44,7 @@ const CardProyect = (
                 <Box
                     display="flex"
                     width="100%"
-                    maxHeight="190px"
+                    maxHeight="180px"
                     overflow="hidden"
                 >
                     <Image
@@ -56,13 +60,19 @@ const CardProyect = (
                 </Box>
                 <Stack mt='2' spacing='3'>
                     <Heading size='md'>{title}</Heading>
-                    <Text
-                        fontSize="small"
+                    <Heading
+                        as='p'
+                        size='xs'
+                        fontWeight="400"
+                        fontFamily="PLUS Rounded 1c"
                         minHeight="100px"
-                        maxHeight="110xpx"
+                        maxHeight="165px"
+                        onClick={details}
+                        noOfLines={6}
+                        cursor='pointer'
                     >
-                        {paragraph}
-                    </Text>
+                        {paragraph[0].paragraph}
+                    </Heading>
                     <Box display="flex">
                         <HStack spacing={4}>
                             {
