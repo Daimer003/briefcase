@@ -3,7 +3,7 @@ import {
     CardBody,
     Stack,
     Heading,
-    Text,
+    // Text,
     Tag,
     TagLabel,
     TagLeftIcon,

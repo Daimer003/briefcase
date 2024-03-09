@@ -1,4 +1,5 @@
 import CardRecommendations from "@/components/smallComponents/cardRecommendations";
+import { ServiceComment } from "@/services/service.comment";
 import {
     Box,
     Avatar,
@@ -12,11 +13,38 @@ import {
     AlertTitle,
     AlertDescription,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
 
 
-
 const Recommendations = () => {
+    const [isLoadingRes, setIsLoadingRes] = useState<boolean>(false)
+    const [formComment, setFormComment] = useState<any>({
+        neme: ""
+    })
+
+    //*Función para crear los comentarios
+    const comment = async () => {
+        setIsLoadingRes(true)
+        try {
+            const response = await ServiceComment.createComment(
+                {
+                    name: "Daymer Perdomo 3",
+                    link: "Link https:// 3",
+                    profile: "Perfil del que esta comentando 3",
+                    comment: "Eres genial, y estas destinado para grandes cosas. 2",
+                    color: "Pink"
+                }
+            )
+            console.log("Respuesta crear comentario", response)
+            if (response) {
+                setIsLoadingRes(false)
+            }
+        } catch (error) {
+            setIsLoadingRes(false)
+        }
+    }
+
     return (
         <Box
             width="100%"
@@ -80,7 +108,8 @@ const Recommendations = () => {
                     </Box>
                     <Button
                         width="100%"
-                        isDisabled
+                        isLoading={isLoadingRes}
+                        onClick={comment}
                     >
                         Comentar
                     </Button>

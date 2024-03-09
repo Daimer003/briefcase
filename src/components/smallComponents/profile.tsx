@@ -28,6 +28,7 @@ import CardProyect from "./cardProyect";
 import { ongoingProjects } from "../../../utils/data";
 import ModalGlobal from "../shared/modal/modal";
 import Detail from "../detail";
+import History from "../history";
 
 
 const Profile = () => {
@@ -68,7 +69,6 @@ const Profile = () => {
                 </Box>
                 <Spacer />
                 <Box
-                    display="flex"
                     width="150px"
                     height="150px"
                     borderRadius="50%"
@@ -79,6 +79,9 @@ const Profile = () => {
                     <Image
                         src="/assets/daimer.webp"
                         alt="Imagen del perfil"
+                        objectFit="cover"
+                        quality={100}
+                        priority
                         width={150}
                         height={150}
                     />
@@ -278,6 +281,7 @@ const Profile = () => {
                         </ListItem>
                     </List>
                 </Box>
+                <History />
             </Box >
 
             <ModalGlobal

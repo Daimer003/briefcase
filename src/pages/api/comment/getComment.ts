@@ -27,15 +27,14 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
-    const { messages } = await req.body;
     await runMiddleware(req, res, corsMiddleware);
     // Ask OpenAI for a streaming chat completion given the prompt
     try {
         await connectDb()
 
         const comments = await Comments.find()
-        console.log(comments)
-        return comments
+        console.log("Respuesta", comments)
+        res.status(200).json(comments);
     } catch (error) {
         console.log(error)
     }
