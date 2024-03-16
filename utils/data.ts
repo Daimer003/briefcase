@@ -347,3 +347,70 @@ export const technologies = [
     },
 ]
 
+
+export const profiles = [
+    {
+        id: 1,
+        profile: "CEO - Director Ejecutivo"
+    },
+    {
+        id: 2,
+        profile: "Full-Stack"
+    },
+    {
+        id: 3,
+        profile: "Front-End"
+    },
+    {
+        id: 4,
+        profile: "Back-End"
+    },
+    {
+        id: 5,
+        profile: "Ingeniero/a de Software"
+    },
+    {
+        id: 6,
+        profile: "Arquitecto/a de Software"
+    },
+    {
+        id: 7,
+        profile: "DevOps"
+    },
+    {
+        id: 8,
+        profile: "Especialista en SRE"
+    },
+    {
+        id: 9,
+        profile: "Ciberseguridad"
+    },
+    {
+        id: 10,
+        profile: "Analista de Seguridad"
+    },
+    {
+        id: 11,
+        profile: "Ciencia de Datos"
+    },
+    {
+        id: 12,
+        profile: "Diseñador/a UX/UI"
+    },
+    {
+        id: 13,
+        profile: "Analista de Negocios"
+    },
+    {
+        id: 14,
+        profile: "Marketing Digital"
+    },
+    {
+        id: 15,
+        profile: "Gerente de Proyecto"
+    },
+    {
+        id: 16,
+        profile: "Analista de Negocios"
+    },
+]

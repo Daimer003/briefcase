@@ -1,10 +1,11 @@
+import { ContentModal } from '@/styles/components/shared/Modal/modal.styles'
 import {
     Modal,
     ModalOverlay,
     ModalContent,
     ModalHeader,
     ModalCloseButton,
-
+    Box,
 } from '@chakra-ui/react'
 import React, { ReactNode, useEffect } from 'react'
 
@@ -13,7 +14,6 @@ interface Props {
     title: string,
     children: ReactNode,
     isOpen: boolean,
-    onOpen: () => void,
     onClose: () => void,
     user?: boolean,
     size: string
@@ -28,10 +28,7 @@ const ModalGlobal = (
         size
     }: Props) => {
     const OverlayOne = () => (
-        <ModalOverlay
-            bg='blackAlpha.300'
-            backdropFilter='blur(10px) hue-rotate(90deg)'
-        />
+        <ModalOverlay />
     )
     const [overlay, setOverlay] = React.useState(<OverlayOne />)
 
@@ -40,28 +37,27 @@ const ModalGlobal = (
     }, [])
 
     return (
-        <>
-            <Modal
-                isOpen={isOpen}
-                onClose={onClose}
-                size={size}
-            >
-                {overlay}
-                <ModalContent
-                    background="black"
-                    border="1px solid #F0F0F2"
-                    padding="10px"
-                    margin="20px"
-                >
-                    <ModalHeader
-                        margin="0"
-                        padding="10px 0"
-                    >{title}</ModalHeader>
-                    <ModalCloseButton />
-                    {children}
-                </ModalContent>
-            </Modal>
-        </>
+        <Modal
+            isOpen={isOpen}
+            onClose={onClose}
+            size={size}
+        >
+            {overlay}
+            <ModalContent margin='15px'>
+                <ContentModal>
+                    <Box
+                        borderRadius="8px"
+                        padding='10px'
+                    >
+                        <ModalHeader>
+                            {title}
+                        </ModalHeader>
+                        <ModalCloseButton />
+                        {children}
+                    </Box>
+                </ContentModal>
+            </ModalContent>
+        </Modal>
     )
 }
 

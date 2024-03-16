@@ -3,8 +3,8 @@ import { Box, keyframes } from "@chakra-ui/react"
 
 
 //Background
-const color1 = '#2F855A';
-const color2 = '#000000';
+const color1 = '#daf8d6';
+const color2 = '#a1ffd7';
 
 const gradientAnimation = keyframes`
    0% {
@@ -24,11 +24,13 @@ export const IaBox = styled(Box)`
   width: 100%;
   height: auto;
   margin-top: 80px;
-  gap: 5px;
-  padding: 10px;
-  box-sizing: border-box;
+  border-radius: 16px;
+  overflow: hidden;
   gap: 10px;
   position: relative;
+  background: rgb(109,255,220);
+  background: linear-gradient(331deg, rgba(109,255,220,1) 0%, rgba(26,66,65,1) 42%, rgba(14,21,21,1) 66%);
+
   & span strong{
     text-transform: capitalize;
   }
@@ -36,12 +38,14 @@ export const IaBox = styled(Box)`
 
 
 export const BoxText = styled(Box)`
+  display: flex;
   padding: 10px;
   box-sizing: border-box;
   border-radius: var(--border-radius-small);
   background: radial-gradient(circle at top right, ${color1}, ${color2});
   background-size: 400% 400%;
   animation: ${gradientAnimation} 3s ease infinite;
+  z-index: 0;
 `;
 
 export const ChatBox = styled(Box)`
@@ -51,7 +55,6 @@ export const ChatBox = styled(Box)`
   max-height: 300px;
   height: auto;
   border: 1px solid ${({ border }) => border};
-  padding: 10px;
   box-sizing: border-box;
   border-radius: var(--border-radius-small);
   overflow: auto;

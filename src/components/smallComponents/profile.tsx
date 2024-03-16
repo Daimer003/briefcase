@@ -42,7 +42,6 @@ const Profile = () => {
 
     //* Ejecuta el modal para ver los detalles del proyecto
     const seeDetails = (project: any) => {
-        console.log(project)
         setDetailsProyect(project)
         modalDetails()
     }
@@ -186,9 +185,10 @@ const Profile = () => {
                     >
                         <Tag
                             size='lg'
-                            colorScheme='red'
+                            bg="#cfffaa"
+                            color='#000000'
                             border='1px'
-                            borderColor='red'
+                            borderColor='#2c3431'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={FaFutbol} />
@@ -196,9 +196,10 @@ const Profile = () => {
                         </Tag>
                         <Tag
                             size='lg'
-                            colorScheme='blue'
+                            bg="#cfffaa"
+                            color='#000000'
+                            borderColor='#2c3431'
                             border='1px'
-                            borderColor='blue'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GiRobotGolem} />
@@ -206,9 +207,10 @@ const Profile = () => {
                         </Tag>
                         <Tag
                             size='lg'
-                            colorScheme='green'
+                            bg="#cfffaa"
+                            color='#000000'
+                            borderColor='#2c3431'
                             border='1px'
-                            borderColor='green'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GoFileCode} />
@@ -216,9 +218,10 @@ const Profile = () => {
                         </Tag>
                         <Tag
                             size='lg'
-                            colorScheme='purple'
+                            bg="#cfffaa"
+                            color='#000000'
+                            borderColor='#2c3431'
                             border='1px'
-                            borderColor='purple'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={GiBookshelf} />
@@ -226,9 +229,10 @@ const Profile = () => {
                         </Tag>
                         <Tag
                             size='lg'
-                            colorScheme='yellow'
+                            bg="#cfffaa"
+                            color='#000000'
+                            borderColor='#2c3431'
                             border='1px'
-                            borderColor='yellow'
                             borderRadius="4px"
                         >
                             <TagLeftIcon boxSize='12px' as={IoMdCafe} />
@@ -287,7 +291,6 @@ const Profile = () => {
             <ModalGlobal
                 title=""
                 isOpen={executeModal}
-                onOpen={modalDetails}
                 onClose={() => setExecuteModal(false)}
                 size="xl"
             >

@@ -62,7 +62,7 @@ const History = () => {
                             key={index}
                             w='4'
                             h='4'
-                            bg='gray.900'
+                            bg='#141e1e'
                             borderRadius='4px'
                         >
                             <Tooltip
@@ -114,7 +114,7 @@ const History = () => {
                         <Box
                             width='auto'
                             height='auto'
-                            background='gray.900'
+                            background='#141e1e'
                             padding='4px'
                             borderRadius='50%'
                         >
@@ -137,7 +137,7 @@ const History = () => {
                         <Box
                             width='auto'
                             height='auto'
-                            background='gray.900'
+                            background='#141e1e'
                             padding='4px'
                             borderRadius='50%'
                         >
@@ -160,7 +160,7 @@ const History = () => {
                         <Box
                             width='auto'
                             height='auto'
-                            background='gray.900'
+                            background='#141e1e'
                             padding='4px'
                             borderRadius='50%'
                         >
