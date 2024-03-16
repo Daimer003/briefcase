@@ -72,7 +72,6 @@ const Works = () => {
             <ModalGlobal
                 title=""
                 isOpen={executeModal}
-                onOpen={modalDetailsWorks}
                 onClose={() => setExecuteModal(false)}
                 size="xl"
             >
