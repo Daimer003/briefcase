@@ -11,14 +11,16 @@ import {
     useColorModeValue
 } from "@chakra-ui/react";
 import { avatars, profiles } from "../../../utils/data";
+import { validateField } from "../../../utils/functios";
 
 interface Props {
-    getDataForm: (event: any) => void
+    getDataForm: (event: any) => void,
+    selectAvatar: (avatar: string) => void
 }
 
 
 
-const EditUser = ({ getDataForm }: Props) => {
+const EditUser = ({ getDataForm, selectAvatar }: Props) => {
     return (
         <Box
             display='flex'
@@ -43,8 +45,24 @@ const EditUser = ({ getDataForm }: Props) => {
                             borderRadius='50%'
                             border="1px"
                             borderColor={useColorModeValue('#0B0C0D', '#2c3431')}
+                            transform="scale(1)"
+                            transition="all .5s"
+                            _hover={
+                                {
+                                    transform: "scale(1.1)",
+                                    transition: "all .5s",
+                                    borderColor: useColorModeValue('#0B0C0D', '#00a96b')
+                                }
+                            }
                         >
-                            <Avatar size='lg' name='Dan Abrahmov' src={avatar.imagen} />
+                            <Avatar
+                                size='lg'
+                                name='Dan Abrahmov'
+                                src={avatar.imagen}
+                                onClick={() => selectAvatar(avatar.imagen)}
+
+
+                            />
                         </WrapItem>
                     ))
                 }

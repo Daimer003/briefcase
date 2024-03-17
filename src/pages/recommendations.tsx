@@ -16,6 +16,8 @@ import {
 import { useState } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
 import { MdModeEdit } from "react-icons/md";
+import { validateField } from "../../utils/functios";
+
 
 
 const Recommendations = () => {
@@ -31,6 +33,11 @@ const Recommendations = () => {
 
     //*Función para crear los comentarios
     const comment = async () => {
+        const res = await validateField(formComment)
+        if (res.emptyField) {
+            setAddData(true)
+            return
+        }
         setIsLoadingRes(true)
         try {
             const {
@@ -61,12 +68,20 @@ const Recommendations = () => {
     const getDataForm = (event: any) => {
         const { name, value } = event.target
 
+
         setFormComment({
             ...formComment,
             [name]: value
         })
     }
+    const selectAvatar = (avatar: string) => {
+        setFormComment({
+            ...formComment,
+            ["profile"]: avatar
+        })
+    }
 
+    console.log(formComment)
 
     return (
         <Box
@@ -174,7 +189,10 @@ const Recommendations = () => {
                 onClose={() => setAddData(false)}
                 size="lg"
             >
-                <EditUser getDataForm={getDataForm} />
+                <EditUser
+                    getDataForm={getDataForm}
+                    selectAvatar={selectAvatar}
+                />
             </ModalGlobal>
         </Box >
     );
