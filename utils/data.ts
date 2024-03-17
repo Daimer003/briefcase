@@ -414,3 +414,78 @@ export const profiles = [
         profile: "Analista de Negocios"
     },
 ]
+
+export const avatars = [
+    {
+        id: 1,
+        imagen: "/assets/avatars/j-1.webp"
+    },
+    {
+        id: 2,
+        imagen: "/assets/avatars/j-2.webp"
+    },
+    {
+        id: 3,
+        imagen: "/assets/avatars/j-3.webp"
+    },
+    {
+        id: 4,
+        imagen: "/assets/avatars/j-4.webp"
+    },
+    {
+        id: 5,
+        imagen: "/assets/avatars/j-5.webp"
+    },
+    {
+        id: 6,
+        imagen: "/assets/avatars/j-6.webp"
+    },
+    {
+        id: 7,
+        imagen: "/assets/avatars/j-7.webp"
+    },
+    {
+        id: 8,
+        imagen: "/assets/avatars/j-8.webp"
+    },
+    {
+        id: 9,
+        imagen: "/assets/avatars/j-9.webp"
+    },
+    {
+        id: 10,
+        imagen: "/assets/avatars/j-10.webp"
+    },
+    {
+        id: 11,
+        imagen: "/assets/avatars/j-11.webp"
+    },
+    {
+        id: 12,
+        imagen: "/assets/avatars/j-12.webp"
+    },
+    {
+        id: 13,
+        imagen: "/assets/avatars/v-12.webp"
+    },
+    {
+        id: 14,
+        imagen: "/assets/avatars/v-13.webp"
+    },
+    {
+        id: 15,
+        imagen: "/assets/avatars/v-14.webp"
+    },
+    {
+        id: 16,
+        imagen: "/assets/avatars/v-15.webp"
+    },
+    {
+        id: 17,
+        imagen: "/assets/avatars/v-16.webp"
+    },
+    {
+        id: 18,
+        imagen: "/assets/avatars/v-17.webp"
+    },
+]

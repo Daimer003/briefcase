@@ -93,7 +93,9 @@ const Profile = () => {
             <Box
                 width="100%"
                 height="auto"
-                marginTop="10px">
+                marginTop="10px"
+                padding="0 10px"
+            >
                 <Text
                     as="h3"
                     fontSize="x-large"
@@ -106,6 +108,7 @@ const Profile = () => {
                 spacing='20px'
                 justify='center'
                 marginTop="20px"
+                padding='0 10px'
             >
                 {
                     ongoingProjects.map(project => {

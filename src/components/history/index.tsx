@@ -48,11 +48,11 @@ const History = () => {
             </Text>
             <Grid
                 templateColumns='repeat(38, 1fr)'
-                templateRows='repeat(auto, 1fr)'
+                templateRows='repeat(10, 1fr)'
                 gap={1}
                 overflow='auto'
-                border='1px'
-                borderColor='gray.900'
+                border="1px"
+                borderColor="#cfffaa"
                 padding='10px'
                 borderRadius='8px'
             >

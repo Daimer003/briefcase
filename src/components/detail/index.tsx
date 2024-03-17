@@ -11,9 +11,6 @@ interface Props {
 }
 
 
-
-
-
 const Detail = ({ data }: Props) => {
     return (
         <BoxDetails

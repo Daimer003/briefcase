@@ -10,11 +10,13 @@ import {
     Button,
     useColorModeValue
 } from "@chakra-ui/react";
-import { profiles } from "../../../utils/data";
+import { avatars, profiles } from "../../../utils/data";
 
 interface Props {
     getDataForm: (event: any) => void
 }
+
+
 
 const EditUser = ({ getDataForm }: Props) => {
     return (
@@ -23,7 +25,6 @@ const EditUser = ({ getDataForm }: Props) => {
             flexDir='column'
             gap='10px'
         >
-
             <Wrap
                 display='flex'
                 border="1px"
@@ -31,64 +32,22 @@ const EditUser = ({ getDataForm }: Props) => {
                 bg='#141e1e81'
                 padding='10px'
                 borderRadius='8px'
-                spacing={4}
+                spacing={3}
                 marginTop='15px'
             >
-                <WrapItem >
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
-                <WrapItem>
-                    <Avatar size='lg' name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                </WrapItem>
+                {
+                    avatars.map((avatar, index) => (
+                        <WrapItem
+                            key={index}
+                            cursor="pointer"
+                            borderRadius='50%'
+                            border="1px"
+                            borderColor={useColorModeValue('#0B0C0D', '#2c3431')}
+                        >
+                            <Avatar size='lg' name='Dan Abrahmov' src={avatar.imagen} />
+                        </WrapItem>
+                    ))
+                }
             </Wrap>
             {/* <Text as="h4">User</Text> */}
             <Input

@@ -9,14 +9,13 @@ import {
     Text,
     Button,
     Textarea,
-    Link,
-    Alert,
-    AlertIcon,
-    AlertTitle,
-    AlertDescription,
+    useColorModeValue,
+    IconButton,
+    Spacer
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
+import { MdModeEdit } from "react-icons/md";
 
 
 const Recommendations = () => {
@@ -112,12 +111,21 @@ const Recommendations = () => {
                             </Button>
                         </Box>
                     </Box>
+                    <Spacer />
+                    <Box>
+                        <IconButton
+                            isRound={true}
+                            aria-label="Toggle theme"
+                            icon={<MdModeEdit size='20px' />}
+                        >
+                        </IconButton>
+                    </Box>
                 </Box>
                 <Box
                     display="flex"
                     flexDirection="column"
                     border="1px"
-                    borderColor="gray.800"
+                    borderColor="#cfffaa"
                     borderRadius="8px"
                     padding="10px"
                     boxSizing="border-box"
@@ -132,7 +140,7 @@ const Recommendations = () => {
                             name="comment"
                             onChange={getDataForm}
                             placeholder='Comenta aquí'
-                            bg='gray.900'
+                            bg='#0e1515'
                             border='1px'
                             color='white'
                             borderColor='gray.900'
@@ -141,8 +149,10 @@ const Recommendations = () => {
                     <Button
                         width="100%"
                         isLoading={isLoadingRes}
+                        borderColor="gray.900"
+                        background="#255a4e"
+                        color={useColorModeValue('gray.100', '#6cffd9')}
                         onClick={comment}
-                        bg='gray.900'
                     >
                         Comentar
                     </Button>
