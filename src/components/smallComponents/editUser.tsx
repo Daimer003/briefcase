@@ -8,10 +8,15 @@ import {
     InputGroup,
     InputLeftAddon,
     Button,
-    useColorModeValue
+    useColorModeValue,
+    IconButton,
 } from "@chakra-ui/react";
 import { avatars, profiles } from "../../../utils/data";
 import { validateField } from "../../../utils/functios";
+import { useState } from "react";
+import Image from "next/image";
+import { MdModeEdit } from "react-icons/md";
+
 
 interface Props {
     getDataForm: (event: any) => void,
@@ -19,16 +24,27 @@ interface Props {
 }
 
 
-
 const EditUser = ({ getDataForm, selectAvatar }: Props) => {
+    const [myAvatar, setMyAvatar] = useState<string>('')
+
+
+    const select = (imagen: string) => {
+        selectAvatar(imagen)
+        setMyAvatar(imagen)
+    }
+
+    console.log(myAvatar)
     return (
         <Box
             display='flex'
+            width='100%'
             flexDir='column'
             gap='10px'
         >
             <Wrap
                 display='flex'
+                justifyContent='center'
+                width='100%'
                 border="1px"
                 borderColor={useColorModeValue('#0B0C0D', '#2c3431')}
                 bg='#141e1e81'
@@ -38,33 +54,69 @@ const EditUser = ({ getDataForm, selectAvatar }: Props) => {
                 marginTop='15px'
             >
                 {
-                    avatars.map((avatar, index) => (
-                        <WrapItem
-                            key={index}
-                            cursor="pointer"
-                            borderRadius='50%'
-                            border="1px"
-                            borderColor={useColorModeValue('#0B0C0D', '#2c3431')}
-                            transform="scale(1)"
-                            transition="all .5s"
-                            _hover={
-                                {
-                                    transform: "scale(1.1)",
-                                    transition: "all .5s",
-                                    borderColor: useColorModeValue('#0B0C0D', '#00a96b')
+                    myAvatar.length === 0 ?
+                        avatars.map((avatar, index) => (
+                            <WrapItem
+                                key={index}
+                                cursor="pointer"
+                                borderRadius='50%'
+                                border="1px"
+                                borderColor={useColorModeValue('#0B0C0D', '#2c3431')}
+                                transform="scale(1)"
+                                transition="all .5s"
+                                _hover={
+                                    {
+                                        transform: "scale(1.1)",
+                                        transition: "all .5s",
+                                        borderColor: useColorModeValue('#0B0C0D', '#6cffd9')
+                                    }
                                 }
-                            }
+                            >
+                                <Avatar
+                                    size='lg'
+                                    name='Dan Abrahmov'
+                                    src={avatar.imagen}
+                                    onClick={() => select(avatar.imagen)}
+                                />
+                            </WrapItem>
+                        )) :
+                        <Box
+                            width='150px'
+                            height='150px'
+                            position='relative'
                         >
-                            <Avatar
-                                size='lg'
-                                name='Dan Abrahmov'
-                                src={avatar.imagen}
-                                onClick={() => selectAvatar(avatar.imagen)}
-
-
-                            />
-                        </WrapItem>
-                    ))
+                            <Box
+                                borderRadius='50%'
+                                overflow='hidden'
+                                border='1px'
+                                borderColor='#6cffd9'
+                            >
+                                <Image
+                                    src={myAvatar}
+                                    alt="Imagen del avatar"
+                                    width={150}
+                                    height={150}
+                                />
+                            </Box>
+                            <Box
+                                display='flex'
+                                width='24px'
+                                height='24px'
+                                position='absolute'
+                                zIndex='999'
+                                bottom='20px'
+                                right='20px'
+                            >
+                                <IconButton
+                                    isRound={true}
+                                    colorScheme="green"
+                                    aria-label="Toggle theme"
+                                    icon={<MdModeEdit size='22px' />}
+                                    onClick={() => setMyAvatar('')}
+                                >
+                                </IconButton>
+                            </Box>
+                        </Box>
                 }
             </Wrap>
             {/* <Text as="h4">User</Text> */}

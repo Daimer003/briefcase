@@ -43,9 +43,12 @@ const ModalGlobal = (
             size={size}
         >
             {overlay}
-            <ModalContent margin='15px'>
+            <ModalContent
+                margin='15px'
+            >
                 <ContentModal>
                     <Box
+                        width='100%'
                         borderRadius="8px"
                         padding='10px'
                     >
