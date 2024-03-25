@@ -16,8 +16,6 @@ export default function Home() {
   useEffect(() => {
     const añoActual = new Date().getFullYear();
     const ultimoDiaMes = new Date(2024, 2, 0).getDate();
-    console.log(ultimoDiaMes)
-
 
     // Función para determinar si un año es bisiesto
     function esBisiesto(año: any) {
@@ -41,7 +39,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box>
-        <motion.article
+        <motion.div
           initial="hidden"
           animate="enter"
           exit="exit"
@@ -50,7 +48,7 @@ export default function Home() {
           style={{ position: 'relative' }}
         >
           <Profile />
-        </motion.article>
+        </motion.div>
       </Box>
     </>
   )

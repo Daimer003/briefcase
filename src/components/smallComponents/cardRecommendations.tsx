@@ -10,9 +10,7 @@ import {
 import { IoLogoLinkedin } from "react-icons/io";
 
 interface Props {
-    data: {
-        color: string
-    }
+    data: any
 }
 
 const CardRecommendations = ({ data }: Props) => {
@@ -34,9 +32,9 @@ const CardRecommendations = ({ data }: Props) => {
                 </WrapItem>
                 <Box>
                     <Box display="flex" gap="10px">
-                        <Text as="h5" fontSize="small">Usuario</Text>
+                        <Text as="h5" fontSize="small">{data.name}</Text>
                         <Tag size="sm" colorScheme={data.color}>
-                            CEO
+                            {data.profile}
                         </Tag>
                     </Box>
                     <Box>
@@ -59,7 +57,7 @@ const CardRecommendations = ({ data }: Props) => {
             </Box>
             <Box>
                 <Text as="p" fontSize="small">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat vero esse dicta voluptatem, eveniet voluptatum dolorum inventore quis odio iusto quos corrupti quisquam doloribus nobis at est eius nulla cum.
+                    {data.comment}
                 </Text>
             </Box>
         </Box>

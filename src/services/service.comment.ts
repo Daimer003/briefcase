@@ -38,4 +38,23 @@ export class ServiceComment {
             console.log("error de servicio crear comentario", error)
         }
     }
+
+    static getComment = async () => {
+        try {
+            const response = await fetch('/api/comment/getComment',
+                {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json",
+                        "content-type": "application/json"
+                    },
+                }
+            )
+            const resData = await response.json()
+            return resData
+
+        } catch (error) {
+            console.log("error de servicio optener", error)
+        }
+    }
 }

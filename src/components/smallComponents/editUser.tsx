@@ -13,27 +13,36 @@ import {
 } from "@chakra-ui/react";
 import { avatars, profiles } from "../../../utils/data";
 import { validateField } from "../../../utils/functios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdModeEdit } from "react-icons/md";
 
 
 interface Props {
     getDataForm: (event: any) => void,
-    selectAvatar: (avatar: string) => void
+    selectAvatar: (avatar: string) => void,
+    comment: () => void,
+    fields: any
 }
 
-
-const EditUser = ({ getDataForm, selectAvatar }: Props) => {
+const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
     const [myAvatar, setMyAvatar] = useState<string>('')
-
+    const [addData, setAddData] = useState<boolean>(false)
 
     const select = (imagen: string) => {
         selectAvatar(imagen)
         setMyAvatar(imagen)
     }
 
-    console.log(myAvatar)
+    useEffect(() => {
+        const res = validateField(fields)
+        if (res.emptyField) {
+            setAddData(true)
+            return
+        }
+        setAddData(false)
+    }, [fields])
+
     return (
         <Box
             display='flex'
@@ -191,8 +200,8 @@ const EditUser = ({ getDataForm, selectAvatar }: Props) => {
                 borderColor="gray.900"
                 background="#255a4e"
                 color={useColorModeValue('gray.100', '#6cffd9')}
-            // isLoading={isLoadingRes}
-            // onClick={comment}
+                // isLoading={isLoadingRes}
+                onClick={comment}
             >
                 Comentar
             </Button>

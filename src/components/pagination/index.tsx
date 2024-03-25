@@ -2,7 +2,6 @@ import {
     Button,
     HStack,
     Box,
-    Text,
     Badge
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
@@ -38,14 +37,11 @@ const Paginator = (
     return (
         <HStack
             width="100%"
-            justifyContent="center"
             alignItems="center"
             display="flex"
             spacing={2}
             justify="center"
             bottom="0"
-            border="1px"
-            borderColor="#cfffaa"
             borderRadius="8px"
             padding="5px"
             boxSizing='border-box'
@@ -57,7 +53,6 @@ const Paginator = (
                 alignItems='center'
                 width="100%"
                 flexDirection="row"
-                justifyContent="center"
                 maxWidth="1500px"
                 position="relative"
             >
