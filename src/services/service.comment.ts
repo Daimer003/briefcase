@@ -12,6 +12,8 @@ export class ServiceComment {
             profile,
             comment,
             color,
+            huella,
+            avatar
         }: Comment
     ) => {
         try {
@@ -28,6 +30,8 @@ export class ServiceComment {
                         profile: profile,
                         comment: comment,
                         color: color,
+                        huella: huella,
+                        avatar: avatar
                     })
                 }
             )

@@ -1,16 +1,16 @@
 import { Box, Grid, GridItem, Tooltip, Text } from "@chakra-ui/react";
 import { FaGitlab } from "react-icons/fa6";
 import { IoGitCommit } from "react-icons/io5";
+import { calendar } from "../../../utils/calendar";
+import { useEffect } from "react";
 
 
 const History = () => {
     const commitsHistory = [];
-    // const month = new Date().getDay();
+    const data = new Date()
     const month = new Date().getMonth();
     const day = new Date().getDate()
 
-    console.log(day)
-    console.log(month + 1)
 
     for (let i = 0; i < 366; i++) {
         const date = new Date(2024, 0, i + 1);
@@ -26,7 +26,12 @@ const History = () => {
         });
     }
 
-    console.log(commitsHistory)
+    useEffect(() => {
+        const res = calendar()
+        // console.log(res)
+    }, [])
+
+    // console.log(commitsHistory)
 
     return (
         <Box

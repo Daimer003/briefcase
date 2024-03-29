@@ -20,7 +20,7 @@ import { MdModeEdit } from "react-icons/md";
 
 interface Props {
     getDataForm: (event: any) => void,
-    selectAvatar: (avatar: string) => void,
+    selectAvatar: (avatar: string, color: string) => void,
     comment: () => void,
     fields: any
 }
@@ -29,8 +29,8 @@ const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
     const [myAvatar, setMyAvatar] = useState<string>('')
     const [addData, setAddData] = useState<boolean>(false)
 
-    const select = (imagen: string) => {
-        selectAvatar(imagen)
+    const select = (imagen: string, color: string) => {
+        selectAvatar(imagen, color)
         setMyAvatar(imagen)
     }
 
@@ -85,7 +85,7 @@ const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
                                     size='lg'
                                     name='Dan Abrahmov'
                                     src={avatar.imagen}
-                                    onClick={() => select(avatar.imagen)}
+                                    onClick={() => select(avatar.imagen, avatar.color)}
                                 />
                             </WrapItem>
                         )) :

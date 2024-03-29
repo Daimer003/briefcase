@@ -28,7 +28,7 @@ const CardRecommendations = ({ data }: Props) => {
                 gap="10px"
             >
                 <WrapItem>
-                    <Avatar name='Dan Abrahmov' src='' size="sm" background={data.color} />
+                    <Avatar name='Dan Abrahmov' src={data.avatar} size="sm" background={data.color} />
                 </WrapItem>
                 <Box>
                     <Box display="flex" gap="10px">

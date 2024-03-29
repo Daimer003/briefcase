@@ -418,74 +418,92 @@ export const profiles = [
 export const avatars = [
     {
         id: 1,
-        imagen: "/assets/avatars/j-1.webp"
+        imagen: "/assets/avatars/j-1.webp",
+        color: "orange"
     },
     {
         id: 2,
-        imagen: "/assets/avatars/j-2.webp"
+        imagen: "/assets/avatars/j-2.webp",
+        color: "yellow"
     },
     {
         id: 3,
-        imagen: "/assets/avatars/j-3.webp"
+        imagen: "/assets/avatars/j-3.webp",
+        color: "green"
     },
     {
         id: 4,
-        imagen: "/assets/avatars/j-4.webp"
+        imagen: "/assets/avatars/j-4.webp",
+        color: "teal"
     },
     {
         id: 5,
-        imagen: "/assets/avatars/j-5.webp"
+        imagen: "/assets/avatars/j-5.webp",
+        color: "blue"
     },
     {
         id: 6,
-        imagen: "/assets/avatars/j-6.webp"
+        imagen: "/assets/avatars/j-6.webp",
+        color: "cyan"
     },
     {
         id: 7,
-        imagen: "/assets/avatars/j-7.webp"
+        imagen: "/assets/avatars/j-7.webp",
+        color: "purple"
     },
     {
         id: 8,
-        imagen: "/assets/avatars/j-8.webp"
+        imagen: "/assets/avatars/j-8.webp",
+        color: "pink"
     },
     {
         id: 9,
-        imagen: "/assets/avatars/j-9.webp"
+        imagen: "/assets/avatars/j-9.webp",
+        color: "pink"
     },
     {
         id: 10,
-        imagen: "/assets/avatars/j-10.webp"
+        imagen: "/assets/avatars/j-10.webp",
+        color: "purple"
     },
     {
         id: 11,
-        imagen: "/assets/avatars/j-11.webp"
+        imagen: "/assets/avatars/j-11.webp",
+        color: "teal"
     },
     {
         id: 12,
-        imagen: "/assets/avatars/j-12.webp"
+        imagen: "/assets/avatars/j-12.webp",
+        color: "pink"
     },
     {
         id: 13,
-        imagen: "/assets/avatars/v-12.webp"
+        imagen: "/assets/avatars/v-12.webp",
+        color: "Orange"
     },
     {
         id: 14,
-        imagen: "/assets/avatars/v-13.webp"
+        imagen: "/assets/avatars/v-13.webp",
+        color: "Orange"
     },
     {
         id: 15,
-        imagen: "/assets/avatars/v-14.webp"
+        imagen: "/assets/avatars/v-14.webp",
+        color: "purple"
     },
     {
         id: 16,
-        imagen: "/assets/avatars/v-15.webp"
+        imagen: "/assets/avatars/v-15.webp",
+        color: "Orange"
     },
     {
         id: 17,
-        imagen: "/assets/avatars/v-16.webp"
+        imagen: "/assets/avatars/v-16.webp",
+        color: "white"
     },
     {
         id: 18,
-        imagen: "/assets/avatars/v-17.webp"
+        imagen: "/assets/avatars/v-17.webp",
+        color: "yellow"
     },
 ]

@@ -35,3 +35,5 @@ export const getFingerprint = async () => {
     const hex = hash.toString('hex');
     return hex
 };
+
+

@@ -4,4 +4,6 @@ export interface Comment {
     profile: string;
     comment: string;
     color: string;
+    huella: string
+    avatar: string
 }

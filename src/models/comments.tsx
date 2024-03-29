@@ -6,7 +6,9 @@ const schema = new mongoose.Schema({
     link: String,
     profile: String,
     comment: String,
-    color: String
+    color: String,
+    huella: String,
+    avatar: String
 })
 
 
