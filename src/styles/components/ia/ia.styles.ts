@@ -28,8 +28,7 @@ export const IaBox = styled(Box)`
   overflow: hidden;
   gap: 10px;
   position: relative;
-  background: rgb(109,255,220);
-  background: linear-gradient(331deg, rgba(109,255,220,1) 0%, rgba(26,66,65,1) 42%, rgba(14,21,21,1) 66%);
+ // background: linear-gradient(331deg, rgba(109,255,220,1) 0%, rgba(26,66,65,1) 42%, rgba(14,21,21,1) 66%);
 
   & span strong{
     text-transform: capitalize;

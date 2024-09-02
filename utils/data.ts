@@ -55,11 +55,11 @@ export const ongoingProjects = [
     },
     {
         id: 2,
-        title: "App ScentSync",
-        imagen: "/assets/projects/scent-sync.webp",
+        title: "App Kluby",
+        imagen: "/assets/projects/app-kluby.webp",
         description: [
             {
-                title: "ScentSync con React Native",
+                title: "Kluby con React Native",
                 paragraph: "ScentSync, desarrollado en React Native, utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. La programación reactiva garantiza una interfaz eficiente, convirtiéndolo en un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones.",
                 technology: [
                     "<h3>Tecnologías Utilizadas:</h3>",
