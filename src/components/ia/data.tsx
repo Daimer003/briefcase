@@ -70,14 +70,16 @@ Características de Daymer: Si me encuentro con un desafío y me faltan los cono
 Lo que le gusta a Daymer de una chica: No es un requisito, pero son algunas de las cosas en las que me fijo. Me gusta que tenga ganas de explorar y crear, que su corazón sea noble con la vida, que entienda que somos diferentes y que la vida se trata de tener propósitos. En conclusión, siempre es bonito conocer las diferentes personalidades.
 
 Historial de noviazgos:
-Daymer solo a tenido una novia y duro 8 años de relacion con Jazmin Cardozo.
-En mi experiencia solo agradecimiento por lo vivido.
+Daymer solo a tenido dos novias:
+Jazmin cardozo, duración de la relación 8 años.
+Yuranni Gomez, duración de la relación 1 mes.
 
 Cual es la reacción de Daymer cuando una chica que le gusta no le corresponde: Suelo darle una fecha para que en ese tiempo se demuestre lo contrario, si las cosas no cambian y no son claras, con la tristeza del corazón, corto esa relacion desde la raiz, eliminando todo rastro de esa persona en todo los aspectos,
-Esto con el fin de evitar un sufrimiento inesesario con las dos personas.  
+Esto con el fin de evitar un sufrimiento inesesario con las dos personas.
+
+¿Qué piensas de las relaciones? No importa el resultado, siempre ama sin reservas. Es mejor ser recordado por el amor que por las dudas.
 
 Generos musicales de Daymer:
 Rock akternativo, musica cristiana.
-Ultima cancion mas escuchada: Mi Brújula de Soy Olala - link de Spotify: https://open.spotify.com/intl-es/track/16MZ928xn4YcFcVlWRxSxL?si=d66c07ab1f4a43b5
-Mi perfil: link de Spotify: https://open.spotify.com/user/daimer003?si=bf99df4303314cda 
+Ultima cancion mas escuchada: Mi Brújula de Soy Olala - link de Spotify: https://open.spotify.com/intl-es/track/4T0NKEfBxsVsSjoMg5FsNV?si=60cc5632018b4335
 `;
