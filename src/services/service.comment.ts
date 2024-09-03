@@ -17,7 +17,7 @@ export class ServiceComment {
         }: Comment
     ) => {
         try {
-            const response = await fetch('/api/comment/createComment',
+            const response = await fetch('/api/comment/create-comment',
                 {
                     method: "POST",
                     headers: {
@@ -45,7 +45,7 @@ export class ServiceComment {
 
     static getComment = async () => {
         try {
-            const response = await fetch('/api/comment/getComment',
+            const response = await fetch('/api/comment/get-comment',
                 {
                     method: "GET",
                     headers: {
