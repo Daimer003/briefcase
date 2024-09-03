@@ -22,7 +22,7 @@ export class ServiceComment {
                     method: "POST",
                     headers: {
                         "Accept": "application/json",
-                        "content-type": "application/json"
+                        "Content-type": "application/json"
                     },
                     body: JSON.stringify({
                         name: name,
@@ -39,7 +39,7 @@ export class ServiceComment {
             return resData
 
         } catch (error) {
-            console.log("error de servicio crear comentario", error)
+            throw new Error("error de servicio crear comentario")
         }
     }
 
@@ -50,7 +50,7 @@ export class ServiceComment {
                     method: "GET",
                     headers: {
                         "Accept": "application/json",
-                        "content-type": "application/json"
+                        "Content-type": "application/json"
                     },
                 }
             )
@@ -58,7 +58,7 @@ export class ServiceComment {
             return resData
 
         } catch (error) {
-            console.log("error de servicio optener", error)
+            throw new Error("Fallo el servicio para obtener los comentarios")
         }
     }
 }
