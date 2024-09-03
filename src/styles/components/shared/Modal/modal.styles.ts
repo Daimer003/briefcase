@@ -6,8 +6,8 @@ export const ContentModal = styled(Box)`
  display: flex;
  width: 100%;
  height: 100%;
- background: rgb(67, 109, 72);
- background: linear-gradient(218deg, rgba(67, 109, 72, 1) 3%, rgba(21, 31, 31, 1) 50%);
+ background: #43D9AD;
+ background: linear-gradient(218deg, #43D9AD 3%, #010d18 50%);
  box-sizing: border-box;
  border-radius: 8px;
 `;

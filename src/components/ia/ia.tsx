@@ -13,12 +13,10 @@ import {
   Input,
   Text,
   useColorModeValue,
-  useDisclosure,
   Spinner,
   Heading,
 } from "@chakra-ui/react";
 import { useChat } from "ai/react";
-import ModalGlobal from "../shared/modal/modal";
 import { useEffect, useState, useRef } from "react";
 import { data } from "./data";
 import parse from "html-react-parser";
@@ -44,19 +42,12 @@ const Ia = () => {
     ],
   });
   const myDivRef = useRef<HTMLDivElement>(null);
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const [name, setName] = useState<any>("");
   const [question, setQuestion] = useState<string>("false");
 
   //* Setea el campo para una nueva pregunta
   const setChat = () => {
     setMessages([]);
-  };
-
-  //*Obtiene el valor del input (Name)
-  const gettheValue = (e: any) => {
-    const name = e.target.value;
-    setName(name);
   };
 
   //*Identifica los enlaces que esten en el texto
@@ -71,15 +62,6 @@ const Ia = () => {
   const handleName = () => {
     localStorage.setItem("visitor", name);
   };
-
-  //* Si la variable (visitor) no esta en el localStorange, ejecuta el modal
-  useEffect(() => {
-    (async () => {
-      const dataName = await localStorage.getItem("visitor");
-      if (!dataName) return onOpen();
-      setName(dataName);
-    })();
-  }, [name]);
 
   //* Escucha si ya la IA respondio, mientras muestro un Spinner.
   const loadingIa = () => {
@@ -117,29 +99,26 @@ const Ia = () => {
           gap="10px"
         >
           <BoxText>
-            <Text
-              alignItems="center"
-              gap="5px"
-              color={useColorModeValue("white", "black")}
-              as="h4"
-            >
-              {/* <RiRobot2Line /> */}
+            <Text alignItems="center" gap="5px" color="white" as="h4">
               ¡Hola! Soy un asistente impulsado por inteligencia artificial
               diseñado por un visionario entusiasta de la tecnología.
-              <span>
-                {" "}
-                ¿Cómo puedo ayudarte hoy <strong>{name}</strong>?
-              </span>
+              <span> ¿Cómo puedo ayudarte hoy?</span>
             </Text>
           </BoxText>
           <Box display="flex" flexDirection="column" gap="10px">
             <Box display="flex" width="100%" gap="10px">
-              <Box display="flex" width="100%" gap="10px" onClick={scrollTop}>
+              <Box
+                display="flex"
+                flexDir="column"
+                width="100%"
+                gap="10px"
+                onClick={scrollTop}
+              >
                 <Button
                   width="100%"
                   border="1px"
                   borderColor="gray.900"
-                  background="#607b96b0"
+                  background="transparent"
                   color={useColorModeValue("gray.100", "#efefef")}
                   onClick={() => {
                     setInput("Experiencia y habilidades técnicas?");
@@ -152,14 +131,14 @@ const Ia = () => {
                     noOfLines={1}
                     fontFamily="M PLUS Rounded 1c"
                   >
-                    Experiencia y habilidades técnicas?
+                    ¿Experiencia y habilidades técnicas?
                   </Heading>
                 </Button>
                 <Button
                   width="100%"
                   border="1px"
                   borderColor="gray.900"
-                  background="#607b96b0"
+                  background="transparent"
                   color={useColorModeValue("gray.100", "#e5e5e5")}
                   onClick={() => {
                     setInput("Formación y aprendizaje continuo?");
@@ -172,43 +151,34 @@ const Ia = () => {
                     noOfLines={1}
                     fontFamily="M PLUS Rounded 1c"
                   >
-                    Formación y aprendizaje continuo?
+                    ¿Formación y aprendizaje continuo?
                   </Heading>
                 </Button>
                 <Button
                   width="100%"
-                  border="1px"
-                  borderColor="gray.900"
-                  background="#607b96b0"
+                  background="transparent"
                   color={useColorModeValue("gray.100", "#e5e5e5")}
                   onClick={() => {
                     setInput("Colaboración y resolución de problemas?");
                     setQuestion("true");
                   }}
                 >
-                  <Heading
-                    as="span"
-                    size="sm"
-                    noOfLines={1}
-                    fontFamily="M PLUS Rounded 1c"
-                  >
-                    Colaboración y resolución de problemas?
-                  </Heading>
+                  <Text as="span" size="sm" fontFamily="M PLUS Rounded 1c">
+                    ¿Colaboración y resolución de problemas?
+                  </Text>
                 </Button>
               </Box>
             </Box>
             <Button
               width="100%"
-              border="1px"
-              borderColor="gray.900"
-              background="#607b96b0"
-              color={useColorModeValue("gray.100", "#e5e5e5")}
+              background="#43D9AD"
+              color={useColorModeValue("gray.100", "#211818")}
               onClick={() => {
                 setQuestion("true");
                 scrollTop();
               }}
             >
-              Realizame una pregunta sobre Daymer.
+              Realizame una pregunta sobre Daymer ¿...?
             </Button>
           </Box>
           <Box
@@ -278,31 +248,6 @@ const Ia = () => {
               </Box>
             </ChatBox>
           </Box>
-          <ModalGlobal
-            title="Cual es tu nombre?"
-            isOpen={isOpen}
-            onClose={onClose}
-            user={name == null ? false : true}
-            size="md"
-          >
-            <Box display="flex" width="100%" gap="10px">
-              <Input
-                type="text"
-                width="100%"
-                placeholder="Nombre"
-                onChange={gettheValue}
-              />
-              <Button
-                width="100%"
-                onClick={() => {
-                  onClose();
-                  handleName();
-                }}
-              >
-                Listo
-              </Button>
-            </Box>
-          </ModalGlobal>
         </Box>
       </IaBox>
     </Box>

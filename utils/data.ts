@@ -413,6 +413,10 @@ export const profiles = [
         id: 16,
         profile: "Analista de Negocios"
     },
+    {
+        id: 17,
+        profile: "Coordinadora administrativa"
+    }
 ]
 
 export const avatars = [

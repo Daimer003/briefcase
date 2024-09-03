@@ -3,8 +3,8 @@ import { Box, keyframes } from "@chakra-ui/react"
 
 
 //Background
-const color1 = '#daf8d6';
-const color2 = '#a1ffd7';
+const color1 = '#011627';
+const color2 = '#4D5BCE';
 
 const gradientAnimation = keyframes`
    0% {
@@ -26,6 +26,7 @@ export const IaBox = styled(Box)`
   margin-top: 80px;
   border-radius: 16px;
   overflow: hidden;
+  border: 1px solid #2c3d4d;
   gap: 10px;
   position: relative;
  // background: linear-gradient(331deg, rgba(109,255,220,1) 0%, rgba(26,66,65,1) 42%, rgba(14,21,21,1) 66%);
@@ -68,7 +69,7 @@ export const SearchBox = styled(Box) <{ opensearch: string }>`
   justify-content: center;
   box-sizing: border-box;
   position: absolute;
-  background-color: rgba(0,0,0, .9);
+  background-color: #2c3d4d;
   left: 0;
   right: 0;
   top: 0;
@@ -80,7 +81,7 @@ export const SearchBox = styled(Box) <{ opensearch: string }>`
     padding: 10px;
     box-sizing: border-box;
     input{
-      background: #000000;
+      background: #2c3d4d;
     }
   }
 `;

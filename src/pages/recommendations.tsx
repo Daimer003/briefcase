@@ -39,9 +39,9 @@ const Recommendations = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   const [formComment, setFormComment] = useState<any>({
-    name: "",
-    link: "",
-    profile: "",
+    name: "Nombre",
+    link: "Username",
+    profile: "Profesión",
     comment: "",
     color: "white",
     huella: "",
@@ -57,17 +57,17 @@ const Recommendations = () => {
   //     }
   // }
 
-  //   useEffect(() => {
-  //     (async () => {
-  //       const huella = await getFingerprint();
-  //       if (huella) {
-  //         setFormComment({
-  //           ...formComment,
-  //           ["huella"]: huella,
-  //         });
-  //       }
-  //     })();
-  //   }, []);
+  useEffect(() => {
+    (async () => {
+      const huella = await getFingerprint();
+      if (huella) {
+        setFormComment({
+          ...formComment,
+          ["huella"]: huella,
+        });
+      }
+    })();
+  }, []);
 
   //*Función para crear los comentarios
   const comment = async () => {
@@ -233,7 +233,7 @@ const Recommendations = () => {
                   display="flex"
                   flexDirection="column"
                   border="1px"
-                  borderColor="#cfffaa"
+                  borderColor="#2c3d4d"
                   borderRadius="8px"
                   padding="10px"
                   boxSizing="border-box"
@@ -245,7 +245,7 @@ const Recommendations = () => {
                       name="comment"
                       onChange={getDataForm}
                       placeholder="Comenta aquí"
-                      bg="#0e1515"
+                      bg="#2c3d4d"
                       border="1px"
                       color="white"
                       borderColor="gray.900"
@@ -254,9 +254,10 @@ const Recommendations = () => {
                   <Button // Botón de comentar
                     width="100%"
                     isLoading={isLoadingRes}
+                    isDisabled={formComment.comment.length == 0}
                     borderColor="gray.900"
-                    background="#255a4e"
-                    color={useColorModeValue("gray.100", "#6cffd9")}
+                    background="#43D9AD"
+                    color={useColorModeValue("gray.100", "#171e1c")}
                     onClick={comment}
                   >
                     {addData ? "Editar" : "Comentar"}
