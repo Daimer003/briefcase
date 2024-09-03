@@ -81,5 +81,5 @@ Esto con el fin de evitar un sufrimiento inesesario con las dos personas.
 
 Generos musicales de Daymer:
 Rock akternativo, musica cristiana.
-Ultima cancion mas escuchada: Mi Brújula de Soy Olala - link de Spotify: https://open.spotify.com/intl-es/track/4T0NKEfBxsVsSjoMg5FsNV?si=60cc5632018b4335
+Ultima cancion mas escuchada: Iris — Goo Goo Dolls - link de Spotify: https://open.spotify.com/intl-es/track/4T0NKEfBxsVsSjoMg5FsNV?si=60cc5632018b4335
 `;
