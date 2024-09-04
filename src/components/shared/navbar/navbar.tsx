@@ -123,7 +123,7 @@ const Navbar = (props: any) => {
               </LinkItem>
               <LinkItem
                 target="_blank"
-                href="https://gitlab.com/Daymer"
+                href="https://github.com/Daimer003"
                 path={path}
               >
                 <MenuItem bg="black">

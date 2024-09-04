@@ -39,7 +39,7 @@ export function calendar() {
 
     for (let i = 0; i < 12; i++) {
         const position = new Array(((daysInMonth: any) => daysInMonth))
-        console.log(position)
+        //console.log(position)
     }
 
 

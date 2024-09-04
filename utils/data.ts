@@ -60,12 +60,11 @@ export const ongoingProjects = [
         description: [
             {
                 title: "Kluby con React Native",
-                paragraph: "ScentSync, desarrollado en React Native, utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. La programación reactiva garantiza una interfaz eficiente, convirtiéndolo en un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones.",
+                paragraph: "La aplicación Kluby ha sido desarrollada utilizando React Native con Expo, un marco que permite crear aplicaciones móviles multiplataforma. React Native proporciona eficiencia al compartir código entre plataformas iOS y Android, lo que facilita un desarrollo ágil y una experiencia de usuario consistente. Kluby permite a las personas ver los eventos de diferentes clubes y crear sus propios eventos para informar a otros sobre estas actividades.",
                 technology: [
                     "<h3>Tecnologías Utilizadas:</h3>",
                     "<strong>React Native:</strong> <p> La aplicación ScentSync ha sido desarrollada utilizando React Native, un marco de desarrollo que permite crear aplicaciones móviles multiplataforma. React Native proporciona eficiencia al compartir código entre plataformas iOS y Android, permitiendo un desarrollo más rápido y una experiencia del usuario consistente.</p>",
                     "<h3>Funcionalidades Principales:</h3>",
-                    "<strong>Sincronización Avanzada de Fragancias:</strong> <p>ScentSync utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. Estos algoritmos permiten una adaptación precisa de las fragancias según las preferencias y características individuales.</p>",
                     "<strong>Programación Reactiva:</strong><p>La aplicación está diseñada con programación reactiva para garantizar una interfaz eficiente y fluida. La programación reactiva permite la actualización automática de la interfaz de usuario en respuesta a cambios en los datos o interacciones del usuario, brindando una experiencia más ágil y receptiva.</p>",
                     "<strong>Exploración Personalizada de la Armonía entre la Piel y las Lociones:</strong><p>ScentSync se presenta como un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones. Los usuarios pueden descubrir y experimentar con diversas combinaciones de fragancias para lograr una experiencia personalizada y única.</p>",
                 ]
@@ -216,16 +215,13 @@ export const projectsInProduction = [
         paragraph: "Colegio La Fontaine fue fundado en 2016 por un equipo de cuatro personas, dos de ellos hermanos- Adarley y Lilibeydy Manrique- quienes crecieron en Siloé y vieron en la educación una herramienta de empoderamiento para transformar su realidad y construir un proyecto de vida...",
         description: [
             {
-                title: "ScentSync con React Native",
-                paragraph: "ScentSync, desarrollado en React Native, utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. La programación reactiva garantiza una interfaz eficiente, convirtiéndolo en un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones.",
+                title: "Colegio la Fontaine con Next.js",
+                paragraph: "El sitio web del colegio ha sido desarrollado utilizando Next.js, un framework de React que ofrece una estructura sólida para el desarrollo de aplicaciones web. Next.js permite la generación de páginas estáticas y dinámicas, optimizando la velocidad de carga y la eficiencia del sitio. El sitio es informativo para la comunidad educativa y cuenta con páginas dedicadas a las diferentes áreas del colegio, brindando acceso rápido y fácil a información relevante.",
                 technology: [
                     "<h3>Tecnologías Utilizadas:</h3>",
-                    "<strong>React Native:</strong> <p> La aplicación ScentSync ha sido desarrollada utilizando React Native, un marco de desarrollo que permite crear aplicaciones móviles multiplataforma. React Native proporciona eficiencia al compartir código entre plataformas iOS y Android, permitiendo un desarrollo más rápido y una experiencia del usuario consistente.</p>",
+                    "<strong>Next.js:</strong> <p> La aplicación ha sido desarrollada utilizando Next.js.</p>",
                     "<h3>Tecnologías Utilizadas:</h3>",
-                    "<strong>Sincronización Avanzada de Fragancias:</strong> <p>ScentSync utiliza algoritmos de sincronización avanzados para personalizar la experiencia del usuario al mapear la interacción entre la piel y las fragancias. Estos algoritmos permiten una adaptación precisa de las fragancias según las preferencias y características individuales.</p>",
-                    "<strong>Programación Reactiva:</strong><p>La aplicación está diseñada con programación reactiva para garantizar una interfaz eficiente y fluida. La programación reactiva permite la actualización automática de la interfaz de usuario en respuesta a cambios en los datos o interacciones del usuario, brindando una experiencia más ágil y receptiva.</p>",
-                    "<strong>Exploración Personalizada de la Armonía entre la Piel y las Lociones:</strong><p>ScentSync se presenta como un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones. Los usuarios pueden descubrir y experimentar con diversas combinaciones de fragancias para lograr una experiencia personalizada y única.</p>",
-                ]
+                    "<strong>Programación Reactiva:</strong><p>La aplicación está diseñada con programación reactiva para garantizar una interfaz eficiente y fluida. La programación reactiva permite la actualización automática de la interfaz de usuario en respuesta a cambios en los datos o interacciones del usuario, brindando una experiencia más ágil y receptiva.</p>",                ]
             }
         ],
         technologies: [

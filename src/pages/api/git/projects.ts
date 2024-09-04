@@ -2,6 +2,11 @@ import { NextApiRequest, NextApiResponse } from "next";
 import Cors from 'cors';
 import fetch from 'node-fetch';
 
+//Url de github
+const url = process.env.NEXT_PUBLIC_URL_GITHUB as string
+const token = process.env.NEXT_PUBLIC_TOKEN_GITHUB as string
+
+
 const corsMiddleware = Cors({
     methods: ['GET', 'POST', 'OPTIONS'],
 });
@@ -22,31 +27,27 @@ async function runMiddleware(
 }
 
 
-const projectId = "8bffbf988805cbae81c10f80feeb61ce2241e10c";
-const accessToken = 'glpat-66gnMVh1V78iAU3RPwfj';
-
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    await runMiddleware(req, res, corsMiddleware);
-    const apiUrl = `https://gitlab.com/api/v4/projects/`;
+   
     try {
+        await runMiddleware(req, res, corsMiddleware);
 
-        const response = await fetch(apiUrl, {
+        const response = await fetch(`${url}/users/Daimer003/repos`, {
             method: 'GET',
             headers: {
+                'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'PRIVATE-TOKEN': accessToken,
+                'Authorization': `Bearer ${token}`
             },
         })
 
         const data = await response.json();
-        console.log(data)
         res.status(200).json(data);
     } catch (error) {
-        res.status(500).json({ error: "Fallo el servicio" });
+        res.status(500).json({ error: "Fallo el servicio para obtener los proyectos" });
 
     }
 }

@@ -34,7 +34,6 @@ export default async function handler(
         await connectDb()
 
         const comments = await Comments.find()
-        console.log("Respuesta", comments)
         res.status(200).json(comments);
     } catch (error) {
         console.log(error)

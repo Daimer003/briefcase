@@ -3,6 +3,7 @@ import { FaGitlab } from "react-icons/fa6";
 import { IoGitCommit } from "react-icons/io5";
 import { calendar } from "../../../utils/calendar";
 import { useEffect } from "react";
+import { getProjects } from "../../../lib/commits";
 
 const History = () => {
   const commitsHistory = [];
@@ -31,7 +32,9 @@ const History = () => {
 
   // console.log(commitsHistory)
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getProjects();
+  }, []);
 
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
