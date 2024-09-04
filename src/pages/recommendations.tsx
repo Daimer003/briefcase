@@ -43,7 +43,7 @@ const Recommendations = () => {
     link: "Username",
     profile: "Profesión",
     comment: "",
-    color: "white",
+    color: "gray.500",
     huella: "",
     avatar: "",
   });
@@ -109,7 +109,6 @@ const Recommendations = () => {
     try {
       let isComment = true;
       const response = await ServiceComment.getComment();
-      console.log("OBTENER COMENTARIOS", response);
       if (response) {
         await setComments(response.reverse());
         setIsLoaded(true);
@@ -206,19 +205,21 @@ const Recommendations = () => {
                     <Text as="p" fontSize="small">
                       {formComment.profile}
                     </Text>
-                    <Box>
-                      <Button
-                        variant="ghost"
-                        colorScheme="teal"
-                        margin="0"
-                        padding="0"
-                        height="auto"
-                        fontSize="small"
-                        leftIcon={<IoLogoLinkedin />}
-                      >
-                        {formComment.link}
-                      </Button>
-                    </Box>
+                    {formComment.link.length > 0 && (
+                      <Box>
+                        <Button
+                          variant="ghost"
+                          colorScheme="teal"
+                          margin="0"
+                          padding="0"
+                          height="auto"
+                          fontSize="small"
+                          leftIcon={<IoLogoLinkedin />}
+                        >
+                          {formComment.link}
+                        </Button>
+                      </Box>
+                    )}
                   </Box>
                   <Spacer />
                   <Box>

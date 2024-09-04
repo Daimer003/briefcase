@@ -443,7 +443,7 @@ export const avatars = [
     {
         id: 5,
         imagen: "/assets/avatars/j-5.webp",
-        color: "blue"
+        color: "yellow"
     },
     {
         id: 6,
@@ -468,7 +468,7 @@ export const avatars = [
     {
         id: 10,
         imagen: "/assets/avatars/j-10.webp",
-        color: "purple"
+        color: "yellow"
     },
     {
         id: 11,

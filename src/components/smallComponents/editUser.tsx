@@ -1,5 +1,6 @@
 import {
   Box,
+  Text,
   Avatar,
   Wrap,
   WrapItem,
@@ -44,6 +45,13 @@ const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
 
   return (
     <Box display="flex" width="100%" flexDir="column" gap="10px">
+      <Box>
+        <Text as="h3" color="">
+          Datos para identificar la recomendación. <br /> Si no deseas dejar un
+          comentario, simplemente cierra el modal.
+        </Text>
+      </Box>
+
       <Wrap
         display="flex"
         justifyContent="center"
