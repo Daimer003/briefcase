@@ -80,7 +80,11 @@ const Navbar = (props: any) => {
         <LinkItem href="/recommendations" path={path}>
           Recomendaciones
         </LinkItem>
-        <LinkItem target="_blank" href="https://gitlab.com/Daymer" path={path}>
+        <LinkItem
+          target="_blank"
+          href="https://github.com/Daimer003"
+          path={path}
+        >
           <ImGithub />
           Fuente
         </LinkItem>
