@@ -25,7 +25,6 @@ export const runtime = "experimental-edge";
 const Ia = () => {
   const {
     messages,
-    setMessages,
     handleSubmit,
     handleInputChange,
     setInput,
@@ -42,13 +41,7 @@ const Ia = () => {
     ],
   });
   const myDivRef = useRef<HTMLDivElement>(null);
-  const [name, setName] = useState<any>("");
   const [question, setQuestion] = useState<string>("false");
-
-  //* Setea el campo para una nueva pregunta
-  const setChat = () => {
-    setMessages([]);
-  };
 
   //*Identifica los enlaces que esten en el texto
   const parseMessage = (content: any) => {
@@ -57,10 +50,6 @@ const Ia = () => {
       '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
     );
     return parse(withLinks);
-  };
-
-  const handleName = () => {
-    localStorage.setItem("visitor", name);
   };
 
   //* Escucha si ya la IA respondio, mientras muestro un Spinner.

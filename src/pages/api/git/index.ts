@@ -22,8 +22,8 @@ async function runMiddleware(
 }
 
 
-const projectId = "55505365";
-const accessToken = 'glpat-TKs6GQx3DYQnQ8CrsGFk';
+const projectId = "8bffbf988805cbae81c10f80feeb61ce2241e10c";
+const accessToken = 'glpat-66gnMVh1V78iAU3RPwfj';
 
 
 export default async function handler(
@@ -31,7 +31,7 @@ export default async function handler(
     res: NextApiResponse
 ) {
     await runMiddleware(req, res, corsMiddleware);
-    const apiUrl = `https://gitlab.com/api/v4/projects/${projectId}/repository/commits`;
+    const apiUrl = `https://gitlab.com/api/v4/projects/`;
     try {
 
         const response = await fetch(apiUrl, {

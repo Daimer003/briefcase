@@ -74,6 +74,7 @@ Daymer solo a tenido dos novias:
 Jazmin cardozo, duración de la relación 8 años.
 Yuranni Gomez, duración de la relación 1 mes.
 
+
 Cual es la reacción de Daymer cuando una chica que le gusta no le corresponde: Suelo darle una fecha para que en ese tiempo se demuestre lo contrario, si las cosas no cambian y no son claras, con la tristeza del corazón, corto esa relacion desde la raiz, eliminando todo rastro de esa persona en todo los aspectos,
 Esto con el fin de evitar un sufrimiento inesesario con las dos personas.
 

@@ -31,6 +31,8 @@ const History = () => {
 
   // console.log(commitsHistory)
 
+  useEffect(() => {}, []);
+
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
       <Text
