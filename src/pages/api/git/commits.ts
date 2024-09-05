@@ -33,7 +33,6 @@ export default async function handler(
 ) {
    
     const { projects  } = await req.body;
-    console.log("QUI ESTA EL PARAMETRO BODY", projects)
     try {
         await runMiddleware(req, res, corsMiddleware);
     

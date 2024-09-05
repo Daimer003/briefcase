@@ -11,14 +11,14 @@ const History = () => {
   const month = new Date().getMonth();
   const day = new Date().getDate();
 
-  for (let i = 0; i < 366; i++) {
+  for (let i = 0; i < 365; i++) {
     const date = new Date(2024, 0, i + 1);
 
     const numCommits = Math.floor(Math.random() * 10);
     const author = "Daymer";
 
     commitsHistory.push({
-      id: i,
+      id: i + 1,
       date,
       numCommits,
       author,
@@ -48,6 +48,16 @@ const History = () => {
       >
         Historia de commits
         <FaGitlab />
+      </Text>
+      <Text
+        display="flex"
+        alignItems="start"
+        gap="10px"
+        as="span"
+        fontSize="md"
+        color="gray"
+      >
+        Funcionalidad en desarrollo.
       </Text>
       <Grid
         templateColumns="repeat(38, 1fr)"

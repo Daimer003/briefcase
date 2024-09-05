@@ -63,10 +63,8 @@ export const ongoingProjects = [
                 paragraph: "La aplicación Kluby ha sido desarrollada utilizando React Native con Expo, un marco que permite crear aplicaciones móviles multiplataforma. React Native proporciona eficiencia al compartir código entre plataformas iOS y Android, lo que facilita un desarrollo ágil y una experiencia de usuario consistente. Kluby permite a las personas ver los eventos de diferentes clubes y crear sus propios eventos para informar a otros sobre estas actividades.",
                 technology: [
                     "<h3>Tecnologías Utilizadas:</h3>",
-                    "<strong>React Native:</strong> <p> La aplicación ScentSync ha sido desarrollada utilizando React Native, un marco de desarrollo que permite crear aplicaciones móviles multiplataforma. React Native proporciona eficiencia al compartir código entre plataformas iOS y Android, permitiendo un desarrollo más rápido y una experiencia del usuario consistente.</p>",
                     "<h3>Funcionalidades Principales:</h3>",
                     "<strong>Programación Reactiva:</strong><p>La aplicación está diseñada con programación reactiva para garantizar una interfaz eficiente y fluida. La programación reactiva permite la actualización automática de la interfaz de usuario en respuesta a cambios en los datos o interacciones del usuario, brindando una experiencia más ágil y receptiva.</p>",
-                    "<strong>Exploración Personalizada de la Armonía entre la Piel y las Lociones:</strong><p>ScentSync se presenta como un compañero técnico esencial para la exploración personalizada de la armonía entre la piel y las lociones. Los usuarios pueden descubrir y experimentar con diversas combinaciones de fragancias para lograr una experiencia personalizada y única.</p>",
                 ]
             }
         ],
