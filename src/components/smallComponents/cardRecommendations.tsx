@@ -44,7 +44,7 @@ const CardRecommendations = ({ data }: Props) => {
           {data.link.length > 0 && (
             <Box>
               <Link
-                href="https://www.linkedin.com/in/daymer-perdomo-5aa0a5137/"
+                href={`https://www.linkedin.com/in/${data.link}`}
                 target="_blank"
               >
                 <Button
@@ -56,7 +56,7 @@ const CardRecommendations = ({ data }: Props) => {
                   fontSize="small"
                   leftIcon={<IoLogoLinkedin />}
                 >
-                  Carlos Perez
+                  {data.link}
                 </Button>
               </Link>
             </Box>

@@ -162,7 +162,7 @@ const Recommendations = () => {
       width="100%"
       height="auto"
       padding="10px"
-      marginTop="80px"
+      marginTop="40px"
       boxSizing="border-box"
     >
       <Box width="100%" height="auto" marginTop="10px">
