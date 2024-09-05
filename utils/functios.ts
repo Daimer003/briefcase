@@ -30,10 +30,14 @@ export const getFingerprint = async () => {
         navigatorObj.appVersion,
         navigatorObj.vendor,
         navigatorObj.product,
+        `${window.screen.width}x${window.screen.height}`,
+        window.screen.colorDepth,
+        Intl.DateTimeFormat().resolvedOptions().timeZone,
+        Array.from(navigator.plugins).map(plugin => plugin.name).join(',')
     ].join('');
     const hash = await MurmurHash3.hash32(fingerprint, 0);
     const hex = hash.toString('hex');
-    return hex
+    return hex;
 };
 
 

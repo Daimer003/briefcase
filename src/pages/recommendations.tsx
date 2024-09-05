@@ -116,11 +116,13 @@ const Recommendations = () => {
         if (response.length > 0) {
           const huella = await getFingerprint();
 
-          console.log(huella);
           for (const comment of response) {
+            console.log(comment.huella, huella);
             if (comment.huella === huella) {
               isComment = true;
               break;
+            } else {
+              isComment = false;
             }
           }
 
