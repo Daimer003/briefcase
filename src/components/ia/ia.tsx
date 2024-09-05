@@ -95,18 +95,29 @@ const Ia = () => {
             </Text>
           </BoxText>
           <Box display="flex" flexDirection="column" gap="10px">
+            <Button
+              width="100%"
+              background="#43D9AD"
+              color={useColorModeValue("gray.100", "#211818")}
+              onClick={() => {
+                setQuestion("true");
+                scrollTop();
+              }}
+            >
+              Realizame una pregunta sobre Daymer ¿...?
+            </Button>
+
             <Box display="flex" width="100%" gap="10px">
               <Box
                 display="flex"
                 flexDir="column"
                 width="100%"
-                gap="10px"
                 onClick={scrollTop}
               >
                 <Button
+                  display="flex"
+                  justifyContent="start"
                   width="100%"
-                  border="1px"
-                  borderColor="gray.900"
                   background="transparent"
                   color={useColorModeValue("gray.100", "#efefef")}
                   onClick={() => {
@@ -124,9 +135,9 @@ const Ia = () => {
                   </Heading>
                 </Button>
                 <Button
+                  display="flex"
+                  justifyContent="start"
                   width="100%"
-                  border="1px"
-                  borderColor="gray.900"
                   background="transparent"
                   color={useColorModeValue("gray.100", "#e5e5e5")}
                   onClick={() => {
@@ -144,6 +155,8 @@ const Ia = () => {
                   </Heading>
                 </Button>
                 <Button
+                  display="flex"
+                  justifyContent="start"
                   width="100%"
                   background="transparent"
                   color={useColorModeValue("gray.100", "#e5e5e5")}
@@ -158,17 +171,6 @@ const Ia = () => {
                 </Button>
               </Box>
             </Box>
-            <Button
-              width="100%"
-              background="#43D9AD"
-              color={useColorModeValue("gray.100", "#211818")}
-              onClick={() => {
-                setQuestion("true");
-                scrollTop();
-              }}
-            >
-              Realizame una pregunta sobre Daymer ¿...?
-            </Button>
           </Box>
           <Box
             display="flex"

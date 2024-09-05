@@ -155,7 +155,18 @@ const Recommendations = () => {
   };
 
   return (
-    <Box width="100%" height="auto" padding="10px" boxSizing="border-box">
+    <Box
+      width="100%"
+      height="auto"
+      padding="10px"
+      marginTop="80px"
+      boxSizing="border-box"
+    >
+      <Box width="100%" height="auto" marginTop="10px">
+        <Text as="h3" fontSize="x-large" fontWeight="bold">
+          Comentarios
+        </Text>
+      </Box>
       <motion.div
         initial="hidden"
         animate="enter"

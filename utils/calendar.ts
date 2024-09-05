@@ -1,47 +1,21 @@
 const date = new Date();
-const month = date.getMonth(); // Obtiene el número del mes actual (0-11)
-
-let daysInMonth;
-
-switch (month) {
-    case 0:
-        // Enero
-        daysInMonth = 31;
-        break;
-    case 2:
-        // Marzo
-        daysInMonth = 31;
-        break;
-    case 4:
-        // Mayo
-        daysInMonth = 31;
-        break;
-    case 6:
-        // Julio
-        daysInMonth = 31;
-        break;
-    case 8:
-        // Septiembre
-        daysInMonth = 31;
-        break;
-    case 10: // Noviembre
-        daysInMonth = 31;
-        break;
-    case 1: // Febrero
-        daysInMonth = 29
-        break;
-    default:
-        daysInMonth = 30;
-}
+// Obtiene el número del mes actual (0-11)
 
 
-export function calendar() {
-
-    for (let i = 0; i < 12; i++) {
-        const position = new Array(((daysInMonth: any) => daysInMonth))
-        //console.log(position)
-    }
-
-
-
-}
+export const getDayOfYear = (date: Date): number => {
+    // Crear una nueva fecha al inicio del año
+    const startOfYear = new Date(date.getFullYear(), 0, 1);
+    
+    // Calcular la diferencia en milisegundos entre la fecha dada y el inicio del año
+    const diffInMs = date.getTime() - startOfYear.getTime();
+    
+    // Convertir la diferencia de milisegundos a días (1 día = 24 * 60 * 60 * 1000 ms)
+    const dayOfYear = Math.floor(diffInMs / (24 * 60 * 60 * 1000)) + 1;
+    
+    return dayOfYear;
+  }
+  
+  // Ejemplo de uso:
+  const today = new Date();
+  console.log(getDayOfYear(today)); // Devuelve el número de día actual del año
+  

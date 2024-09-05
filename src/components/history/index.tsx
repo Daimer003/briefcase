@@ -1,41 +1,33 @@
 import { Box, Grid, GridItem, Tooltip, Text } from "@chakra-ui/react";
 import { FaGitlab } from "react-icons/fa6";
 import { IoGitCommit } from "react-icons/io5";
-import { calendar } from "../../../utils/calendar";
-import { useEffect } from "react";
-import { getProjects } from "../../../lib/commits";
+import { getDayOfYear } from "../../../utils/calendar";
+import { useEffect, useState } from "react";
+import { getProjectsAndCommits } from "../../../lib/commits";
 
 const History = () => {
-  const commitsHistory = [];
-  const data = new Date();
-  const month = new Date().getMonth();
-  const day = new Date().getDate();
-
-  for (let i = 0; i < 365; i++) {
-    const date = new Date(2024, 0, i + 1);
-
-    const numCommits = Math.floor(Math.random() * 10);
-    const author = "Daymer";
-
-    commitsHistory.push({
-      id: i + 1,
-      date,
-      numCommits,
-      author,
-    });
-  }
+  const [commits, setCommits] = useState<any>([]);
 
   useEffect(() => {
-    const res = calendar();
-    // console.log(res)
+    const specificDate = new Date(2024, 0, 25);
+    const res = getDayOfYear(specificDate);
+    console.log(res);
   }, []);
 
   // console.log(commitsHistory)
 
   useEffect(() => {
-    getProjects();
+    try {
+      (async () => {
+        const response = await getProjectsAndCommits();
+        setCommits(response);
+      })();
+    } catch (error) {
+      console.log("No se logro obtener los commits", error);
+    }
   }, []);
 
+  console.log(commits);
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
       <Text
@@ -62,6 +54,7 @@ const History = () => {
       <Grid
         templateColumns="repeat(38, 1fr)"
         templateRows="repeat(10, 1fr)"
+        minH="218px"
         gap={1}
         overflow="auto"
         border="1px"
@@ -69,22 +62,23 @@ const History = () => {
         padding="10px"
         borderRadius="8px"
       >
-        {commitsHistory.map((commit: any, index) => (
-          <GridItem key={index} w="4" h="4" bg="#192f41" borderRadius="4px">
-            <Tooltip label={commit.author + commit.id} cursor="pointer">
-              <Box
-                display="flex"
-                width="100%"
-                height="100%"
-                content=""
-                position="relative"
-              />
-              {/* <div style={{ fontSize: "8px" }} className="commit-date">{index}</div> */}
-              {/* <div className="commit-num-commits">{commit.numCommits}</div>
+        {commits.length > 0 &&
+          commits.map((commit: any, index: any) => (
+            <GridItem key={index} w="4" h="4" bg="#192f41" borderRadius="4px">
+              <Tooltip label={commit.message + commit.id} cursor="pointer">
+                <Box
+                  display="flex"
+                  width="100%"
+                  height="100%"
+                  content=""
+                  position="relative"
+                />
+                {/* <div style={{ fontSize: "8px" }} className="commit-date">{index}</div> */}
+                {/* <div className="commit-num-commits">{commit.numCommits}</div>
                         <div className="commit-author">{commit.author}</div> */}
-            </Tooltip>
-          </GridItem>
-        ))}
+              </Tooltip>
+            </GridItem>
+          ))}
       </Grid>
       <Box display="flex" flexDir="column" gap="20px" position="relative">
         <Box

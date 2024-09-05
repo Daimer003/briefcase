@@ -25,7 +25,7 @@ import { GiRobotGolem, GiBookshelf } from "react-icons/gi";
 import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
 import { FaGitlab } from "react-icons/fa6";
 import CardProyect from "./cardProyect";
-import { ongoingProjects } from "../../../utils/data";
+import { ongoingProjects, projectsInProduction } from "../../../utils/data";
 import ModalGlobal from "../shared/modal/modal";
 import Detail from "../detail";
 import History from "../history";
@@ -46,7 +46,7 @@ const Profile = () => {
   };
 
   return (
-    <Box>
+    <Box marginTop="80px">
       <Box
         display={{ md: "flex" }}
         flexDirection="row"
@@ -62,7 +62,7 @@ const Profile = () => {
           <Heading as="h2" variant="page-title">
             Daymer Perdomo Molina
           </Heading>
-          <p>Frontend developer / Técnico de aeronaves.</p>
+          <p> Front-end developer</p>
         </Box>
         <Spacer />
         <Box
@@ -84,6 +84,7 @@ const Profile = () => {
           />
         </Box>
       </Box>
+
       <Paragraphs>
         Soy un profesional en constante evolución con una trayectoria destacada,
         donde me he enfocado en funciones específicas. Además, trabajo de manera
@@ -96,11 +97,13 @@ const Profile = () => {
         excelencia me impulsan constantemente a buscar nuevas formas de crear
         soluciones impactantes.
       </Paragraphs>
+
       <Box width="100%" height="auto" marginTop="10px" padding="0 10px">
         <Text as="h3" fontSize="x-large" fontWeight="bold">
           Proyectos en curso...
         </Text>
       </Box>
+
       <Wrap spacing="20px" justify="center" marginTop="20px" padding="0 10px">
         {ongoingProjects.map((project) => {
           return (

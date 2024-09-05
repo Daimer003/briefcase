@@ -23,7 +23,7 @@ export const IaBox = styled(Box)`
   flex-direction: column;
   width: 100%;
   height: auto;
-  margin-top: 80px;
+  margin-top: 40px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid #2c3d4d;
