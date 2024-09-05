@@ -23,9 +23,9 @@ import { FaFutbol, FaInstagram } from "react-icons/fa";
 import { GoFileCode } from "react-icons/go";
 import { GiRobotGolem, GiBookshelf } from "react-icons/gi";
 import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
-import { FaGitlab } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
 import CardProyect from "./cardProyect";
-import { ongoingProjects, projectsInProduction } from "../../../utils/data";
+import { ongoingProjects } from "../../../utils/data";
 import ModalGlobal from "../shared/modal/modal";
 import Detail from "../detail";
 import History from "../history";
@@ -250,11 +250,11 @@ const Profile = () => {
               </Link>
             </ListItem>
             <ListItem>
-              <Link href="https://gitlab.com/Daymer" target="_blank">
+              <Link href="https://github.com/Daimer003" target="_blank">
                 <Button
                   variant="ghost"
                   colorScheme="teal"
-                  leftIcon={<FaGitlab />}
+                  leftIcon={<FaGithub />}
                 >
                   @Daymer
                 </Button>

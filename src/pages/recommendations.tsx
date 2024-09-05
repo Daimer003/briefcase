@@ -48,15 +48,6 @@ const Recommendations = () => {
     avatar: "",
   });
 
-  // const validComments = async () => {
-  //     if (comments) {
-  //         const res = validateField(formComment)
-  //         if (res.emptyField) {
-  //             setAddData(true)
-  //         }
-  //     }
-  // }
-
   useEffect(() => {
     (async () => {
       const huella = await getFingerprint();
@@ -117,7 +108,6 @@ const Recommendations = () => {
           const huella = await getFingerprint();
 
           for (const comment of response) {
-            console.log(comment.huella, huella);
             if (comment.huella === huella) {
               isComment = true;
               break;
@@ -162,7 +152,7 @@ const Recommendations = () => {
       width="100%"
       height="auto"
       padding="10px"
-      marginTop="40px"
+      marginTop="80px"
       boxSizing="border-box"
     >
       <Box width="100%" height="auto" marginTop="10px">
@@ -178,7 +168,7 @@ const Recommendations = () => {
         transition={{ duration: 0.4, type: "easeInOut" }}
         style={{ position: "relative" }}
       >
-        <Box display="flex" flexDir="column" marginTop="40px">
+        <Box display="flex" flexDir="column">
           {commentGenerated === false && ( // Muestra la alerta solo si commentGenerated es falso
             <Alert status="success" marginBottom="20px" borderRadius="8px">
               <AlertIcon />
@@ -286,9 +276,30 @@ const Recommendations = () => {
         </Box>
 
         <Box display="flex" flexDirection="column" marginTop="40px" gap="20px">
-          {comments.map((comment: any, index: number) => (
-            <CardRecommendations key={index} data={comment} />
-          ))}
+          {comments.length > 0 ? (
+            comments.map((comment: any, index: number) => (
+              <CardRecommendations key={index} data={comment} />
+            ))
+          ) : (
+            <Box display="flex" flexDir="column" w="100%" gap="10px">
+              <Skeleton
+                w="100%"
+                height="30px"
+                startColor="#011221"
+                endColor="#072f52"
+                fadeDuration={1}
+                borderRadius="8px"
+              />
+              <Skeleton
+                w="100%"
+                height="30px"
+                startColor="#011221"
+                endColor="#072f52"
+                fadeDuration={1}
+                borderRadius="8px"
+              />
+            </Box>
+          )}
         </Box>
       </motion.div>
 

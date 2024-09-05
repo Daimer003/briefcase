@@ -1,5 +1,5 @@
-import { Box, Grid, GridItem, Tooltip, Text } from "@chakra-ui/react";
-import { FaGitlab } from "react-icons/fa6";
+import { Box, Grid, GridItem, Tooltip, Text, Skeleton } from "@chakra-ui/react";
+import { FaGithub } from "react-icons/fa6";
 import { IoGitCommit } from "react-icons/io5";
 import { getDayOfYear } from "../../../utils/calendar";
 import { useEffect, useState } from "react";
@@ -27,7 +27,6 @@ const History = () => {
     }
   }, []);
 
-  console.log(commits);
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
       <Text
@@ -39,7 +38,7 @@ const History = () => {
         fontWeight="bold"
       >
         Historia de commits
-        <FaGitlab />
+        <FaGithub />
       </Text>
       <Text
         display="flex"
@@ -62,7 +61,7 @@ const History = () => {
         padding="10px"
         borderRadius="8px"
       >
-        {commits.length > 0 &&
+        {commits.length > 0 ? (
           commits.map((commit: any, index: any) => (
             <GridItem key={index} w="4" h="4" bg="#192f41" borderRadius="4px">
               <Tooltip label={commit.message + commit.id} cursor="pointer">
@@ -78,7 +77,10 @@ const History = () => {
                         <div className="commit-author">{commit.author}</div> */}
               </Tooltip>
             </GridItem>
-          ))}
+          ))
+        ) : (
+          <Skeleton />
+        )}
       </Grid>
       <Box display="flex" flexDir="column" gap="20px" position="relative">
         <Box
