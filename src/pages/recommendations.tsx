@@ -116,6 +116,7 @@ const Recommendations = () => {
         if (response.length > 0) {
           const huella = await getFingerprint();
 
+          console.log(huella);
           for (const comment of response) {
             if (comment.huella === huella) {
               isComment = true;
@@ -175,7 +176,7 @@ const Recommendations = () => {
         transition={{ duration: 0.4, type: "easeInOut" }}
         style={{ position: "relative" }}
       >
-        <Box display="flex" flexDir="column">
+        <Box display="flex" flexDir="column" marginTop="40px">
           {commentGenerated === false && ( // Muestra la alerta solo si commentGenerated es falso
             <Alert status="success" marginBottom="20px" borderRadius="8px">
               <AlertIcon />
