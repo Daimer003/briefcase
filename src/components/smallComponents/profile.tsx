@@ -167,6 +167,7 @@ const Profile = () => {
           </Text>
         </Box>
 
+        {/* COMPONENTE  YO */}
         <Box marginTop="10px">
           <Text as="h3" fontSize="x-large" fontWeight="bold">
             Yo ♥
@@ -230,6 +231,7 @@ const Profile = () => {
           </Box>
         </Box>
 
+        {/* COMPONENTE EN LA RED */}
         <Box marginTop="10px">
           <Text as="h3" fontSize="x-large" fontWeight="bold">
             En la red
@@ -277,6 +279,7 @@ const Profile = () => {
           </List>
         </Box>
 
+        {/* COMPONENTE HISTORIA DE COMMITS */}
         <History />
       </Box>
 

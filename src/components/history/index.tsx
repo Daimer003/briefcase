@@ -9,18 +9,13 @@ const History = () => {
   const [commits, setCommits] = useState<any>([]);
 
   useEffect(() => {
-    const specificDate = new Date(2024, 0, 25);
-    const res = getDayOfYear(specificDate);
-    console.log(res);
-  }, []);
-
-  // console.log(commitsHistory)
-
-  useEffect(() => {
     try {
       (async () => {
         const response = await getProjectsAndCommits();
-        setCommits(response);
+        const res = await getDayOfYear(response);
+        //console.log(res);
+        //console.log(res[1].date);
+        setCommits(res);
       })();
     } catch (error) {
       console.log("No se logro obtener los commits", error);
@@ -63,8 +58,14 @@ const History = () => {
       >
         {commits.length > 0 ? (
           commits.map((commit: any, index: any) => (
-            <GridItem key={index} w="4" h="4" bg="#192f41" borderRadius="4px">
-              <Tooltip label={commit.message + commit.id} cursor="pointer">
+            <GridItem
+              key={index}
+              w="4"
+              h="4"
+              bg={commit && commit.date != null ? "#FEA55F" : "#192f41"}
+              borderRadius="4px"
+            >
+              <Tooltip label={commit.date} cursor="pointer">
                 <Box
                   display="flex"
                   width="100%"
@@ -72,9 +73,6 @@ const History = () => {
                   content=""
                   position="relative"
                 />
-                {/* <div style={{ fontSize: "8px" }} className="commit-date">{index}</div> */}
-                {/* <div className="commit-num-commits">{commit.numCommits}</div>
-                        <div className="commit-author">{commit.author}</div> */}
               </Tooltip>
             </GridItem>
           ))
