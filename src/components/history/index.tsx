@@ -22,8 +22,6 @@ const History = () => {
     }
   }, []);
 
-  console.log(commits?.ultimosTresCommits);
-
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
       <Text

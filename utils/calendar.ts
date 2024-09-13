@@ -32,7 +32,6 @@ const ultimosTresCommits = daysOfYear
   .filter((commit: Commit) => commit.date != null && typeof commit.date === 'string' && commit.date.slice(0, 4) === '2024')
   .slice(-3);  // Selecciona los últimos 3 objetos filtrados
 
-console.log(ultimosTresCommits);
 
   return{
     daysOfYear,
