@@ -25,14 +25,17 @@ import { GiRobotGolem, GiBookshelf } from "react-icons/gi";
 import { IoMdCafe, IoLogoLinkedin } from "react-icons/io";
 import { FaGithub } from "react-icons/fa6";
 import CardProyect from "./cardProyect";
-import { ongoingProjects } from "../../../utils/data";
+import { ongoingProjects, projectsInProduction } from "../../../utils/data";
 import ModalGlobal from "../shared/modal/modal";
 import Detail from "../detail";
 import History from "../history";
+import Pagination from "@/components/pagination";
+const itemsPerPage = 4; //* Numero de filas
 
 const Profile = () => {
   const [detailsProyect, setDetailsProyect] = useState<any>();
   const [executeModal, setExecuteModal] = useState<boolean>(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   //*Ejecuta el modal para ver los detalles
   const modalDetails = () => {
@@ -43,6 +46,17 @@ const Profile = () => {
   const seeDetails = (project: any) => {
     setDetailsProyect(project);
     modalDetails();
+  };
+
+  //* Ejecuta el modal para ver los detalles del proyecto
+  const seeDetailsWorks = (project: any) => {
+    setDetailsProyect(project);
+    modalDetails();
+  };
+
+  //* Pagina
+  const handlePageChange = (page: any) => {
+    setCurrentPage(page);
   };
 
   return (
@@ -97,6 +111,39 @@ const Profile = () => {
         excelencia me impulsan constantemente a buscar nuevas formas de crear
         soluciones impactantes.
       </Paragraphs>
+
+      <Box width="100%" height="auto" marginTop="10px">
+        <Text as="h3" fontSize="x-large" fontWeight="bold">
+          Proyectos recientes en producciòn
+        </Text>
+      </Box>
+
+      <Box display="flex" flexDir="column" position="relative" gap="20px">
+        <Wrap spacing="20px" justify="center" marginTop="40px">
+          {projectsInProduction.map((project) => {
+            return (
+              <WrapItem key={project.id}>
+                <Center w="100%" maxW="380px" h="auto">
+                  <CardProyect
+                    title={project.title}
+                    imagen={project.imagen}
+                    paragraph={project?.description}
+                    technologies={project.technologies}
+                    details={() => seeDetailsWorks(project)}
+                  />
+                </Center>
+              </WrapItem>
+            );
+          })}
+        </Wrap>
+
+        <Pagination
+          currentPage={currentPage}
+          totalItems={projectsInProduction.length}
+          itemsPerPage={itemsPerPage}
+          onPageChange={handlePageChange}
+        />
+      </Box>
 
       <Box width="100%" height="auto" marginTop="10px" padding="0 10px">
         <Text as="h3" fontSize="x-large" fontWeight="bold">
