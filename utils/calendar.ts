@@ -1,10 +1,13 @@
 
-
-
+interface Commit {
+  date: string | null;
+}
 
 export const getDayOfYear = (dateIso8601: any) => {
   const daysOfYear = Array.from({ length: 365 }, () => ({ date: null, commits: <any>[] }));
+  const currentDate =  new Date().getFullYear()
 
+console.log(currentDate)
 
 for(let i = 0; dateIso8601.length > i; i++){
   const date = new Date(dateIso8601[i]?.date);
@@ -24,7 +27,17 @@ for(let i = 0; dateIso8601.length > i; i++){
         daysOfYear[dayOfYear].commits.push(dateIso8601[i]);
       }
 }
-  return daysOfYear
+
+const ultimosTresCommits = daysOfYear
+  .filter((commit: Commit) => commit.date != null && typeof commit.date === 'string' && commit.date.slice(0, 4) === '2024')
+  .slice(-3);  // Selecciona los últimos 3 objetos filtrados
+
+console.log(ultimosTresCommits);
+
+  return{
+    daysOfYear,
+    ultimosTresCommits
+  }
   }
   
   

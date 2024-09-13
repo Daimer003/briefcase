@@ -22,6 +22,8 @@ const History = () => {
     }
   }, []);
 
+  console.log(commits?.ultimosTresCommits);
+
   return (
     <Box display="flex" flexDir="column" marginTop="10px" gap="10px">
       <Text
@@ -57,7 +59,7 @@ const History = () => {
         borderRadius="8px"
       >
         {commits.length > 0 ? (
-          commits.map((commit: any, index: any) => (
+          commits.daysOfYear.map((commit: any, index: any) => (
             <GridItem
               key={index}
               w="4"
@@ -91,64 +93,39 @@ const History = () => {
           bg="gray.900"
           zIndex="0"
         />
-        <Box display="flex" flexDir="column" gap="20px" position="relative">
-          <Box display="flex" alignItems="center" gap="10px">
-            <Box
-              width="auto"
-              height="auto"
-              background="#141e1e"
-              padding="4px"
-              borderRadius="50%"
-            >
-              <IoGitCommit size="18px" color="gray" />
-            </Box>
-            <Box display="flex" alignItems="center" gap="10px">
-              <Text as="p" color="gray.700">
-                Pushed to branch
-              </Text>
-              <Text as="p" color="gray.400">
-                Main
-              </Text>
-            </Box>
-          </Box>
-          <Box display="flex" alignItems="center" gap="10px">
-            <Box
-              width="auto"
-              height="auto"
-              background="#141e1e"
-              padding="4px"
-              borderRadius="50%"
-            >
-              <IoGitCommit size="18px" color="gray" />
-            </Box>
-            <Box display="flex" alignItems="center" gap="10px">
-              <Text as="p" color="gray.700">
-                Pushed to branch
-              </Text>
-              <Text as="p" color="gray.400">
-                Main
-              </Text>
-            </Box>
-          </Box>
-          <Box display="flex" alignItems="center" gap="10px">
-            <Box
-              width="auto"
-              height="auto"
-              background="#141e1e"
-              padding="4px"
-              borderRadius="50%"
-            >
-              <IoGitCommit size="18px" color="gray" />
-            </Box>
-            <Box display="flex" alignItems="center" gap="10px">
-              <Text as="p" color="gray.700">
-                Pushed to branch
-              </Text>
-              <Text as="p" color="gray.400">
-                Main
-              </Text>
-            </Box>
-          </Box>
+        <Box
+          w="100%"
+          minH="40px"
+          display="flex"
+          flexDir="column"
+          gap="20px"
+          position="relative"
+        >
+          {commits?.ultimosTresCommits ? (
+            commits?.ultimosTresCommits.map((commit: any, index: number) => (
+              <Box key={index} display="flex" alignItems="center" gap="10px">
+                <Box
+                  width="auto"
+                  height="auto"
+                  background="#141e1e"
+                  padding="4px"
+                  borderRadius="50%"
+                >
+                  <IoGitCommit size="18px" color="gray" />
+                </Box>
+                <Box display="flex" alignItems="center" gap="10px">
+                  <Text as="p" color="gray.700">
+                    Pushed to branch
+                  </Text>
+                  <Text as="p" color="gray.400">
+                    Main : {commit.commits[0].message}
+                  </Text>
+                </Box>
+              </Box>
+            ))
+          ) : (
+            <Skeleton />
+          )}
         </Box>
       </Box>
     </Box>
