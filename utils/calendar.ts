@@ -3,11 +3,15 @@ interface Commit {
   date: string | null;
 }
 
+/**
+ *  
+ * @param dateIso8601 La fecha del commit
+ * TODO: Revisar que retorne los commits correspondientes a la fecha
+ * @returns 
+ */
 export const getDayOfYear = (dateIso8601: any) => {
   const daysOfYear = Array.from({ length: 365 }, () => ({ date: null, commits: <any>[] }));
   const currentDate =  new Date().getFullYear()
-
-console.log(currentDate)
 
 for(let i = 0; dateIso8601.length > i; i++){
   const date = new Date(dateIso8601[i]?.date);

@@ -13,8 +13,6 @@ const History = () => {
       (async () => {
         const response = await getProjectsAndCommits();
         const res = await getDayOfYear(response);
-        //console.log(res);
-        //console.log(res[1].date);
         setCommits(res);
       })();
     } catch (error) {
@@ -56,8 +54,8 @@ const History = () => {
         padding="10px"
         borderRadius="8px"
       >
-        {commits.length > 0 ? (
-          commits.daysOfYear.map((commit: any, index: any) => (
+        {commits?.daysOfYear && commits?.daysOfYear.length > 0 ? (
+          commits?.daysOfYear.map((commit: any, index: any) => (
             <GridItem
               key={index}
               w="4"
@@ -115,7 +113,7 @@ const History = () => {
                   <Text as="p" color="gray.700">
                     Pushed to branch
                   </Text>
-                  <Text as="p" color="gray.400">
+                  <Text as="p" color="gray.400" fontSize="14px">
                     Main : {commit.commits[0].message}
                   </Text>
                 </Box>
