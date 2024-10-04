@@ -43,6 +43,14 @@ const History = () => {
       >
         Funcionalidad en desarrollo.
       </Text>
+      <Skeleton 
+         height="auto"
+         isLoaded={ commits?.daysOfYear && commits?.daysOfYear.length > 0 }
+         startColor="#0e0f15"
+         endColor="#111824"
+         fadeDuration={1}
+         borderRadius="16px"
+      >
       <Grid
         templateColumns="repeat(38, 1fr)"
         templateRows="repeat(10, 1fr)"
@@ -54,7 +62,7 @@ const History = () => {
         padding="10px"
         borderRadius="8px"
       >
-        {commits?.daysOfYear && commits?.daysOfYear.length > 0 ? (
+        {commits?.daysOfYear && commits?.daysOfYear.length > 0 && (
           commits?.daysOfYear.map((commit: any, index: any) => (
             <GridItem
               key={index}
@@ -74,10 +82,9 @@ const History = () => {
               </Tooltip>
             </GridItem>
           ))
-        ) : (
-          <Skeleton />
-        )}
+        ) }
       </Grid>
+      </Skeleton>
       <Box display="flex" flexDir="column" gap="20px" position="relative">
         <Box
           display="flex"
@@ -111,16 +118,23 @@ const History = () => {
                 </Box>
                 <Box display="flex" alignItems="center" gap="10px">
                   <Text as="p" color="gray.700">
-                    Pushed to branch
+                    Commit:
                   </Text>
                   <Text as="p" color="gray.400" fontSize="14px">
-                    Main : {commit.commits[0].message}
+                    {commit.commits[0].message}
+                    <strong
+                      style={{
+                        color: "#efefef2e",
+                      }}
+                    >
+                      {commit.date.substring(0, 10)}
+                    </strong>
                   </Text>
                 </Box>
               </Box>
             ))
           ) : (
-            <Skeleton />
+            <Skeleton w='100%' />
           )}
         </Box>
       </Box>

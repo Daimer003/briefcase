@@ -311,7 +311,7 @@ const Profile = () => {
             </ListItem>
             <ListItem>
               <Link
-                href="https://www.linkedin.com/in/daymer-perdomo-5aa0a5137/"
+                href="https://www.linkedin.com/in/daymer-perdomo-molina-5aa0a5137/"
                 target="_blank"
               >
                 <Button
