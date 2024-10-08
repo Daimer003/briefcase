@@ -16,6 +16,7 @@ import NextLink from "next/link";
 import { ImGithub } from "react-icons/im";
 import { MdOutlineMenu } from "react-icons/md";
 import { FaFilePdf } from "react-icons/fa6";
+import { useLocale } from "@/hooks/useLocale";
 
 interface LinkItemProps {
   href: string;
@@ -49,7 +50,10 @@ const LinkItem = ({
 };
 
 const Navbar = (props: any) => {
+  const { setLocale, locale, t } = useLocale();
   const { path } = props;
+
+  const idiome = (i: any) => setLocale(i);
 
   return (
     <Box
@@ -98,7 +102,15 @@ const Navbar = (props: any) => {
         </LinkItem>
       </Stack>
       <Spacer />
-      <Box display="flex">
+      <Box display="flex" gap="20px">
+        <Box display="flex" alignItems="center" cursor="pointer">
+          {locale != "es" ? (
+            <span onClick={() => idiome("es")}>{locale}</span>
+          ) : (
+            <span onClick={() => idiome("en")}>{locale}</span>
+          )}
+        </Box>
+
         <ThemeToggleButton />
 
         <Box ml={2} display={{ base: "inline-block", md: "none" }}>
