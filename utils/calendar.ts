@@ -11,7 +11,7 @@ interface Commit {
  */
 export const getDayOfYear = (dateIso8601: any) => {
   const daysOfYear = Array.from({ length: 365 }, () => ({ date: null, commits: <any>[] }));
-  const currentDate =  new Date().getFullYear()
+  //const currentDate =  new Date().getFullYear()
 
 for(let i = 0; dateIso8601.length > i; i++){
   const date = new Date(dateIso8601[i]?.date);
