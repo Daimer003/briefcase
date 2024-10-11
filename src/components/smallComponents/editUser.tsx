@@ -27,7 +27,6 @@ interface Props {
 
 const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
   const [myAvatar, setMyAvatar] = useState<string>("");
-  const [addData, setAddData] = useState<boolean>(false);
 
   const select = (imagen: string, color: string) => {
     selectAvatar(imagen, color);
@@ -37,10 +36,10 @@ const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
   useEffect(() => {
     const res = validateField(fields);
     if (res.emptyField) {
-      setAddData(true);
+     // setAddData(true);
       return;
     }
-    setAddData(false);
+ //   setAddData(false);
   }, [fields]);
 
   return (

@@ -115,7 +115,7 @@ const Navbar = (props: any) => {
 
       <Spacer />
 
-      <Box display="flex" gap="20px">
+      <Box display="flex" alignItems='center' gap="20px">
         <Box
           display="flex"
           alignItems="center"
@@ -131,7 +131,7 @@ const Navbar = (props: any) => {
             w="35px"
             flexDir="column"
             position="absolute"
-            top={1}
+            top={0}
             left={-2}
             gap="6px"
             bg={useColorModeValue("#ffffff3", "#011627")}
