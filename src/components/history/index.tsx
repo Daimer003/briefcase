@@ -121,10 +121,11 @@ const History = () => {
                     Commit:
                   </Text>
                   <Text as="p" color="gray.400" fontSize="14px">
-                    {commit.commits[0].message}
+                    {commit.commits[0].message} 
                     <strong
                       style={{
                         color: "#efefef2e",
+                        marginLeft: "10px"
                       }}
                     >
                       {commit.date.substring(0, 10)}

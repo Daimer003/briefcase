@@ -42,6 +42,8 @@ Año de estudios: 2019 al 2020
 3. Desarrollo de tecnologías en Platzi
 Link del sitio web de la institución: https://platzi.com/p/Daymer/
 
+4. En la actualidad esta estudiando en Coursera Software Engineering.
+
 Tengo dos hermanas:
 Julieth Perdomo y Yeraldin Perdomo.
 
