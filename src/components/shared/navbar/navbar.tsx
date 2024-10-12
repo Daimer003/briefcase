@@ -59,12 +59,10 @@ const Navbar = (props: any) => {
   const icons = ["et", "en", "es"];
 
   const idiome = (i: any) => {
-
     console.log(i, t);
     setLocale(i);
     setSelectIdiome(false);
   };
-
 
   return (
     <Box
@@ -90,10 +88,10 @@ const Navbar = (props: any) => {
         mt={{ base: 4, md: 0 }}
       >
         <LinkItem href="/works" path={path}>
-          Proyectos
+          {t.navbar.li1}
         </LinkItem>
         <LinkItem href="/recommendations" path={path}>
-          Recomendaciones
+          {t.navbar.li2}
         </LinkItem>
         <LinkItem
           target="_blank"
@@ -101,7 +99,7 @@ const Navbar = (props: any) => {
           path={path}
         >
           <ImGithub />
-          Fuente
+          {t.navbar.li3}
         </LinkItem>
         <LinkItem
           target="_blank"
@@ -109,13 +107,13 @@ const Navbar = (props: any) => {
           path={path}
         >
           <FaFilePdf />
-          Cv
+          {t.navbar.li4}
         </LinkItem>
       </Stack>
 
       <Spacer />
 
-      <Box display="flex" alignItems='center' gap="20px">
+      <Box display="flex" alignItems="center" gap="20px">
         <Box
           display="flex"
           alignItems="center"
@@ -123,7 +121,12 @@ const Navbar = (props: any) => {
           position="relative"
         >
           <span onClick={() => setSelectIdiome(true)}>
-            <Image src={`/assets/${locale}.webp`} alt="Icono" width={20} height={20} />
+            <Image
+              src={`/assets/${locale}.webp`}
+              alt="Icono"
+              width={20}
+              height={20}
+            />
           </span>
 
           <Box
@@ -146,7 +149,7 @@ const Navbar = (props: any) => {
                 alt="Icono"
                 width={50}
                 height={50}
-                onClick={() =>  idiome(icon)}
+                onClick={() => idiome(icon)}
               />
             ))}
           </Box>
@@ -166,13 +169,13 @@ const Navbar = (props: any) => {
             />
             <MenuList display="flex" flexDirection="column" bg="black">
               <LinkItem href="/" path={path}>
-                <MenuItem bg="black">Perfil</MenuItem>
+                <MenuItem bg="black">{t.logo}</MenuItem>
               </LinkItem>
               <LinkItem href="/works" path={path}>
-                <MenuItem bg="black">Proyectos</MenuItem>
+                <MenuItem bg="black"> {t.navbar.li1}</MenuItem>
               </LinkItem>
               <LinkItem href="/recommendations" path={path}>
-                <MenuItem bg="black">Recomendaciones</MenuItem>
+                <MenuItem bg="black"> {t.navbar.li2}</MenuItem>
               </LinkItem>
               <LinkItem
                 target="_blank"
@@ -181,7 +184,7 @@ const Navbar = (props: any) => {
               >
                 <MenuItem bg="black">
                   <ImGithub style={{ marginRight: "10px" }} />
-                  Fuente
+                  {t.navbar.li3}
                 </MenuItem>
               </LinkItem>
               <LinkItem
@@ -191,7 +194,7 @@ const Navbar = (props: any) => {
               >
                 <MenuItem bg="black">
                   <FaFilePdf style={{ marginRight: "10px" }} />
-                  Cv
+                  {t.navbar.li4}
                 </MenuItem>
               </LinkItem>
             </MenuList>

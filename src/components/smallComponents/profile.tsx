@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Paragraphs from "./paragraphs";
-
 import { FaFutbol, FaInstagram } from "react-icons/fa";
 import { GoFileCode } from "react-icons/go";
 import { GiRobotGolem, GiBookshelf } from "react-icons/gi";
@@ -30,12 +29,14 @@ import ModalGlobal from "../shared/modal/modal";
 import Detail from "../detail";
 import History from "../history";
 import Pagination from "@/components/pagination";
+import { useLocale } from "@/hooks/useLocale";
 const itemsPerPage = 4; //* Numero de filas
 
 const Profile = () => {
   const [detailsProyect, setDetailsProyect] = useState<any>();
   const [executeModal, setExecuteModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const { t } = useLocale();
 
   //*Ejecuta el modal para ver los detalles
   const modalDetails = () => {
@@ -76,7 +77,7 @@ const Profile = () => {
           <Heading as="h2" variant="page-title">
             Daymer Perdomo Molina
           </Heading>
-          <p> Front-end developer</p>
+          <p>{t.profile.profession}</p>
         </Box>
         <Spacer />
         <Box
@@ -99,20 +100,9 @@ const Profile = () => {
         </Box>
       </Box>
 
-      <Paragraphs>
-        Soy un profesional en constante evolución con una trayectoria destacada,
-        donde me he enfocado en funciones específicas. Además, trabajo de manera
-        independiente como desarrollador frontend en Medellín. Mi destreza
-        abarca todo el proceso de lanzamiento de productos, desde la
-        conceptualización y diseño hasta la resolución de desafíos reales
-        mediante la programación. Fuera del ámbito digital, disfruto dedicar
-        tiempo al desarrollo de proyectos de electrónica, explorando mi pasión
-        por la innovación. Mi enfoque meticuloso y mi compromiso con la
-        excelencia me impulsan constantemente a buscar nuevas formas de crear
-        soluciones impactantes.
-      </Paragraphs>
+      <Paragraphs>{t.profile.description}</Paragraphs>
 
-      <Box width="100%" height="auto" marginTop="10px">
+      <Box width="100%" height="auto" marginTop="10px" padding="10px">
         <Text as="h3" fontSize="x-large" fontWeight="bold">
           Proyectos recientes en producciòn
         </Text>
