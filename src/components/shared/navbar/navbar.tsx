@@ -103,7 +103,7 @@ const Navbar = (props: any) => {
         </LinkItem>
         <LinkItem
           target="_blank"
-          href="/assets/documents/cv-daymer.pdf"
+          href="/assets/documents/cv-daymer-es.pdf"
           path={path}
         >
           <FaFilePdf />
@@ -189,7 +189,7 @@ const Navbar = (props: any) => {
               </LinkItem>
               <LinkItem
                 target="_blank"
-                href="/assets/documents/cv-daymer.pdf"
+                href="/assets/documents/cv-daymer-es.pdf"
                 path={path}
               >
                 <MenuItem bg="black">
