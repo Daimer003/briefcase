@@ -48,17 +48,6 @@ const Recommendations = () => {
     avatar: "",
   });
 
-  useEffect(() => {
-    (async () => {
-      const huella = await getFingerprint();
-      if (huella) {
-        setFormComment({
-          ...formComment,
-          ["huella"]: huella,
-        });
-      }
-    })();
-  }, []);
 
   //*Función para crear los comentarios
   const comment = async () => {

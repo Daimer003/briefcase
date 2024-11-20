@@ -4,7 +4,6 @@ import {
   CardBody,
   Stack,
   Heading,
-  // Text,
   Tag,
   TagLabel,
   TagLeftIcon,
@@ -75,6 +74,8 @@ const CardProyect = ({
                   return (
                     <Tag
                       key={tag.id}
+                      as="a"
+                      href={tag.site}
                       borderRadius="4px"
                       border="1px"
                       borderColor={tag.color}

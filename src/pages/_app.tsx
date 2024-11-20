@@ -4,17 +4,12 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../lib/theme";
 import LayoutMain from "@/components/layouts/main";
 import { AnimatePresence } from "framer-motion";
-import { FpjsProvider } from "@fingerprintjs/fingerprintjs-pro-react";
 import { LocaleProvider } from "@/context/internatiolizationContext";
 
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <FpjsProvider
-      loadOptions={{
-        apiKey: "SPRgSfsBXshZlRwOZZww",
-      }}
-    >
+ 
       <LocaleProvider>
         <ChakraProvider theme={theme}>
           <LayoutMain router={router}>
@@ -32,6 +27,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
           </LayoutMain>
         </ChakraProvider>
       </LocaleProvider>
-    </FpjsProvider>
+ 
   );
 }
