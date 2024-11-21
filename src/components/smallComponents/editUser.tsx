@@ -35,19 +35,15 @@ const EditUser = ({ getDataForm, selectAvatar, comment, fields }: Props) => {
 
   useEffect(() => {
     const res = validateField(fields);
-    if (res.emptyField) {
-     // setAddData(true);
-      return;
-    }
- //   setAddData(false);
+    if (res.emptyField) return;
   }, [fields]);
 
   return (
     <Box display="flex" width="100%" flexDir="column" gap="10px">
       <Box>
-        <Text as="h3" color="">
-          Datos para identificar la recomendación. <br /> Si no deseas dejar un
-          comentario, simplemente cierra el modal.
+        <Text as="h3" color="gray.200" textAlign='center'>
+        Datos para identificar la recomendación.
+        Si no deseas agregar un comentario, simplemente cierra este modal.
         </Text>
       </Box>
 

@@ -21,7 +21,6 @@ import {
 import { useEffect, useState } from "react";
 import { IoLogoLinkedin } from "react-icons/io";
 import { MdModeEdit } from "react-icons/md";
-import { getFingerprint } from "../../utils/functios";
 import { motion } from "framer-motion";
 
 const variants = {
@@ -35,11 +34,10 @@ const Recommendations = () => {
   const [addData, setAddData] = useState<boolean>(false);
   const [commentGenerated, setCommentGenerated] = useState<boolean>(true);
   const [comments, setComments] = useState<any>([]);
-  const [found, setFound] = useState<boolean>(true);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   const [formComment, setFormComment] = useState<any>({
-    name: "Nombre",
+    name: "",
     link: "Username",
     profile: "Profesión",
     comment: "",
@@ -48,10 +46,15 @@ const Recommendations = () => {
     avatar: "",
   });
 
-
   //*Función para crear los comentarios
   const comment = async () => {
     try {
+
+      if(formComment.name.length == 0 || formComment.profile.lenght == 0 ) {
+        setAddData(true)
+        return
+      }
+
       const { name, link, profile, comment, color, huella, avatar } =
         formComment;
       const response = await ServiceComment.createComment({
@@ -87,35 +90,12 @@ const Recommendations = () => {
   //* Obtiene los comentarios de la db
   const getComments = async () => {
     try {
-      let isComment = true;
       const response = await ServiceComment.getComment();
+
       if (response) {
         await setComments(response.reverse());
         setIsLoaded(true);
-
-        if (response.length > 0) {
-          const huella = await getFingerprint();
-
-          for (const comment of response) {
-            if (comment.huella === huella) {
-              isComment = true;
-              break;
-            } else {
-              isComment = false;
-            }
-          }
-
-          if (isComment && response) {
-            setFound(true);
-          } else {
-            setFound(false);
-            setAddData(true);
-          }
-          return;
-        } else {
-          setFound(false);
-          setAddData(true);
-        }
+        return;
       }
     } catch (error) {
       console.log("NO SE OBTUVIERON LOS COMENTARIOS", error);
@@ -173,7 +153,6 @@ const Recommendations = () => {
             fadeDuration={1}
             borderRadius="16px"
           >
-            {!found ? (
               <>
                 <Box
                   display="flex"
@@ -258,9 +237,6 @@ const Recommendations = () => {
                   </Button>
                 </Box>
               </>
-            ) : (
-              <></>
-            )}
           </Skeleton>
         </Box>
 
