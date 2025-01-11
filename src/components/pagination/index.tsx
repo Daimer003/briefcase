@@ -2,32 +2,14 @@ import { Button, HStack, Box, Badge } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 interface Props {
+  res: any;
   currentPage: any;
-  totalItems: any;
-  itemsPerPage: any;
-  onPageChange: any;
+  onPageChange: (n: number) => void;
 }
 
-const Paginator = ({
-  currentPage,
-  totalItems,
-  itemsPerPage,
-  onPageChange,
-}: Props) => {
-  const totalItemsNum = typeof totalItems === "number" ? totalItems : 0;
-  const itemsPerPageNum = typeof itemsPerPage === "number" ? itemsPerPage : 1;
-  const totalPages = Math.max(Math.ceil(totalItemsNum / itemsPerPageNum), 1);
+const Paginator = ({ res, currentPage, onPageChange }: Props) => {
 
-  //* Mostrar solo 3 posiciones a la vez
-  const maxPagesToShow = 3;
-  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-  let endPage = Math.min(startPage + maxPagesToShow - 1, totalPages);
-
-  //* Ajustar el inicio si estamos cerca del final
-  if (endPage - startPage + 1 < maxPagesToShow) {
-    startPage = Math.max(1, endPage - maxPagesToShow + 1);
-  }
-
+  console.log(res)
   return (
     <HStack
       width="100%"
@@ -61,22 +43,22 @@ const Paginator = ({
           >
             Atrás
           </Button>
-          {[...Array(endPage - startPage + 1)].map((_, index) => (
+          {[...Array(res?.totalPages || 0)].map((_, index) => (
             <Button
-              key={startPage + index}
-              onClick={() => onPageChange(startPage + index)}
+              key={res?.startPage + index}
+              onClick={() => onPageChange(res?.startPage + index)}
               backgroundColor={
-                currentPage === startPage + index ? 'bg="#cfffaa"' : "gray"
+                currentPage === res?.startPage + index ? 'bg="#cfffaa"' : "gray"
               }
               color="white.900"
               size="sm"
             >
-              {startPage + index}
+              {res?.startPage + index}
             </Button>
           ))}
           <Button
-            onClick={() => onPageChange(totalPages)}
-            disabled={currentPage === totalPages}
+            onClick={() => onPageChange(res?.totalPages)}
+            disabled={currentPage === res?.totalPages}
             bg="#43D9AD"
             color="black"
             rightIcon={<ChevronRightIcon />}
@@ -90,7 +72,7 @@ const Paginator = ({
             padding="6px"
             borderRadius="6px"
           >
-            <span>{totalItems}</span>
+            <span>{res?.totalItems}</span>
           </Badge>
         </Box>
       </Box>

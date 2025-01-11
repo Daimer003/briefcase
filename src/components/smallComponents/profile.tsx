@@ -30,13 +30,14 @@ import Detail from "../detail";
 import History from "../history";
 import Pagination from "@/components/pagination";
 import { useLocale } from "@/hooks/useLocale";
-const itemsPerPage = 4; //* Numero de filas
+import { paginator } from "utils/paginator";
 
 const Profile = () => {
   const [detailsProyect, setDetailsProyect] = useState<any>();
   const [executeModal, setExecuteModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState(1);
   const { t } = useLocale();
+  const res = paginator(projectsInProduction, 4, currentPage);
 
   //*Ejecuta el modal para ver los detalles
   const modalDetails = () => {
@@ -110,7 +111,7 @@ const Profile = () => {
 
       <Box display="flex" flexDir="column" position="relative" gap="20px">
         <Wrap spacing="20px" justify="center" marginTop="40px">
-          {projectsInProduction.map((project) => {
+          {res?.visibleData.map((project: any) => {
             return (
               <WrapItem key={project.id}>
                 <Center w="100%" maxW="380px" h="auto">
@@ -128,9 +129,8 @@ const Profile = () => {
         </Wrap>
 
         <Pagination
+          res={res}
           currentPage={currentPage}
-          totalItems={projectsInProduction.length}
-          itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </Box>
