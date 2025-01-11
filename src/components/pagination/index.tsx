@@ -9,7 +9,6 @@ interface Props {
 
 const Paginator = ({ res, currentPage, onPageChange }: Props) => {
 
-  console.log(res)
   return (
     <HStack
       width="100%"
@@ -72,7 +71,7 @@ const Paginator = ({ res, currentPage, onPageChange }: Props) => {
             padding="6px"
             borderRadius="6px"
           >
-            <span>{res?.totalItems}</span>
+            <span>{res?.totalPages}</span>
           </Badge>
         </Box>
       </Box>
