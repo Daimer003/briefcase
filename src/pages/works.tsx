@@ -6,12 +6,13 @@ import Technologies from "@/components/technologies/technologies";
 import ModalGlobal from "@/components/shared/modal/modal";
 import Detail from "@/components/detail";
 import Pagination from "@/components/pagination";
+import { paginator } from "utils/paginator";
 
 const Works = () => {
   const [detailsProyect, setDetailsProyect] = useState<any>();
   const [executeModal, setExecuteModal] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4; //* Numero de filas
+  const res = paginator(projectsInProduction, 4, currentPage);
 
   //*Ejecuta el modal para ver los detalles
   const modalDetailsWorks = () => {
@@ -38,7 +39,7 @@ const Works = () => {
       </Box>
       <Box display="flex" flexDir="column" position="relative" gap="20px">
         <Wrap spacing="20px" justify="center" marginTop="40px">
-          {projectsInProduction.map((project) => {
+          {res?.visibleData.map((project) => {
             return (
               <WrapItem key={project.id}>
                 <Center w="100%" maxW="380px" h="auto">
@@ -55,9 +56,8 @@ const Works = () => {
           })}
         </Wrap>
         <Pagination
+          res={res}
           currentPage={currentPage}
-          totalItems={projectsInProduction.length}
-          itemsPerPage={itemsPerPage}
           onPageChange={handlePageChange}
         />
       </Box>

@@ -159,14 +159,14 @@ export const projectsInProduction = [
                 name: "NEXT.JS",
                 icon: TbBrandNextjs,
                 color: "black",
-                site: "https://www.partneo.io/"
+                site: "https://nextjs.org/"
             },
             {
                 id: 2,
                 name: "SITIO WEB",
                 icon: GiWireframeGlobe,
                 color: "gray",
-                site: ""
+                site: "https://www.partneo.io/"
             },
         ]
     },
