@@ -76,6 +76,7 @@ const CardProyect = ({
                       key={tag.id}
                       as="a"
                       href={tag.site}
+                      target="_blank"
                       borderRadius="4px"
                       border="1px"
                       borderColor={tag.color}
