@@ -141,7 +141,7 @@ export const projectsInProduction = [
         paragraph: "Esta landing page, desarrollada con Next.js y Styled Components, exhibe nuestra experiencia en desarrollo web. Next.js garantiza un rendimiento sólido, mientras que Styled Components facilita estilos modulares. Nuestra dedicación a la seguridad y escalabilidad se refleja en una experiencia informativa excepcional, ideal para empresas y comunidades.",
         description: [
             {
-                title: "Landing Page de Dcorp - Desarrollo de Software Blockchain con Next.js y Styled Components",
+                title: "Landing Page de Partneo - Desarrollo de Software Blockchain con Next.js y Styled Components",
                 paragraph: "La implementación de esta landing page ha permitido a Dcorp presentar su experiencia y servicios de manera efectiva en línea. Los visitantes pueden obtener información clave sobre la empresa de manera clara y atractiva. La combinación de Next.js para la eficiencia y Styled Components para el diseño modular ha contribuido a una presencia en línea sólida y profesional para Dcorp.",
                 technology: [
                     "<h3>Tecnologías Utilizadas:</h3>",
