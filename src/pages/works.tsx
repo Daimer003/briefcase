@@ -38,7 +38,7 @@ const Works = () => {
         </Text>
       </Box>
       <Box display="flex" flexDir="column" position="relative" gap="20px">
-        <Wrap spacing="20px" justify="center" marginTop="40px">
+        <Wrap spacing="20px" justify="center" marginTop="40px" minH={{base: "auto", md: "879px"}}>
           {res?.visibleData.map((project) => {
             return (
               <WrapItem key={project.id}>

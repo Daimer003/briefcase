@@ -110,7 +110,7 @@ const Profile = () => {
       </Box>
 
       <Box display="flex" flexDir="column" position="relative" gap="20px">
-        <Wrap spacing="20px" justify="center" marginTop="40px">
+        <Wrap spacing="20px" justify="center" marginTop="40px" minH={{base: "auto", md: "780px"}}>
           {res?.visibleData.map((project: any) => {
             return (
               <WrapItem key={project.id}>

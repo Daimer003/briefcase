@@ -291,6 +291,50 @@ export const projectsInProduction = [
             },
         ]
     },
+    {
+        id: 6,
+        title: "Gestia",
+        imagen: "/assets/projects/gestia.webp",
+        description: [
+            {
+                title: "Automatización de Fechas con Next.js y Chakra UI",
+                paragraph: "Next.js: Se empleó el framework de React para desarrollar una aplicación web eficiente y de alto rendimiento. Next.js facilita la creación de aplicaciones de una sola página (SPA) con capacidades de servidor, lo que mejora la experiencia del usuario y la velocidad de carga. Chakra UI: Se implementó Chakra UI como el sistema de diseño y componentes para la interfaz de usuario. Chakra UI proporciona componentes reutilizables y estilos predefinidos que aceleran el desarrollo y garantizan una interfaz coherente y atractiva.",
+                technology: [
+                    "<h3>Tecnologías Utilizadas:</h3>",
+                    "<strong>Next.js:</strong> <p> Se empleó el framework de React para desarrollar una aplicación web eficiente y de alto rendimiento. Next.js facilita la creación de aplicaciones de una sola página (SPA) con capacidades de servidor, lo que mejora la experiencia del usuario y la velocidad de carga.</p>",
+                    "<strong>Chakra UI:</strong><p>  Se implementó Chakra UI como el sistema de diseño y componentes para la interfaz de usuario. Chakra UI proporciona componentes reutilizables y estilos predefinidos que aceleran el desarrollo y garantizan una interfaz coherente y atractiva.</p>",
+                    "<h3>Funcionalidades Principales:</h3>",
+
+                    "<strong>Automatización de Fechas con Archivos XML:</strong> <p> El sistema automatiza el procesamiento de fechas al subir archivos XML, optimizando la eficiencia en la gestión de datos financieros.</p>",
+                    "<strong>Forward Date: </strong> <p> La funcionalidad Forward Date se ha integrado como un elemento esencial para cálculos financieros. Permite avanzar en el tiempo de manera automática, facilitando la planificación y ejecución de operaciones financieras.</p>",
+
+                    "<strong>Target DrawDown Ajustable:</strong><p>  Se ha establecido un valor predeterminado de 1000 para Target DrawDown, que representa la reducción máxima esperada en el valor de una cartera de inversión. Este valor es ajustable según las necesidades del usuario, brindando flexibilidad en la configuración de parámetros financieros.</p>",
+                    "<strong>Modernización de la Gestión de Datos Financieros:</strong> <p>La aplicación moderniza la gestión de datos financieros al proporcionar una interfaz eficiente y amigable. Los usuarios pueden realizar tareas complejas de manera intuitiva, mejorando la productividad y la toma de decisiones informadas.</p>",
+
+                    "<strong>Objetivo del Proyecto:</strong> <p> El objetivo principal de este proyecto es proporcionar una solución robusta y moderna para la automatización de fechas y la gestión eficiente de datos financieros. La combinación de Next.js y Chakra UI asegura un desarrollo ágil y una experiencia de usuario optimizada.</p>",
+                    "<strong>Impacto y Resultados:</strong> <p> La implementación de esta aplicación ha llevado a una mejora significativa en la productividad y precisión en el manejo de datos financieros, ofreciendo a los usuarios una herramienta avanzada para tomar decisiones informadas en el ámbito financiero.</p>",
+
+                ]
+
+            }
+        ],
+        technologies: [
+            {
+                id: 1,
+                name: "NEXT.JS",
+                icon: TbBrandNextjs,
+                color: "black",
+                site: "https://nextjs.org/"
+            },
+            {
+                id: 2,
+                name: "SITIO WEB",
+                icon: GiWireframeGlobe,
+                color: "gray",
+                site: "#"
+            },
+        ]
+    },
 ]
 
 export const technologies = [
