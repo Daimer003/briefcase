@@ -15,6 +15,7 @@ import {
   useColorModeValue,
   Spinner,
   Heading,
+  Stack,
 } from "@chakra-ui/react";
 import { useChat } from "ai/react";
 import { useEffect, useState, useRef } from "react";
@@ -40,6 +41,7 @@ const Ia = () => {
       },
     ],
   });
+
   const myDivRef = useRef<HTMLDivElement>(null);
   const [question, setQuestion] = useState<string>("false");
 
@@ -225,6 +227,14 @@ const Ia = () => {
                         {parseMessage(m.content)}
                       </Box>
                     ))}
+
+                  <Stack justify="center" align="center" w="100%" h="100%" mt={3}>
+                    <Text color="yellow">
+                      Lo sentimos, los tokens disponibles se han agotado. No es
+                      posible continuar con la operación.
+                    </Text>
+                  </Stack>
+
                   <Box
                     display="flex"
                     position="fixed"

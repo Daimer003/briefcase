@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext", 
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    
     "allowJs": true,
     "strict": false,
     "noEmit": true,
@@ -15,8 +16,8 @@
     "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "Node16", // O "CommonJS", si usas módulos comunes de Node.js
+    "moduleResolution": "Node16",
     "jsx": "preserve",
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
