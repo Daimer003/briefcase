@@ -1,15 +1,30 @@
-import mongoose from "mongoose";
+import { Schema, model, models, Document } from 'mongoose';
 
-const schema = new mongoose.Schema({
-    id: Number,
-    name: String,
-    link: String,
-    profile: String,
-    comment: String,
-    color: String,
-    huella: String,
-    avatar: String
-})
+export interface IComment extends Document {
+    id?: number;
+    link?: string;
+    comment: string;
+    name: string;
+    profile?: string;
+    color?: string;
+    huella?: string;
+    avatar?: string;
+}
 
+const CommentSchema = new Schema<IComment>(
+    {
+        id: Number,
+        link: String,
+        comment: { type: String, required: true },
+        name: { type: String, required: true },
+        profile: String,
+        color: String,
+        huella: String,
+        avatar: String,
+    },
+    { timestamps: true }
+);
 
-export default mongoose.models.Comments || mongoose.model("Comments", schema)
+const Comments = models.Comments || model<IComment>('Comments', CommentSchema);
+
+export default Comments;

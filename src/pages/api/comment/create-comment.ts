@@ -3,7 +3,6 @@ import Comments from '@/models/comments'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Cors from 'cors';
 
-
 const corsMiddleware = Cors({
     methods: ['GET', 'POST', 'OPTIONS'],
 });
@@ -25,16 +24,30 @@ async function runMiddleware(
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse,
+    res: NextApiResponse
 ) {
-    await runMiddleware(req, res, corsMiddleware)
-    const comment = await req.body
+    await runMiddleware(req, res, corsMiddleware);
+
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method Not Allowed' });
+    }
 
     try {
-        await connectDb()
-        const comments = await Comments.create(comment)
-        res.status(200).json(comments)
+        await connectDb();
+
+        const commentData = req.body;
+
+        if (!commentData || typeof commentData !== 'object') {
+            return res.status(400).json({ error: 'Invalid comment data' });
+        }
+
+        // Verifica que el comentario tenga la estructura correcta antes de insertarlo
+        const newComment = new Comments(commentData);
+        const savedComment = await newComment.save();
+
+        return res.status(200).json(savedComment);
     } catch (error) {
-        console.log(error)
+        console.error('Error al guardar el comentario:', error);
+        return res.status(500).json({ error: 'Error interno del servidor' });
     }
 }
