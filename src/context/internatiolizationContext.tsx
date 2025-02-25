@@ -157,7 +157,7 @@ export const LocaleProvider: FC<LocaleProviderProps> = (props) => {
 };
 
 LocaleProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export const LocaleConsumer = LocaleContext.Consumer;
