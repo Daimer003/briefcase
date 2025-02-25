@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
-import { Box, keyframes } from "@chakra-ui/react"
+import { keyframes } from "@emotion/react";
+import { Box } from "@chakra-ui/react"
 
 
 //Background

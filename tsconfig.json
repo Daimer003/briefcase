@@ -16,7 +16,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "preserve",
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
@@ -31,7 +31,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "allowSyntheticDefaultImports": true,
   },
   "include": [
     "next-env.d.ts",
